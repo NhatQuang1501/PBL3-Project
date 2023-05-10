@@ -1,0 +1,130 @@
+﻿/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+
+
+/* Container */
+.container {
+    background-color: #E3E6F0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 470px;
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    position: relative;
+    /* left: -275px;
+    top: 1px; */
+    border: 3px solid #002182;
+}
+
+/* Title */
+h2 {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 56px;
+    text-align: center;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+label {
+    color: #5f6368;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="password"] {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    height: 44px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(241, 187, 69, 0.5);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Forgot password link */
+.forgot-password {
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: right;
+    text-decoration: none;
+}
+
+
+
+/* Sign in button */
+button[type="submit"] {
+    background: #F1BB45;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    height: 44px;
+    width: 200px;
+    margin: 15px 0 25px;
+    transition: background-color 0.2s;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+    button[type="submit"]:hover {
+        background-color: #2979ff;
+    }
+
+/* Create account link */
+.create-account {
+    color: #5f6368;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 15px;
+}
+
+/* Flower background */
+body:before {
+    content: "";
+    background-image: url("image/ima.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 15;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.container img {
+    margin: auto;
+    width: 150px;
+    height: 150px;
+}
+
+.container a {
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}

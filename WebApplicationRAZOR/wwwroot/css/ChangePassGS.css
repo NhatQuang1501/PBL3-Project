@@ -1,0 +1,42 @@
+﻿.choice {
+    width: 200px;
+    background-color: #F1BB45;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: black;
+    border-style: double;
+}
+
+    .choice ul {
+        list-style: disc;
+        padding: 0;
+        margin: 0;
+        font-size: large;
+        font-family: serif;
+        font-weight: bold;
+    }
+
+    .choice li {
+        margin-bottom: 10px;
+    }
+
+    .choice a {
+        display: block;
+        color: #333;
+        text-decoration: none;
+        padding: 5px;
+    }
+
+        .choice a:hover {
+            background-color: #002182;
+            color: white;
+            border-radius: 15px;
+        }
+
+    .choice ul ul {
+        display: none;
+    }
+
+    .choice li:hover > ul {
+        display: block;
+    }
