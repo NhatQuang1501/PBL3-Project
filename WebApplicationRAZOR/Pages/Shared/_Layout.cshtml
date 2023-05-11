@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="~/WebApplicationRAZOR.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
         @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">WebApplicationRAZOR</a>
@@ -34,20 +33,22 @@
             </div>
         </nav>*@
 
-        <nav>
-            <div class="logo-box">
-                <img src="~/img/logo.png" alt="Logo" class="logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="main.html">Trang chủ</a></li>
-                <li><a href="Personal.html">Cá nhân</a></li>
-
-                <div class="log-out-box">
-                    <a href="index.html" class="btn btn-su">Đăng xuất</a>
+        <header>
+            <nav>
+                <div class="logo-box">
+                    <img src="~/img/logo.png" alt="Logo" class="logo">
                 </div>
-            </ul>
-        </nav>
-    </header>
+                <ul class="nav-links">
+                    <li><a href="main.html">Trang chủ</a></li>
+                    <li><a href="Personal.html">Cá nhân</a></li>
+
+                    <div class="log-out-box">
+                        <a href="index.html" class="btn btn-su">Đăng xuất</a>
+                    </div>
+
+                </ul>
+            </nav>
+        </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
