@@ -9,7 +9,49 @@
 }*@
 
 
-<div class="text-center">
-    <h1 class="display-4">Đăng nhập</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-in Page</title>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+        <nav>
+            <div class="logo-box">
+                <img src="image/logo.png" alt="Logo" class="logo" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">GIỚI THIỆU</a></li>
+                <li><a href="#">ĐĂNG KÍ PHỤ HUYNH</a></li>
+                <li><a href="#">ĐĂNG KÍ GIA SƯ</a></li>
+                <li><a href="index.html">LIÊN HỆ</a></li>
+                <div class="sign-up-box">
+                    <a href="main.html" class="btn btn-su">Đăng nhập</a>
+                </div>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <h2>ĐĂNG NHẬP</h2>
+            <form>
+                <label for="NAME">Username</label>
+                <input type="text" id="email" name="email" />
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" />
+
+                <label for="forgot-password" class="right"><a href="forgotpassword.html">Quên mật khẩu?</a></label>
+
+                <!-- <button type="submit">Đăng nhập</button> -->
+                <a href="main.html"><button class="btn-signIn2" type="button">Đăng nhập</button></a>
+
+                <div class="create-account">
+                    Bạn chưa có tài khoản?<a href="index.html">Tạo tài khoản?</a>.
+                </div>
+            </form>
+        </div>
+    </header>
+
+
