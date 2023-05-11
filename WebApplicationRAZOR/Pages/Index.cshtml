@@ -17,10 +17,7 @@
                 <img src="~/img/logo.png" alt="Logo" class="logo" />
             </div>
             <ul class="nav-links">
-                <li><a asp-page="/Error">GIỚI THIỆU</a></li>
-                <li><a href="#">ĐĂNG KÍ PHỤ HUYNH</a></li>
-                <li><a href="#">ĐĂNG KÍ GIA SƯ</a></li>
-                <li><a href="index.html">LIÊN HỆ</a></li>
+
                 <div class="sign-up-box">
                     <a href="main.html" class="btn btn-su">Đăng nhập</a>
                 </div>
@@ -42,7 +39,7 @@
             <a href="main.html"><button class="btn-signIn2" type="button">Đăng nhập</button></a>
 
             <div class="create-account">
-                Bạn chưa có tài khoản?<a href="index.html">Tạo tài khoản?</a>.
+            Bạn chưa có tài khoản?<a asp-page="/Account/Register">Tạo tài khoản?</a>.
             </div>
         </form>
 </div>
