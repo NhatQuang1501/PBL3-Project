@@ -1,6 +1,65 @@
 ﻿@page
 @model WebApplicationRAZOR.Pages.Sign_inModel
 @{
-	    ViewData["Title"] = "Đăng kí";
+    ViewData["Title"] = "Đăng kí";
+
 }
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page</title>
+    <link rel="stylesheet" href="~/css/register.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo-box">
+                <img src="~/img/logo.png" alt="Logo" class="logo" />
+            </div>
+            <ul class="nav-links">
+                <div class="sign-up-box">
+                    <a href="#" class="btn btn-su">Đăng ký</a>
+                    <a href="main.html" class="btn btn-su">Đăng nhập</a>
+                </div>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <h2>ĐĂNG KÝ</h2>
+            <form>
+                <label for="Email">Email</label>
+                <input type="text" id="email" name="email" />
+
+                <label for="Username">Username</label>
+                <input type="text" id="Username" name="Username" />
+
+                <label for="password">Password</label>
+                <input type="password" id="password1" name="password1" />
+
+                <label for="password">Re-Enter Password</label>
+                <input type="password" id="password2" name="password2" />
+
+                <div class="radio-group">
+                    <label><input type="radio" name="user-type" value="tutor" checked> Gia sư</label>
+                    <label><input type="radio" name="user-type" value="parent"> Phụ huynh</label>
+                </div>
+
+
+
+
+                <!-- <button type="submit">Đăng nhập</button> -->
+                <a asp-page="/Index"><button class="btn-Register" type="button">Đăng ký</button></a>
+
+            </form>
+        </div>
+    </header>
+</body>
+</html>
 
