@@ -149,19 +149,19 @@ header {
   .fee{
     font-size:medium ;
   }
-  
-  .btn {
+
+.btn {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #F1BB45;
+    background-color: #fff;
     color: #000;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     
-  }
+}
 
   .btn:hover {
     background-color: #45a049;
@@ -192,6 +192,18 @@ header {
 	justify-content: center;
 	text-align: center;
 	display: inline-block;
+}
+.btn-create:link,
+.btn-create:visited {
+    color: #000;
+    background-color: #45a049;
+    width: 130px;
+    height: 45px;
+    font-size: small;
+    justify-content: center;
+    text-align: center;
+    margin: 5%;
+    margin-left: 20%;
 }
 main {
   display: flex;
