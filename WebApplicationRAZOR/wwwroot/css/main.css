@@ -195,14 +195,15 @@ header {
 }
 .btn-create:link,
 .btn-create:visited {
-    color: #fff;
-    background-color: #002182;
-    width: 90px;
-    height: 35px;
+    color: #000;
+    background-color: #45a049;
+    width: 130px;
+    height: 45px;
     font-size: small;
-    align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 5%;
+    margin-left: 20%;
 }
 main {
   display: flex;
