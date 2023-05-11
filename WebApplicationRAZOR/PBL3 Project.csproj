@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Pages\Admin\" />
-    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
   <ItemGroup>
