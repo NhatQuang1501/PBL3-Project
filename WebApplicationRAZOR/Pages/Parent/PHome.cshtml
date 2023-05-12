@@ -5,12 +5,11 @@
 
 @{
     Layout = null;
+    ViewData["title"] ="Trang chủ Phụ huynh";
 }
 
-<title>PHome Page</title>
     <link rel="stylesheet" href="~/css/main.css">
     <script src="main.js"></script>
-
 
 <body>
     <header>
@@ -19,18 +18,11 @@
                 <img src="~/img/logo.png" alt="Logo" class="logo">
             </div>
             <ul class="nav-links">
-                <li><a asp-page="/Index">Trang chủ</a></li>
-                <li><a href="Personal.html">Cá nhân</a></li>
-                <div class="search">
-                    <input type="text" id="search-bar" placeholder="Search...">
-
-                    <button type="submit" class="image-button">
-                        <img src="~/img/iconSearch.png" alt="Image" class="button-image">
-                    </button>
-                </div>
-
+                <li><a asp-page="/Parent/PHome">Trang chủ</a></li>
+                <li><a asp-page="/Parent/PInfo">Thông tin cá nhân</a></li>
+                
                 <div class="log-out-box">
-                    <a href="index.html" class="btn btn-su">Đăng xuất</a>
+                    <a asp-page="/Index" class="btn btn-su">Đăng xuất</a>
                 </div>
 
             </ul>
@@ -105,7 +97,7 @@
 
             <a href="#" class="btn btn-del">Xóa tất cả</a>
             <a href="#" class="btn btn-find">Áp dụng</a>
-            <a href="#" class="btn btn-create">Tạo bài đăng</a>
+            <a asp-page="/CreatePost" class="btn btn-create">Tạo bài đăng</a>
 
         </div>
 
@@ -176,7 +168,7 @@
 <footer>
 
     <div class="footer">
-        <img src="~/img/footer.png" alt="footer" class="footer" height="188px" width="1200px">
+        <img src="~/img/footer.png" alt="footer" class="footer" height="25%" width="100%">
     </div>
 </footer>
 
