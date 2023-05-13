@@ -1,0 +1,120 @@
+﻿@page
+@model PBL3_Project.Pages.Tutor.TPersonalModel
+@{
+}
+@{
+    Layout = null;
+}
+<head>
+    <title>Personal Page</title>
+    <link rel="stylesheet" href="~/css/Personal.css" />
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo-box">
+                <img src="~img/logo.png" alt="Logo" class="logo" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="main.html">Trang chủ</a></li>
+                <li><a href="#">Cá nhân</a></li>
+                <div class="search">
+                    <input type="text" id="search-bar" placeholder="Search..." />
+
+                    <button type="submit" class="image-button">
+                        <img src="~img/iconSearch.png"
+                             alt="Image"
+                             class="button-image" />
+                    </button>
+                </div>
+
+                <div class="log-out-box">
+                    <a href="/About" class="btn btn-su">Đăng xuất</a>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="control">
+            <img class="avatar" src="~img/avar.jpg" alt="Avatar" />
+            <div class="user-info">
+                <div class="username">ChuBeDan</div>
+                <img src="~img/iconControl.png" alt="Logo" class="iconControl" />
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="choice">
+                <label class="TTTK">
+                    <strong><a href="Personal.html">Thông tin tài khoản</a></strong>
+                </label><br /><br /><br />
+
+                <div class="form-control">
+                    <label><strong>Quản lý hồ sơ :</strong></label>
+                    <select>
+                        <option value="1">Tạo hồ sơ</option>
+                        <option value="2">Xem hồ sơ</option>
+                        <option value="3">Xóa hồ sơ</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label><strong>Quản lý suất dạy :</strong></label>
+                    <select>
+                        <option value="4">Suất dạy đã đăng kí</option>
+                        <option value="5">Suất dạy được nhận</option>
+                        <option value="6">Đánh giá của tôi</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container1">
+        <img src="~img/background.png" alt="background" class="background" />
+        <form class="form">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <h2>Thông tin tài khoản <br /><br /></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong><label for="username">Email đăng nhập:</label></strong>
+                    </td>
+                    <td>
+                        <label for="Email">LTMTUTOR@@@@<br /><br /></label>
+                    </td>
+                    <br />
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong><label for="password">Mật khẩu:</label></strong>
+                    </td>
+                    <td><label for="Pass">123456</label></td>
+                    <form action="changePassGS.html">
+                    <td colspan="2"><input type="submit" value="Đổi mật khẩu" formaction="changePassGS.html" /></td>
+        </form>
+
+        </tr>
+        <tr></tr>
+        </table>
+        </form>
+    </div>
+</body>
+
+<footer>
+    <div class="footer">
+        <img src="~img/footer.png"
+             alt="footer"
+             class="footer"
+             height="378px"
+             width="1200px" />
+    </div>
+</footer>
+</html>
