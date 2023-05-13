@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace WebApplicationRAZOR.Pages.Tutor
+namespace WebApplicationRAZOR.Pages.Parent
 {
-    public class TInfoModel : PageModel
+    public class PProfileModel : PageModel
     {
         public void OnGet()
         {

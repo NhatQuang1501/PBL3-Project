@@ -1,16 +1,12 @@
 ﻿@page
 @model WebApplicationRAZOR.Pages.Sign_inModel
 @{
-    ViewData["Title"] = "Đăng kí";
-
-}
-@{
     Layout = null;
+    ViewData["title"] = "Đăng kí";
 }
 
 <link rel="stylesheet" href="~/css/register.css" />
 <link rel="stylesheet" href="~/css/style.css" />
-
 
 <body>
     <header>
@@ -20,8 +16,8 @@
             </div>
             <ul class="nav-links">
                 <div class="sign-up-box">
-                    <a href="#" class="btn btn-su">Đăng ký</a>
-                    <a href="main.html" class="btn btn-su">Đăng nhập</a>
+                    <a asp-page="/Account/Register" class="btn btn-su" style="text-decoration: none">Đăng ký</a>
+                    <a asp-page="/Index" class="btn btn-su" style="text-decoration: none">Đăng nhập</a>
                 </div>
             </ul>
         </nav>

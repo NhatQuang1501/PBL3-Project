@@ -3,38 +3,15 @@
 @{
 }
 @{
-    Layout = null;
+    Layout = "_TLayout";
+    ViewData["title"] = "Trang chủ Gia sư";
 }
 
-<title>THome Page</title>
     <link rel="stylesheet" href="~/css/main.css">
     <script src="main.js"></script>
 
-
 <body>
-    <header>
-        <nav>
-            <div class="logo-box">
-                <img src="~/img/logo.png" alt="Logo" class="logo">
-            </div>
-            <ul class="nav-links">
-                <li><a asp-page="#">Trang chủ</a></li>
-                <li><a asp-page="/Tutor/TPersonal">Cá nhân</a></li>
-                <div class="search">
-                    <input type="text" id="search-bar" placeholder="Search...">
 
-                    <button type="submit" class="image-button">
-                        <img src="~/img/iconSearch.png" alt="Image" class="button-image">
-                    </button>
-                </div>
-
-                <div class="log-out-box">
-                    <a href="index.html" class="btn btn-su">Đăng xuất</a>
-                </div>
-
-            </ul>
-        </nav>
-    </header>
 
     <div class="container">
         <img src="~/img/FilterSearch.png" alt="FilSearch" class="FilSearch">
@@ -180,12 +157,3 @@
 
     </div>
 </body>
-
-<footer>
-
-    <div class="footer">
-        <img src="~/img/footer.png" alt="footer" class="footer" height="188px" width="1200px">
-    </div>
-</footer>
-
-</html>
