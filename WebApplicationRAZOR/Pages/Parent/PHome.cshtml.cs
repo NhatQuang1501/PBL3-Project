@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using PBL3_Project.Models;
 
 namespace WebApplicationRAZOR.Pages.Parent
 {
@@ -7,6 +8,9 @@ namespace WebApplicationRAZOR.Pages.Parent
     {
         public void OnGet()
         {
+
         }
+
+        
     }
 }

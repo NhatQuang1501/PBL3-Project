@@ -1,0 +1,137 @@
+﻿@page
+@model PBL3_Project.Pages.Parent.CreatePostModel
+@{
+	Layout = "_PLayout";
+	ViewData["title"] = "Trang chủ Phụ huynh";
+}
+
+  <link rel="stylesheet" href="~/css/main.css">
+  <link rel="stylesheet" href="~/css/createPost.css" />
+  <link rel="stylesheet" href="~/css/Personal.css" />
+
+
+<body>
+
+  <div class="container">
+    <img src="image/FilterSearch.png" alt="FilSearch" class="FilSearch" >
+    <!-- filter -->
+    <div class="filter">
+      
+      <div class="form-control">
+        <label>Môn học:</label>
+        <select>
+          <option value="math">Toán</option>
+          <option value="physics">Vật lý</option>
+          <option value="chemistry">Hóa học</option>
+          <option value="history">Ngữ văn</option>
+          <option value="english">Tiếng Anh</option>
+          <option value="english">Tiếng Trung</option>
+          <option value="history">Lịch sử</option>
+          <option value="history">Sinh học</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <label>Lớp:</label>
+        <select>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+
+        </select>
+      </div>
+      <div class="form-control">
+        <label>Khu vực:</label>
+        <select>
+          <option value="hanoi">Hà Nội</option>
+          <option value="hochiminh">TP Hồ Chí Minh</option>
+          <option value="danang">Đà Nẵng</option>
+        </select>
+      </div>
+
+      <div class="form-control">
+        <label>Học phí:</label>
+        <input id = "inputrange" type="range" value="0" min="0" max="1000" oninput="this.nextElementSibling.value = this.value">
+        <output class="fee">0</output>
+        <output class="fee">.000 (VNĐ/h)</output>  
+      </div>
+
+      <div class="form-control">
+        <label>Số học viên:</label>
+        <input id = "inputrange" type="range" value="0" min="0" max="20" oninput="this.nextElementSibling.value = this.value">
+        <output class="fee">0</output>
+         
+      </div>
+
+      <div class="form-control">
+        <label>Số buổi:</label>
+        <input id = "inputrange" type="range" value="0" min="0" max="7" oninput="this.nextElementSibling.value = this.value">
+        <output class="fee">0</output>
+        
+      </div>
+
+      <a href="#" class="btn btn-del">Xóa tất cả</a>
+      <a href="#" class="btn btn-find">Áp dụng</a>
+      <a href="#" class="btn btn-create">Tạo bài đăng</a>
+      
+    </div>
+
+    <div class="container1">
+        
+        <h1 class="myPost">Bài đăng của tôi</h1>
+        <main>
+
+            
+
+          <div class="create-profile">
+            <div>
+              <label>Môn học*</label>
+              <input type="text">
+            </div>
+            <div>
+              <label>Lớp*</label>
+              <input type="text">
+            </div>
+            <div>
+              <label>Trình độ*</label>
+              <input type="text">
+            </div>
+            <div>
+              <label>Số học viên*</label>
+              <input type="text">
+            </div>
+            <div>
+              <label>Học phí*</label>
+              <input type="text">
+            </div>
+            <div>
+              <label>Địa chỉ*</label>
+              <input type="text">
+            </div>
+            <div>
+              <label>Buổi học*</label>
+              <input type="text">
+            </div>
+            <div>
+              <label>Ghi chú*</label>
+              <input type="text">
+            </div>
+            <div class="button-container">
+                <button class="Ret-btn">Trở về</button>
+                <button class="Pos-btn">Đăng bài</button>
+              </div>
+          </div>
+          
+        </main>
+      </div>
+
+  </div>
+</body>

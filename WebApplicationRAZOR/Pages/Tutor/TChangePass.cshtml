@@ -1,0 +1,99 @@
+﻿@page
+@model PBL3_Project.Pages.Tutor.TChangePassModel
+@{
+	Layout = "_TLayout";
+	ViewData["Title"] = "Đổi mật khẩu gia sư";
+}
+
+    <link rel="stylesheet" href="~/css/Personal.css" />
+    <link rel="stylesheet" href="~/css/ChangePassGS.css" />
+
+  <body>
+    <div class="container">
+      <div class="control">
+        <img class="avatar" src="image/avar.jpg" alt="Avatar" />
+        <div class="user-info">
+          <div class="username">ChuBeDan</div>
+          <img src="image/iconControl.png" alt="Logo" class="iconControl" />
+        </div>
+      </div>
+
+      <div class="menu">
+
+        <div class="choice">
+            <ul>
+              <li><a  href="#"><u>Thông tin tài khoản</u> </a>
+              </li>
+              <li><a  href="hoSoGiaSu.html"><u>Quản lý hồ sơ : <br><br></u></a>
+              </li>
+              <li><a href="#"><u> Quản lý suất dạy :<br><br></u> </a>
+                <ul>
+                  <li style="color: white;"><a href="SuatDayDDK.html" >Suất dạy đã đăng kí </a></li>
+                  <li style="color: white;"><a href="#">Suất dạy được nhận</a></li>
+                  <li style="color: white;"><a href="reviewGS.html">Đánh giá của tôi</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          
+      </div>
+        <!-- Thêm đường dẫn đến tệp JavaScript -->
+  <script src="changePassGS.js"></script>
+    </div>
+
+    <div class="container1">
+      <img src="image/background.png" alt="background" class="background" />
+      <form class="form">
+        <table>
+          <tr>
+            <td colspan="2">
+              <h2>Thông tin tài khoản <br /><br /></h2>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong><label for="username">Email đăng nhập:</label></strong>
+            </td>
+            <td>
+              <label for="Email">LTMTUTOR@@@@<br /><br /></label>
+            </td>
+            <br />
+          </tr>
+
+          <tr>
+            <td>
+              <strong><label for="password">Mật khẩu:</label></strong>
+            </td>
+            <td><label for="Pass">123456</label></td>
+            <td colspan="2"><input type="submit" value="Đổi mật khẩu" /></td>
+          </tr>
+
+
+          <tr>
+            <td><div><strong><br> Nhập mật khẩu hiện tại * <br><br></strong></div></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="password1" name="password1"></td>
+          </tr>
+          <tr>
+            <td><div><strong> Nhập mật khẩu mới * <br><br></strong></div></td>
+          </tr>
+          <tr>
+            <td><input type="password" id="password2" name="password2"></td>
+          </tr>
+          <tr>
+            <td><strong><label for="username" style="color: red; font-weight: bold;">Lưu ý *</strong></label>
+                <div>Mật khẩu phải có tối thiểu 8 kí tự, trong đó có ít nhất 1 kí tự chữ và 1 kí tự số. <br><br> </div></td>
+          </tr>
+          <tr>
+            <td><div><strong> Xác nhận mật khẩu mới * </strong></div></td>
+          </tr>
+          <tr>
+            <td><input type="password" id="password3" name="password3"></td>
+            <td><input type="submit" value="Lưu" class="save-button" /></td>
+
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>

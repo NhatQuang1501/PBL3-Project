@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace PBL3_Project.Pages.Parent
 {
-    public class PProfileModel : PageModel
+    public class PInfoModel : PageModel
     {
         public void OnGet()
         {

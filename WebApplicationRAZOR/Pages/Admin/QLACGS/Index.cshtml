@@ -1,0 +1,53 @@
+﻿@page
+@model PBL3_Project.Pages.Admin.QLACGS.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<style>
+    .custom-btn-width {
+        width: 300%;
+    }
+</style>*@
+
+<h1>Index</h1>
+
+<a asp-page="Create" class=" btn btn-success custom-btn-width" style="text-decoration: none">Create New</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountGiaSu[0].ID_GiaSu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountGiaSu[0].TenAcc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountGiaSu[0].PasswordAcc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.AccountGiaSu) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_GiaSu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenAcc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PasswordAcc)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID_GiaSu">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID_GiaSu">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID_GiaSu">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

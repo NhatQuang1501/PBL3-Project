@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace PBL3_Project.Pages.Parent
+namespace PBL3_Project.Pages.Tutor
 {
-    public class PProfileModel : PageModel
+    public class TReviewModel : PageModel
     {
         public void OnGet()
         {

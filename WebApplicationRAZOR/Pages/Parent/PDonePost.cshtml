@@ -1,0 +1,93 @@
+﻿@page
+@model PBL3_Project.Pages.Parent.PDonePostModel
+@{
+	Layout = "_PLayout";
+	ViewData["title"] = "Trang chủ Phụ huynh";
+}
+
+    <link rel="stylesheet" href="Personal.css" />
+    <link rel="stylesheet" href="changePassGS.css" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="CheckedPost.css" />
+
+  <body>
+
+    <div class="container">
+      <div class="control">
+        <img class="avatar" src="image/avar.jpg" alt="Avatar" />
+        <div class="user-info">
+          <div class="username">ChuBeDan</div>
+          <img src="image/iconControl.png" alt="Logo" class="iconControl" />
+        </div>
+      </div>
+
+      <div class="menu">
+
+        <div class="choice">
+            <ul>
+              <li><a  href="#"><u>Thông tin tài khoản</u> </a>
+              </li>
+              <li><a  href="hoSoPH.html"><u>Quản lý hồ sơ : <br><br></u></a>
+              </li>
+              <li><a href="#"><u> Quản lý bài đăng :<br><br></u> </a>
+                <ul>
+                  <li style="color: white;"><a href="CheckedPost.html" >Bài đăng được duyệt </a></li>
+                  <li style="color: white;"><a href="uncheckedPost.html">Bài đăng chờ duyệt</a></li>
+                  <li style="color: white;"><a href="#">Suất dạy đã giao</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          
+      </div>
+        
+
+    </div>
+
+    <main>
+
+        <h1 class="pageTitle">Suất dạy đã giao</h1>
+
+        <div class="job-posting">
+          <div class="image-container">
+            <img src="image/avar.jpg" alt="avar" class="avar">
+            <p class="caption">Lờ tờ mờ</p>
+          </div>
+          <br>
+          <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
+          <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
+          <p><b><i>Học phí :</i></b> 70k/h.</p><br>
+          <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
+          <div class="button-container">
+
+            <a href="#" class="Edit-btn">Đánh giá gia sư</a>
+
+          </div>
+        </div>
+  
+        <div class="job-posting">
+          <div class="image-container">
+            <img src="image/avar.jpg" alt="avar" class="avar">
+            <p class="caption">Lờ tờ mờ</p>
+          </div>
+          <br>
+          <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
+          <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
+          <p><b><i>Học phí :</i></b> 70k/h.</p><br>
+          <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
+          <div class="button-container">
+            <a href="#" class="Edit-btn">Đánh giá gia sư</a>
+          </div>
+        </div>
+  
+        
+      </main>
+  
+      <div id="pagination">
+        <a href="#" id="first">&laquo; Đầu</a>
+        <a href="#" id="prev">&lsaquo; Trước</a>
+        <span id="pages"></span>
+        <a href="#" id="next">Tiếp &rsaquo;</a>
+        <a href="#" id="last">Cuối &raquo;</a>
+      </div>
+  </body>

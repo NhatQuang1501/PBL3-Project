@@ -1,0 +1,32 @@
+﻿
+.pageTitle {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    background-color: #F1BB45;
+    border-radius: 30px;
+    margin-top: -40px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+    .button-container a {
+        flex: 1;
+        padding: 10px;
+        background-color: #F1BB45;
+        text-decoration: none;
+        text-align: center;
+        color: #000;
+        transition: background-color 0.3s ease;
+        border-radius: 30px;
+    }
+
+        .button-container a:hover {
+            background-color: darkorange;
+        }
