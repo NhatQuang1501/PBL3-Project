@@ -94,39 +94,41 @@
           <div class="create-profile">
             <div>
               <label>Môn học*</label>
-              <input type="text">
+              <input type="text" asp-for="AddPostRequest.MonHoc">
             </div>
             <div>
               <label>Lớp*</label>
-              <input type="text">
+              <input type="text" asp-for="AddPostRequest.Lop">
             </div>
             <div>
               <label>Trình độ*</label>
-              <input type="text">
+              <input type="text" asp-for="AddPostRequest.TrinhDoHocVan">
             </div>
             <div>
               <label>Số học viên*</label>
-              <input type="text">
+              <input type="text" asp-for="AddPostRequest.SoHocVien">
             </div>
             <div>
               <label>Học phí*</label>
-              <input type="text">
+              <input type="text" asp-for="AddPostRequest.HocPhi">
             </div>
             <div>
               <label>Địa chỉ*</label>
-              <input type="text">
+              <input type="text" asp-for="AddPostRequest.DiaChi">
             </div>
             <div>
               <label>Buổi học*</label>
-              <input type="text">
+              <input type="text" asp-for="AddPostRequest.SoBuoi">
             </div>
             <div>
               <label>Ghi chú*</label>
-              <input type="text">
+              <input type="text" asp-for="AddPostRequest.GhiChu">
             </div>
             <div class="button-container">
-                <button class="Ret-btn">Trở về</button>
-                <button class="Pos-btn">Đăng bài</button>
+                @*<button class="Ret-btn" asp-page-handler="Back">Trở về</button>
+                <button class="Pos-btn" asp-page="/PHome">Đăng bài</button>*@
+                <a class="Pos-btn" asp-page="/Parent/PHome">Trở về</a>
+                <a class="Ret-btn" asp-page-handler="Post">Đăng bài</a>
               </div>
           </div>
           

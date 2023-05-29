@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using PBL3_Project.Data;
-using PBL3_Project.Models;
+using PBL3_Project.Models.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 

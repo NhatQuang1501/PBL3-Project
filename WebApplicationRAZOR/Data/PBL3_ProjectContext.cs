@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using PBL3_Project.Models;
+using PBL3_Project.Models.Domain;
 
 namespace PBL3_Project.Data
 {
@@ -14,8 +14,8 @@ namespace PBL3_Project.Data
         {
         }
 
-        public DbSet<PBL3_Project.Models.AccountGiaSu> AccountGiaSu { get; set; } = default!;
-
-        public DbSet<PBL3_Project.Models.AccountPhuHuynh>? AccountPhuHuynh { get; set; }
+        public DbSet<AccountGiaSu> AccountGiaSu { get; set; } = default!;
+        public DbSet<AccountPhuHuynh>? AccountPhuHuynh { get; set; }
+        public DbSet<BaiDang> BaiDang { get; set;}
     }
 }

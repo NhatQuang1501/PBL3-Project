@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PBL3_Project.Data;
-using PBL3_Project.Models;
+using PBL3_Project.Models.Domain;
 
 namespace PBL3_Project.Pages.Admin.QLACPH
 {

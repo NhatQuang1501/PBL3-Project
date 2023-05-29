@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PBL3_Project.Models
+namespace PBL3_Project.Models.Domain
 {
-    public class AccountPhuHuynh
+    public class AccountGiaSu
     {
         [Key]
-        public int ID_PhuHuynh { get; set; }
+        public int ID_GiaSu { get; set; }
         public string TenAcc { get; set; }
         public string PasswordAcc { get; set; }
     }

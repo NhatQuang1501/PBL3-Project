@@ -2,7 +2,7 @@
 using PBL3_Project.Data;
 using WebApplicationRAZOR.Pages.Admin.QLACGS;
 
-namespace PBL3_Project.Models
+namespace PBL3_Project.Models.Domain
 {
     public static class SeedData
     {
@@ -43,7 +43,7 @@ namespace PBL3_Project.Models
                         ID_GiaSu = 3,
                         TenAcc = "tutor3",
                         PasswordAcc = "tutor3"
-                    }      
+                    }
                 );
                 context.SaveChanges();
             }

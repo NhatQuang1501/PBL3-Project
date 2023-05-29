@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PBL3_Project.Models
+namespace PBL3_Project.Models.Domain
 {
     public class BaiDang
     {
