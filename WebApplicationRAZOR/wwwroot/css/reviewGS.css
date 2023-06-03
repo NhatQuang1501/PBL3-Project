@@ -1,0 +1,67 @@
+﻿.employee-reviews {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: medium;
+    margin: 30px;
+}
+
+.avatar {
+    margin-right: 10px;
+}
+
+    .avatar img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+
+.employee-info {
+    flex-grow: 1;
+    margin-left: 5%;
+}
+
+.criteria {
+    font-weight: bold;
+    font-size: large;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    margin-right: 5px;
+}
+
+    .star::after {
+        content: '\2605';
+        font-size: 16px;
+        color: #ffc107;
+    }
+
+.comment {
+    margin-top: 5px;
+}
+
+.Review {
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    background-color: #002182;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: -8%;
+    max-width: 75%;
+}

@@ -266,10 +266,10 @@ main {
     min-height: 100vh;
   }
 
-  .FilSearch{
+  #FilSearch{
     position: absolute;
-    height : 80px;
-    width: 25%;
+    height : 3.3%;
+    width: 21.3%;
     margin-left: 10px;
     border-radius: 10px;
   }

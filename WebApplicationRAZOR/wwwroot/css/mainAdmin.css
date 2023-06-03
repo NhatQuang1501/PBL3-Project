@@ -1,0 +1,19 @@
+﻿main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -8%;
+}
+
+.container2 {
+    min-height: 10vh;
+}
+
+.pageTitle {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    background-color: #F1BB45;
+    border-radius: 30px;
+}

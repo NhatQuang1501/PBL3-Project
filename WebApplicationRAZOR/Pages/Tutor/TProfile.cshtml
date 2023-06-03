@@ -5,4 +5,77 @@
     ViewData["title"] = "Hồ sơ Gia sư";
 }
 
-<h1 style="color:red">Trang hồ sơ gia sư</h1>
+
+    <link rel="stylesheet" href="~/css/Personal.css" />
+    <link rel="stylesheet" href="~/css/ChangePassGS.css" />
+
+<body>
+    <div class="container">
+        <div class="control">
+            <img class="avatar" src="image/avar.jpg" alt="Avatar" />
+            <div class="user-info">
+                <div class="username">ChuBeDan</div>
+                <img src="image/iconControl.png" alt="Logo" class="iconControl" />
+            </div>
+        </div>
+
+        <div class="menu">
+
+            <div class="choice">
+                <ul>
+                    <li>
+                        <a asp-page="/TProfile"><u>Thông tin tài khoản</u> </a>
+                    </li>
+                    <li>
+                        <a href="hoSoGiaSu.html"><u>Quản lý hồ sơ : <br><br></u></a>
+                    </li>
+                    <li>
+                        <a href="#"><u> Quản lý suất dạy :<br><br></u> </a>
+                        <ul>
+                            <li style="color: white;"><a href="SuatDayDDK.html">Suất dạy đã đăng kí </a></li>
+                            <li style="color: white;"><a href="SuatDayChecked.html">Suất dạy được nhận</a></li>
+                            <li style="color: white;"><a href="reviewGS.html">Đánh giá của tôi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container1">
+        <img src="image/background.png" alt="background" class="background" />
+        <form class="form">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <h2>Thông tin tài khoản <br /><br /></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong><label for="username">Email đăng nhập:</label></strong>
+                    </td>
+                    <td>
+                        <label for="Email">LTMTUTOR@@@@<br /><br /></label>
+                    </td>
+                    <br />
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong><label for="password">Mật khẩu:</label></strong>
+                    </td>
+                    <td><label for="Pass">123456</label></td>
+                    <form action="changePassGS.html">
+                    <td colspan="2"><input type="submit" value="Đổi mật khẩu" formaction="changePassGS.html" /></td>
+        </form>
+
+        </tr>
+        <tr></tr>
+        </table>
+        </form>
+    </div>
+</body>
+
+

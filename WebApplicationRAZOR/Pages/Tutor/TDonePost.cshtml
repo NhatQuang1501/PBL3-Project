@@ -1,0 +1,92 @@
+﻿@page
+@model PBL3_Project.Pages.Tutor.TDonePostModel
+@{
+    Layout = "_TLayout";
+    ViewData["title"] = "Trang chủ Gia sư";
+}
+
+<link rel="stylesheet" href="~/css/main.css">
+<link rel="stylesheet" href="~/css/mainAdmin.css">
+<link rel="stylesheet" href="~/css/Personal.css">
+<link rel="stylesheet" href="~/css/hoSoGiaSu.css">
+<script src="main.js"></script>
+
+<body>
+
+    <div class="container2">
+        <div class="control">
+            <img class="avatar" src="image/admin.jpg" alt="Avatar" />
+            <div class="user-info">
+                <div class="username">Lê Tèo</div>
+                <img src="image/iconControl.png" alt="Logo" class="iconControl" />
+            </div>
+        </div>
+
+        <div class="menu">
+
+            <div class="choice">
+                <ul>
+                    <li>
+                        <a href="Personal.html"><u>Thông tin tài khoản</u> </a>
+                    </li>
+                    <li>
+                        <a href="hoSoGiaSu.html"><u>Quản lý hồ sơ : <br><br></u></a>
+                    </li>
+                    <li>
+                        <a href="#"><u> Quản lý suất dạy :<br><br></u> </a>
+                        <ul>
+                            <li style="color: white;"><a href="SuatDayDDK.html">Suất dạy đã đăng kí </a></li>
+                            <li style="color: white;"><a href="#">Suất dạy được nhận</a></li>
+                            <li style="color: white;"><a href="reviewGS.html">Đánh giá của tôi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <main>
+
+        <!-- <h1 class="pageTitle">Suất dạy đã nhận</h1> -->
+
+
+        <div class="job-posting">
+            <div class="image-container">
+                <img src="image/avar.jpg" alt="avar" class="avar">
+                <p class="caption">Lờ tờ mờ</p>
+            </div>
+            <br>
+            <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
+            <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
+            <p><b><i>Học phí :</i></b> 70k/h.</p><br>
+            <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
+
+
+        </div>
+
+
+        <div class="job-posting">
+            <div class="image-container">
+                <img src="image/avar.jpg" alt="avar" class="avar">
+                <p class="caption">Lờ tờ mờ</p>
+            </div>
+            <br>
+            <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
+            <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
+            <p><b><i>Học phí :</i></b> 70k/h.</p><br>
+            <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
+
+        </div>
+
+    </main>
+
+    <div id="pagination">
+        <a href="#" id="first">&laquo; Đầu</a>
+        <a href="#" id="prev">&lsaquo; Trước</a>
+        <span id="pages"></span>
+        <a href="#" id="next">Tiếp &rsaquo;</a>
+        <a href="#" id="last">Cuối &raquo;</a>
+    </div>
+
+    </div>
+</body>

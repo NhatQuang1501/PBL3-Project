@@ -1,19 +1,69 @@
 ﻿@page
+@using PBL3_Project.Models
 @model WebApplicationRAZOR.Pages.Parent.PHomeModel
 @{
 }
 
 @{
+    Layout = "_PLayout";
     ViewData["title"] ="Trang chủ Phụ huynh";
 }
 
-    <link rel="stylesheet" href="~/css/main.css">
-    <script src="main.js"></script>
+@{
+    var bd1 = new BaiDang()
+            {
+                ID_BaiDang = 1,
+                ID_PhuHuynh = 2,
+                TrinhDoHocVan = "Sinh viên",
+                MonHoc = "Sinh học",
+                HocPhi = 600000,
+                Lop = "11",
+                SoBuoi = 3,
+                SoHocVien = 5,
+                TinhTrang = true,
+                ThoiGian = "19:00 Thứ 2, 4, 6",
+                DiaChi = "123 Điện Biên Phủ",
+                GhiChu = "Học và ôn tập liên thông lên 12",
+            };
+    var bd2 = new BaiDang()
+            {
+                ID_BaiDang = 2,
+                ID_PhuHuynh = 3,
+                TrinhDoHocVan = "Giáo viên",
+                MonHoc = "Toán",
+                HocPhi = 900000,
+                Lop = "12",
+                SoBuoi = 3,
+                SoHocVien = 2,
+                TinhTrang = true,
+                ThoiGian = "17:00 Thứ 2, 3, 6",
+                DiaChi = "54 Nguyễn Lương Bằng",
+                GhiChu = "Ôn tập kĩ để thi đại học",
+            };
+    var bd3 = new BaiDang()
+            {
+                ID_BaiDang = 3,
+                ID_PhuHuynh = 1,
+                TrinhDoHocVan = "Sinh viên",
+                MonHoc = "Hóa học",
+                HocPhi = 200000,
+                Lop = "10",
+                SoBuoi = 2,
+                SoHocVien = 3,
+                TinhTrang = false,
+                ThoiGian = "14:30 Thứ 4, CN",
+                DiaChi = "17 Ngô Thì Nhậm",
+                GhiChu = "Lấy gốc cho học viên",
+            };
+}
+
+<link rel="stylesheet" href="~/css/main.css">
+<script src="main.js"></script>
 
 <body>
 
     <div class="container">
-        <img src="~/img/FilterSearch.png" alt="FilSearch" class="FilSearch">
+        <img src="~/img/FilterSearch.png" alt="FilSearch" id="FilSearch">
         <!-- filter -->
         <div class="filter">
 
@@ -85,55 +135,17 @@
         </div>
 
         <main>
-            <div class="job-posting">
-                <div class="image-container">
-                    <img src="~/img/avar.jpg" alt="avar" class="avar">
-                    <p class="caption">Lờ tờ mờ</p>
+            <div class="row">
+                <div class="col">
+                    <partial name="_Post" model="bd1" />
                 </div>
-                <br>
-                <p>Tìm gia sư Lý cho học sinh 13</p><br>
-                <p>Cháu bị mất gốc nặng.</p>
-            </div>
-
-            <div class="job-posting">
-                <div class="image-container">
-                    <img src="~/img/avar.jpg" alt="avar" class="avar">
-                    <p class="caption">Lờ tờ mờ</p>
+                <div class="col">
+                    <partial name="_Post" model="bd2" />
                 </div>
-                <br>
-                <p>Tìm gia sư Lý cho học sinh 13</p><br>
-                <p>Cháu bị mất gốc nặng.</p>
             </div>
-
-            <div class="job-posting">
-                <div class="image-container">
-                    <img src="~/img/avar.jpg" alt="avar" class="avar">
-                    <p class="caption">Lờ tờ mờ</p>
-                </div>
-                <br>
-                <p>Tìm gia sư Lý cho học sinh 13</p><br>
-                <p>Cháu bị mất gốc nặng.</p>
-            </div>
-
-            <div class="job-posting">
-                <div class="image-container">
-                    <img src="~/img/avar.jpg" alt="avar" class="avar">
-                    <p class="caption">Lờ tờ mờ</p>
-                </div>
-                <br>
-                <p>Tìm gia sư Lý cho học sinh 13</p><br>
-                <p>Cháu bị mất gốc nặng.</p>
-            </div>
-
-            <div class="job-posting">
-                <div class="image-container">
-                    <img src="~/img/avar.jpg" alt="avar" class="avar">
-                    <p class="caption">Lờ tờ mờ</p>
-                </div>
-                <br>
-                <p>Tìm gia sư Lý cho học sinh 13</p><br>
-                <p>Cháu bị mất gốc nặng.</p>
-            </div>
+            
+            
+           @* <partial name="_Post" model="bd3"/>*@
 
         </main>
 

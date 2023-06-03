@@ -1,0 +1,27 @@
+﻿.card {
+    width: 40%;
+    border: solid;
+    border-color: rgba(0, 33, 130, 1);
+}
+
+.list-group-item {
+    border: none;
+    font-size: 150%;
+}
+
+.card-footer {
+    background-color: rgba(0, 33, 130, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-group-item {
+    padding: 5px;
+}
+
+.btn-warning {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-weight: bold;
+}

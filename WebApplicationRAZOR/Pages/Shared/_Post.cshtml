@@ -1,0 +1,57 @@
+﻿@using PBL3_Project.Models
+@model BaiDang
+
+<link rel="stylesheet" href="~/css/post.css" />
+
+<div class="card my-4">
+    <h2 class="card-header text-black">@Model.ID_PhuHuynh</h2>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <label for="">Môn học: @Model.MonHoc</label>
+
+            </li>
+            <li class="list-group-item">
+                <label for="">Học phí: @Model.HocPhi</label>
+
+            </li>
+            <li class="list-group-item">
+                <label for="">Lớp: @Model.Lop</label>
+
+            </li>
+            <li class="list-group-item">
+                <label for="">Trình độ học vấn: @Model.TrinhDoHocVan</label>
+
+            </li>
+            <li class="list-group-item">
+                <label for="">Số buổi: @Model.SoBuoi</label>
+
+            </li>
+            <li class="list-group-item">
+                <label for="">Số học viên: @Model.SoHocVien</asp>
+
+            </li>
+            <li class="list-group-item">
+                <label for="">Tình trạng: @Model.TinhTrang</label>
+
+            </li>
+            <li class="list-group-item">
+                <label for="">Thời gian: @Model.ThoiGian</label>
+
+            </li>
+            <li class="list-group-item">
+                <label for="">Địa chỉ: @Model.DiaChi</label>
+
+            </li>
+            <li class="list-group-item">
+                <label for="">Ghi chú:  @Model.GhiChu</label>
+
+            </li>
+        </ul>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-warning">Đăng kí dạy</button>
+        <button class="btn btn-warning">Hủy đăng kí</button>
+    </div>
+</div>
+    </div>

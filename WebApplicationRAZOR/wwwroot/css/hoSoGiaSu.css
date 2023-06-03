@@ -1,0 +1,98 @@
+﻿.choice {
+    width: 230px;
+    background-color: #F1BB45;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: black;
+    border-style: double;
+}
+
+    .choice ul {
+        list-style: disc;
+        padding: 0;
+        margin: 0;
+        font-size: large;
+        font-family: serif;
+        font-weight: bold;
+    }
+
+    .choice li {
+        margin-bottom: 10px;
+    }
+
+    .choice a {
+        display: block;
+        color: #333;
+        text-decoration: none;
+        padding: 5px;
+    }
+
+        .choice a:hover {
+            background-color: #002182;
+            color: white;
+            border-radius: 15px;
+        }
+
+    .choice ul ul {
+        display: none;
+    }
+
+    .choice li:hover > ul {
+        display: block;
+    }
+
+
+
+
+
+
+/* Thiết lập kích thước chung cho các input và label */
+.create-profile input,
+.create-profile label {
+    width: 130%;
+    padding: 10px;
+    margin-bottom: 7px;
+    font-size: 10px;
+}
+
+/* Thiết lập border và focus style cho input */
+.create-profile input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+    .create-profile input:focus {
+        outline: none;
+        border-color: #6c63ff;
+        box-shadow: 0 0 5px #6c63ff;
+    }
+
+/* Thiết lập style cho label */
+.create-profile label {
+    font-weight: bold;
+}
+
+/* Thiết lập style cho nút Lưu */
+.create-profile .Save-btn, .Del-btn {
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    .create-profile .Save-btn:hover, .Del-btn:hover {
+        background-color: #534dff;
+    }
+
+.container1 {
+    width: 50%;
+    margin-top: -5%;
+}
+
+.Save-btn {
+    margin: 10%;
+    margin-left: 30%;
+}

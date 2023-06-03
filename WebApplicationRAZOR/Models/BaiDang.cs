@@ -8,7 +8,6 @@ namespace PBL3_Project.Models
         public int ID_BaiDang { get; set; }
         public int ID_PhuHuynh { get; set; }
         public string TrinhDoHocVan { get; set; }
-
         public string MonHoc { get; set; }
         public int HocPhi { get; set; }
         public string Lop { get; set; }
@@ -17,5 +16,6 @@ namespace PBL3_Project.Models
         public bool TinhTrang { get; set; }
         public string ThoiGian { get; set; }
         public string DiaChi { get; set; }
+        public string GhiChu { get; set; }
     }
 }

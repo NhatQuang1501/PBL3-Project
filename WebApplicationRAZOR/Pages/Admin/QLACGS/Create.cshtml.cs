@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using PBL3_Project.Data;
+using PBL3_Project.Models;
+
+namespace PBL3_Project.Pages.Admin.QLACGS
+{
+    public class CreateModel : PageModel
+    {
+        private readonly PBL3_Project.Data.PBL3_ProjectContext _context;
+
+        public CreateModel(PBL3_Project.Data.PBL3_ProjectContext context)
+        {
+            _context = context;
+        }
+
+        public IActionResult OnGet()
+        {
+            return Page();
+        }
+
+        [BindProperty]
+        public AccountGiaSu AccountGiaSu { get; set; } = default!;
+        
+
+        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+        public async Task<IActionResult> OnPostAsync()
+        {
+          if (!ModelState.IsValid || _context.AccountGiaSu == null || AccountGiaSu == null)
+            {
+                return Page();
+            }
+
+            _context.AccountGiaSu.Add(AccountGiaSu);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("./Index");
+        }
+    }
+}
