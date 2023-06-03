@@ -1,0 +1,78 @@
+﻿@page
+@model PBL3_Project.Pages.Admin.QLHSPH.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HoSoPhuHuynh[0].TenAcc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoSoPhuHuynh[0].PasswordAcc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoSoPhuHuynh[0].TenPhuHuynh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoSoPhuHuynh[0].DiaChi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoSoPhuHuynh[0].SoDienThoai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoSoPhuHuynh[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoSoPhuHuynh[0].GioiTinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoSoPhuHuynh[0].Tuoi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.HoSoPhuHuynh) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenAcc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PasswordAcc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenPhuHuynh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoDienThoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GioiTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tuoi)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID_PhuHuynh">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID_PhuHuynh">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID_PhuHuynh">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

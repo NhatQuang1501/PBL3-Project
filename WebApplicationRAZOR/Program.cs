@@ -1,21 +1,23 @@
-using Microsoft.EntityFrameworkCore;
-//using RazorPagesMovie.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using PBL3_Project.Models;
+using PBL3_Project.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-//builder.Services.AddDbContext<RazorPagesMovieContext>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("RazorPagesMovieContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesMovieContext' not found.")));
-
+builder.Services.AddDbContext<PBL3_ProjectContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PBL3_ProjectContext") ?? throw new InvalidOperationException("Connection string 'PBL3_ProjectContext' not found.")));
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
 
-//using (var scope = app.Services.CreateScope())
-//{
-//    var services = scope.ServiceProvider;
+    SeedData.Initialize(services);
+}
 
-//    SeedData.Initialize(services);
-//}
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

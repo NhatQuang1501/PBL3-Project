@@ -13,6 +13,7 @@
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="5.2.3" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.16">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -24,6 +25,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Admin\QlPost\" />
   </ItemGroup>
 
 </Project>
