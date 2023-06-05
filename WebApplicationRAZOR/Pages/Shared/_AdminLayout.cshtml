@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PBL3 Project</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/WebApplicationRAZOR.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/mainAdmin.css">
+    <link rel="stylesheet" href="~/css/Personal.css">
+    <link rel="stylesheet" href="~/css/hoSoGiaSu.css">
+    <script src="~/js/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo-box">
+                <img src="~/img/logo.png" alt="Logo" class="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a asp-page="/Admin/QLHSGS">Trang chủ</a></li>
+                <div class="log-out-box">
+                    <a asp-page="/Index" class="btn btn-su">Đăng xuất</a>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container2">
+        <div class="control">
+            <img class="avatar" src="~/img/admin.jpg" alt="Avatar" />
+            <div class="user-info">
+                <div class="username">ADMIN</div>
+                <img src="~/img/iconControl.png" alt="Logo" class="iconControl" />
+            </div>
+        </div>
+
+        <div class="menu">
+
+            <div class="choice">
+                <ul>
+                    <li>
+                        <a asp-page="/Admin/QLPost/Index"><u>Quản lý bài đăng</u> </a>
+                    </li>
+
+                    <li>
+                        <a asp-page="/Admin/QLHSGS/Index"><u>Quản lý tài khoản Gia sư <br><br></u></a>
+                    </li>
+
+                    <li>
+                        <a asp-page="/Admin/QLHSPH/Index"><u> Quản lý tài khoản Phụ huynh<br><br></u> </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    @*<main>
+
+        <h1 class="pageTitle">Bài đăng chờ duyệt</h1>
+
+
+        <div class="job-posting">
+            <div class="image-container">
+                <img src="~/img/avar.jpg" alt="avar" class="avar">
+                <p class="caption">Lờ tờ mờ</p>
+            </div>
+            <br>
+            <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
+            <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
+            <p><b><i>Học phí :</i></b> 70k/h.</p><br>
+            <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
+            <button class="apply-btn">Duyệt bài đăng</button>
+            <button class="Cancel-btn">Xóa bài đăng</button>
+        </div>
+
+
+        <div class="job-posting">
+            <div class="image-container">
+                <img src="~/img/avar.jpg" alt="avar" class="avar">
+                <p class="caption">Lờ tờ mờ</p>
+            </div>
+            <br>
+            <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
+            <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
+            <p><b><i>Học phí :</i></b> 70k/h.</p><br>
+            <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
+            <button class="apply-btn">Duyệt bài đăng</button>
+            <button class="Cancel-btn">Xóa bài đăng</button>
+        </div>
+
+        <div class="job-posting">
+            <div class="image-container">
+                <img src="~/img/avar.jpg" alt="avar" class="avar">
+                <p class="caption">Lờ tờ mờ</p>
+            </div>
+            <br>
+            <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
+            <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
+            <p><b><i>Học phí :</i></b> 70k/h.</p><br>
+            <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
+            <button class="apply-btn">Duyệt bài đăng</button>
+            <button class="Cancel-btn">Xóa bài đăng</button>
+        </div>*@
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+
+        <div class="footer">
+            <img src="~/img/footer.png" alt="footer" class="footer" height="25%" width="100%">
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
