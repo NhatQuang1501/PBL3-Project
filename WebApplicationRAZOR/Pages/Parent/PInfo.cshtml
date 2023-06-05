@@ -13,10 +13,10 @@
 
     <div class="container">
       <div class="control">
-        <img class="avatar" src="image/avar.jpg" alt="Avatar" />
+        <img class="avatar" src="~/img/avar.jpg" alt="Avatar" />
         <div class="user-info">
           <div class="username">ChuBeDan</div>
-          <img src="image/iconControl.png" alt="Logo" class="iconControl" />
+          <img src="~/img/iconControl.png" alt="Logo" class="iconControl" />
         </div>
       </div>
 
@@ -24,15 +24,15 @@
 
         <div class="choice">
             <ul>
-                <li><a  href="PersonalPH.html"><u>Thông tin tài khoản</u> </a>
+                <li><a asp-page="/PProfile"><u>Thông tin tài khoản</u> </a>
                 </li>
-                <li><a  href="#"><u>Quản lý hồ sơ : <br><br></u></a>
+                <li><a asp-page="/PInfo"><u>Quản lý hồ sơ : <br><br></u></a>
                 </li>
                 <li><a href="#"><u> Quản lý bài đăng :<br><br></u> </a>
                   <ul>
-                    <li style="color: white;"><a href="CheckedPost.html" >Bài đăng được duyệt </a></li>
-                    <li style="color: white;"><a href="uncheckedPost.html">Bài đăng chờ duyệt</a></li>
-                    <li style="color: white;"><a href="SuatDayDaGiao.html">Suất dạy đã giao</a></li>
+                    <li style="color: white;"><a asp-page="/PDuyetPost" >Bài đăng được duyệt </a></li>
+                    <li style="color: white;"><a asp-page="/PChuaDuyetPost">Bài đăng chờ duyệt</a></li>
+                    <li style="color: white;"><a asp-page="/PDonePost">Suất dạy đã giao</a></li>
                 </ul>
               </li>
             </ul>
@@ -42,7 +42,7 @@
     </div>
 
     <div class="container1">
-      <img src="image/background.png" alt="background" class="background" />
+      <img src="~/img/background.png" alt="background" class="background" />
       <main>
         <div class="create-profile">
           <div>
