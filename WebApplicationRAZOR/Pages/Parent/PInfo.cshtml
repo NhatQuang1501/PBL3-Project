@@ -24,15 +24,17 @@
 
         <div class="choice">
             <ul>
-                <li><a  href="PersonalPH.html"><u>Thông tin tài khoản</u> </a>
-                </li>
-                <li><a  href="#"><u>Quản lý hồ sơ : <br><br></u></a>
-                </li>
-                <li><a href="#"><u> Quản lý bài đăng :<br><br></u> </a>
-                  <ul>
-                    <li style="color: white;"><a href="CheckedPost.html" >Bài đăng được duyệt </a></li>
-                    <li style="color: white;"><a href="uncheckedPost.html">Bài đăng chờ duyệt</a></li>
-                    <li style="color: white;"><a href="SuatDayDaGiao.html">Suất dạy đã giao</a></li>
+                    <a asp-page="/Parent/PInfor"><u>Thông tin tài khoản</u> </a>
+                    </li>
+                    <li>
+                        <a asp-page="/Parent/PProfile"><u>Quản lý hồ sơ : <br><br></u></a>
+                    </li>
+                    <li>
+                        <u> Quản lý bài đăng :<br><br></u>
+                        <ul>
+                            <li style="color: white;"><a asp-page="/Parent/PDuyetPost">Bài đăng được duyệt </a></li>
+                            <li style="color: white;"><a asp-page="/Parent/PChuaDuyetPost">Bài đăng chờ duyệt</a></li>
+                            <li style="color: white;"><a href="#">Suất dạy đã giao</a></li>
                 </ul>
               </li>
             </ul>

@@ -11,8 +11,8 @@ using PBL3_Project.Data;
 namespace PBL3_Project.Migrations
 {
     [DbContext(typeof(PBL3_ProjectContext))]
-    [Migration("20230529123218_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230605040511_NameMigration")]
+    partial class NameMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

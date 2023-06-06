@@ -178,7 +178,7 @@ header {
 	justify-content: center;
 	text-align: center;
 	display: inline-block;
-  margin-left: 55px;
+    border-color:azure;
 }
 
 .btn-del:link,
@@ -192,6 +192,7 @@ header {
 	justify-content: center;
 	text-align: center;
 	display: inline-block;
+    margin-left: 55px;
 }
 .btn-create:link,
 .btn-create:visited {
@@ -264,6 +265,7 @@ main {
   .container {
     
     min-height: 100vh;
+
   }
 
   #FilSearch{

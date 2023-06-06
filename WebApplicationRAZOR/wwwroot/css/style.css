@@ -39,6 +39,7 @@ nav {
     top: 0px;
     right: 10px;
     margin-right: 0px;
+    margin-top: 10px;
 }
 
 
@@ -144,7 +145,7 @@ p {
 .btn:link,
 .btn:visited {
     display: inline-block;
-    font-weight: 30;
+    font-weight: 30px;
     text-transform: uppercase;
     text-align: center;
     padding: 1rem 2rem;
@@ -162,6 +163,9 @@ p {
     align-items: center;
     justify-content: center;
     text-align: center;
+    width: 140px;
+    height:28px;
+
 }
 
 .btn-send:link,

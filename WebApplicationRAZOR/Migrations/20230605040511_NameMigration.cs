@@ -4,7 +4,7 @@
 
 namespace PBL3_Project.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class NameMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

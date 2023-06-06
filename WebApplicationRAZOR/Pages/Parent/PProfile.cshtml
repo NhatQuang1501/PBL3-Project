@@ -12,10 +12,10 @@
 
     <div class="container">
         <div class="control">
-            <img class="avatar" src="image/avar.jpg" alt="Avatar" />
+            <img class="avatar" src="~img/avar.jpg" alt="Avatar" />
             <div class="user-info">
                 <div class="username">ChuBeDan</div>
-                <img src="image/iconControl.png" alt="Logo" class="iconControl" />
+                <img src="~img/iconControl.png" alt="Logo" class="iconControl" />
             </div>
         </div>
 
@@ -24,17 +24,17 @@
             <div class="choice">
                 <ul>
                     <li>
-                        <a href="PersonalPH.html"><u>Thông tin tài khoản</u> </a>
+                        <a asp-page="/Parent/PInfor"><u>Thông tin tài khoản</u> </a>
                     </li>
                     <li>
-                        <a href="hoSoPH.html"><u>Quản lý hồ sơ : <br><br></u></a>
+                        <a asp-page="/Parent/PProfile"><u>Quản lý hồ sơ : <br><br></u></a>
                     </li>
                     <li>
-                        <a href="#"><u> Quản lý bài đăng :<br><br></u> </a>
+                        <u> Quản lý bài đăng :<br><br></u>
                         <ul>
-                            <li style="color: white;"><a href="CheckedPost.html">Bài đăng được duyệt</a></li>
-                            <li style="color: white;"><a href="uncheckedPost.html">Bài đăng chờ duyệt</a></li>
-                            <li style="color: white;"><a href="SuatDayDaGiao.html">Suất dạy đã giao</a></li>
+                            <li style="color: white;"><a asp-page="/Parent/PDuyetPost">Bài đăng được duyệt </a></li>
+                            <li style="color: white;"><a asp-page="/Parent/PChuaDuyetPost">Bài đăng chờ duyệt</a></li>
+                            <li style="color: white;"><a href="#">Suất dạy đã giao</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="container1">
-        <img src="image/background.png" alt="background" class="background" />
+
         <form class="form">
             <table>
                 <tr>
