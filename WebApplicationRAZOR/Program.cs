@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using PBL3_Project.Models;
 using PBL3_Project.Data;
+using Microsoft.AspNetCore.Identity;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,13 +11,30 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<PBL3_ProjectContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PBL3_ProjectContext") ?? throw new InvalidOperationException("Connection string 'PBL3_ProjectContext' not found.")));
-var app = builder.Build();
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
+builder.Services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("PBL3_ProjectContext")));
 
-    SeedData.Initialize(services);
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
+builder.Services.AddAuthorization();
+
+var serviceProvider = builder.Services.BuildServiceProvider();
+using (var scope = serviceProvider.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    roleManager.CreateAsync(new IdentityRole("Admin"));
+    roleManager.CreateAsync(new IdentityRole("Parent"));
+    roleManager.CreateAsync(new IdentityRole("Tutor"));
 }
+
+
+
+var app = builder.Build();
+
+//using (var scope = app.Services.CreateScope())
+//{
+//    var services = scope.ServiceProvider;
+
+//    SeedData.Initialize(services);
+//}
 
 
 
@@ -31,6 +50,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

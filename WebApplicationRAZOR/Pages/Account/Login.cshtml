@@ -1,5 +1,5 @@
 ﻿@page
-@model IndexModel
+@model LoginModel
 @{
     ViewData["Title"] = "Đăng nhập";
 }
@@ -26,10 +26,10 @@
     <h2>ĐĂNG NHẬP</h2>
         <form>
             <label for="NAME">UserName</label>
-            <input type="text" id="email" name="email" />
+            <input type="text" id="email" name="email" asp-for="Model.Email"/>
 
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" />
+            <input type="password" id="password" name="password" asp-for="Model.Password"/>
         <label for="forgot-password" class="right"><a href="forgotpassword.html" style="text-decoration: none">Quên mật khẩu?</a></label>
 
             <!-- <button type="submit">Đăng nhập</button> -->

@@ -1,5 +1,5 @@
 ﻿@page
-@model WebApplicationRAZOR.Pages.Sign_inModel
+@model RegisterModel
 @{
     Layout = null;
     ViewData["title"] = "Đăng kí";
@@ -24,26 +24,33 @@
 
         <div class="container">
             <h2>ĐĂNG KÝ</h2>
-            <form>
-                <label for="Email">Email</label>
-                <input type="text" id="email" name="email" />
-
-                <label for="Username">Username</label>
-                <input type="text" id="Username" name="Username" />
-
-                <label for="password">Password</label>
-                <input type="password" id="password1" name="password1" />
-
-                <label for="password">Re-Enter Password</label>
-                <input type="password" id="password2" name="password2" />
+            <form method="post" asp-page-handler="CreateAcc">
+                <div> 
+                    <label for="Email">Email</label> <br />
+                    <input type="text" id="email" name="email" asp-for=Model.Email />
+                    <span asp-validation-for="Model.Email" class="text-danger"></span>
+                </div>
+                
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password1" name="password1" asp-for=Model.Password />
+                    <span asp-validation-for="Model.Password" class="text-danger"></span>
+                </div>
+                
+                <div>
+                    <label for="password">Confirm Password</label>
+                    <input type="password" id="password2" name="password2" asp-for=Model.ConfirmPassword />
+                    <span asp-validation-for="Model.Password" class="text-danger"></span>
+                </div>
 
                 <div class="radio-group">
-                    <label><input type="radio" name="user-type" value="tutor" checked> Gia sư</label>
+                    <label><input type="radio" name="user-type" value="tutor" asp-for=Model.isParent checked> Gia sư</label>
                     <label><input type="radio" name="user-type" value="parent"> Phụ huynh</label>
                 </div>
 
                 <!-- <button type="submit">Đăng nhập</button> -->
-                <a asp-page="/Account/Login"><button class="btn-Register" type="button">Đăng ký</button></a>
+                <a><button class="btn-Register" type="button">Đăng ký</button></a>
+                <div asp-validation-summary="All" class="text-danger"></div>
             </form>
         </div>
     </header>
