@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace WebApplicationRAZOR.Pages
 {
-    public class Sign_inModel : PageModel
+    public class RegisterModel : PageModel
     {
         public void OnGet()
         {
