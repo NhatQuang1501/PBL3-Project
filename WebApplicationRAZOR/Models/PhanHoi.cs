@@ -1,12 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PBL3_Project.Models
 {
     public class PhanHoi
     {
         [Key]
-        public int ID_PhanHoi { get; set; }
+        public int? ID_PhanHoi { get; set; }
+
+        [ForeignKey("ID_GiaSu")]
         public int ID_GiaSu { get; set; }
+
+        [ForeignKey("ID_Phuhuynh")]
         public int ID_PhuHuynh { get; set; }
         public string NoiDungPhanHoi { get; set; }
         public double DiemDanhGia { get; set; }
