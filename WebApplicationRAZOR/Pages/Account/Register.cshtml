@@ -1,4 +1,5 @@
 ﻿@page
+@using PBL3_Project.ViewModel;
 @model RegisterModel
 @{
     Layout = null;
@@ -46,10 +47,26 @@
                     <span asp-validation-for="Model.ConfirmPassword" class="text-danger"></span>
                 </div>
 
-                <div class="radio-group">
-                    <label><input type="radio" name="user-type" value="tutor" asp-for=IsParent> Gia sư</label>
-                    <label><input type="radio" name="user-type" value="parent" checked> Phụ huynh</label>
-                </div>
+                @*<div class="radio-group">
+                    <label><input value="@RolesApp.Parent" type="radio" name="UserRole">@RolesApp.Parent</label>
+                    <label><input value="@RolesApp.Tutor" type="radio" name="UserRole">@RolesApp.Tutor</label>
+                </div>*@
+
+                <label class="text-danger">Select Role</label>
+                <div class="form-check form-switch">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" value="@RolesApp.Parent" type="radio" name="rUserRole" asp-for=IsParent checked>
+                        <label class="form-check-label">
+                            @RolesApp.Parent
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" value="@RolesApp.Tutor" type="radio" name="rUserRole">
+                        <label class="form-check-label">
+                            @RolesApp.Tutor
+                        </label>
+                    </div>
+                </div>              
 
                 <!-- <button type="submit">Đăng nhập</button> -->
                 <a><button class="btn-Register" type="submit">Đăng ký</button></a>

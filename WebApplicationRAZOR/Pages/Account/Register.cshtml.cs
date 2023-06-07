@@ -11,7 +11,7 @@ namespace WebApplicationRAZOR.Pages
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         [BindProperty]
         public Register Model { get; set; }
@@ -24,21 +24,15 @@ namespace WebApplicationRAZOR.Pages
         {
             this._userManager = userManager;
             this._signInManager = signInManager;
-            this.roleManager = roleManager;
+            this._roleManager = roleManager;
         }
         public async Task OnGet()
         {
-            if(!await roleManager.RoleExistsAsync(RolesApp.Admin))
+            if(!await _roleManager.RoleExistsAsync(RolesApp.Admin))
             {
-                await roleManager.CreateAsync(new IdentityRole(RolesApp.Admin));
-            }
-            if (!await roleManager.RoleExistsAsync(RolesApp.Parent))
-            {
-                await roleManager.CreateAsync(new IdentityRole(RolesApp.Parent));
-            }
-            if (!await roleManager.RoleExistsAsync(RolesApp.Tutor))
-            {
-                await roleManager.CreateAsync(new IdentityRole(RolesApp.Tutor));
+                await _roleManager.CreateAsync(new IdentityRole(RolesApp.Admin));
+                await _roleManager.CreateAsync(new IdentityRole(RolesApp.Parent));
+                await _roleManager.CreateAsync(new IdentityRole(RolesApp.Tutor));
             }
         }
         public async Task<IActionResult> OnPostCreateAccAsync()
@@ -51,6 +45,10 @@ namespace WebApplicationRAZOR.Pages
                     UserName = Model.Email,
                     Email = Model.Email
                 };
+                //string role = Request.Form["rUserRole"].ToString();
+                ////string roleToAdd = role != "" ? role : RolesApp.Tutor;
+                ////user.IsParent = (roleToAdd == RolesApp.Parent);
+
                 var result = await _userManager.CreateAsync(user, Model.Password);
                 if (result.Succeeded)
                 {
