@@ -8,7 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<PBL3_ProjectContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("PBL3_ProjectContext") ?? throw new InvalidOperationException("Connection string 'PBL3_ProjectContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PBL3Db")));
+
+builder.Services.AddDbContext<AuthDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PBL3Db")));
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
