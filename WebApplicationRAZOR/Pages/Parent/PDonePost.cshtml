@@ -5,10 +5,10 @@
 	ViewData["title"] = "Trang chủ Phụ huynh";
 }
 
-    <link rel="stylesheet" href="Personal.css" />
-    <link rel="stylesheet" href="changePassGS.css" />
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="CheckedPost.css" />
+<link rel="stylesheet" href="~/css/Personal.css" />
+<link rel="stylesheet" href="~/css/ChangePassGS.css" />
+<link rel="stylesheet" href="~/css/main.css" />
+<link rel="stylesheet" href="~/css/CheckedPost.css" />
 
   <body>
 
@@ -48,9 +48,33 @@
 
     <main>
 
-        <h1 class="pageTitle">Suất dạy đã giao</h1>
 
-        <div class="job-posting">
+        @foreach (var post in Model.Posts)
+        {
+            <div class="job-posting">
+                <div class="image-container">
+                    <img src="~/img/avar.jpg" alt="avar" class="avar">
+                    <p class="caption">Lờ tờ mờ</p>
+                </div>
+                <br>
+                <p><b><i>Môn học:</i></b> @post.MonHoc</p><br>
+                <p><b><i>Trình độ học vấn:</i></b> @post.TrinhDoHocVan</p><br>
+                <p><b><i>Học phí:</i></b> @post.HocPhi</p><br>
+                <p><b><i>Lớp:</i></b> @post.Lop</p><br>
+                <p><b><i>Số buổi:</i></b> @post.SoBuoi</p><br>
+                <p><b><i>Số học viên:</i></b> @post.SoHocVien</p><br>
+                <p><b><i>Thời gian:</i></b> @post.ThoiGian</p><br>
+                <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
+                <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>
+
+                <div class="button-container">
+                    <a href="createPost.html" class="Edit-btn">Sửa bài đăng</a>
+                    <a href="createPost.html" class="Del-btn">Xóa bài đăng</a>
+                </div>
+            </div>
+        }
+
+        @*<div class="job-posting">
           <div class="image-container">
             <img src="image/avar.jpg" alt="avar" class="avar">
             <p class="caption">Lờ tờ mờ</p>
@@ -80,7 +104,7 @@
           <div class="button-container">
             <a href="#" class="Edit-btn">Đánh giá gia sư</a>
           </div>
-        </div>
+        </div>*@
   
         
       </main>
