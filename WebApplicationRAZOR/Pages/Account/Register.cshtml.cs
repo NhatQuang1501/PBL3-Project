@@ -45,10 +45,11 @@ namespace WebApplicationRAZOR.Pages
                     UserName = Model.Email,
                     Email = Model.Email
                 };
-                //string role = Request.Form["rUserRole"].ToString();
-                ////string roleToAdd = role != "" ? role : RolesApp.Tutor;
-                ////user.IsParent = (roleToAdd == RolesApp.Parent);
-
+                if(Model.Password != Model.ConfirmPassword)
+        {
+                    ModelState.AddModelError("", "Password and confirmation password did not match");
+                    return Page();
+                }
                 var result = await _userManager.CreateAsync(user, Model.Password);
                 if (result.Succeeded)
                 {

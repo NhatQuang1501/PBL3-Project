@@ -19,6 +19,23 @@ namespace PBL3_Project.Pages.Parent
         public void OnGet()
         {
         }
+        /*
+         * [Key]
+        public int? ID_BaiDang { get; set; }
+        [ForeignKey("ID_Phuhuynh")]
+        public int ID_PhuHuynh { get; set; }
+        public string MonHoc { get; set; }
+        public string TrinhDoHocVan { get; set; }
+        public int HocPhi { get; set; }
+        public string Lop { get; set; }
+        public int SoBuoi { get; set; }
+        public int SoHocVien { get; set; }
+        public bool TinhTrang { get; set; }
+        public string ThoiGian { get; set; }
+        public string DiaChi { get; set; }
+        public string GhiChu { get; set; }
+        public bool TinhTrangDuyet { get; set; }
+         * */
         public IActionResult OnPost()
         {
             var post = new Models.BaiDang()
@@ -30,10 +47,11 @@ namespace PBL3_Project.Pages.Parent
                 Lop = AddPostRequest.Lop,
                 SoBuoi = AddPostRequest.SoBuoi,
                 SoHocVien = AddPostRequest.SoHocVien,
-                TinhTrang = AddPostRequest.TinhTrang,
+                TinhTrang = false,
                 ThoiGian = AddPostRequest.ThoiGian,
                 DiaChi = AddPostRequest.DiaChi,
-                GhiChu = AddPostRequest.GhiChu
+                GhiChu = AddPostRequest.GhiChu,
+                TinhTrangDuyet = false
             };
             _context.BaiDang.Add(post);
             _context.SaveChanges();

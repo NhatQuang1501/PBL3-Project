@@ -242,17 +242,6 @@ button[type="submit"]:hover {
 }
 
 
-    .menu .TTTK {
-        font-size: 18px;
-        margin-bottom: 20px;
-        position: initial;
-    }
-
-.TTTK a {
-    text-decoration: none;
-    color: #000;
-}
-
 
 .form-control {
     margin-bottom: 20px;
@@ -281,6 +270,8 @@ button[type="submit"]:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 300px;
+    margin-top: -300px;
 }
 
 .form {
@@ -290,8 +281,8 @@ button[type="submit"]:hover {
     padding: 20px;
     width: 550px;
     height: 500px;
-    margin-top: -600px;
-    margin-left: 300px;
+    margin-top: -100px;
+    margin-left: 265px;
     font-size: 120%;
 }
 

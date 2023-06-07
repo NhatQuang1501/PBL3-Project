@@ -27,7 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Admin\" />
+    <Folder Include="Pages\Admin\QLHSGS\" />
+    <Folder Include="Pages\Admin\QLHSPH\" />
+    <Folder Include="Pages\Admin\QLPost\" />
   </ItemGroup>
 
 </Project>

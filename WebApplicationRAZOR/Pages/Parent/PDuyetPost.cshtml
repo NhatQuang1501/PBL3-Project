@@ -50,9 +50,34 @@
 
     <main>
 
-        <h1 class="pageTitle">Bài đăng đã duyệt</h1>
+        
 
-        <div class="job-posting">
+            @foreach (var post in Model.Posts)
+            {
+                <div class="job-posting">
+                    <div class="image-container">
+                        <img src="~/img/avar.jpg" alt="avar" class="avar">
+                        <p class="caption">Lờ tờ mờ</p>
+                    </div>
+                    <br>
+                    <p><b><i>Môn học:</i></b> @post.MonHoc</p><br>
+                    <p><b><i>Trình độ học vấn:</i></b> @post.TrinhDoHocVan</p><br>
+                    <p><b><i>Học phí:</i></b> @post.HocPhi</p><br>
+                    <p><b><i>Lớp:</i></b> @post.Lop</p><br>
+                    <p><b><i>Số buổi:</i></b> @post.SoBuoi</p><br>
+                    <p><b><i>Số học viên:</i></b> @post.SoHocVien</p><br>
+                    <p><b><i>Thời gian:</i></b> @post.ThoiGian</p><br>
+                    <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
+                    <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>
+
+                    <div class="button-container">
+                        <a href="createPost.html" class="Edit-btn">Sửa bài đăng</a>
+                        <a href="createPost.html" class="Del-btn">Xóa bài đăng</a>
+                    </div>
+                </div>
+            }
+
+        @*<div class="job-posting">
           <div class="image-container">
             <img src="image/avar.jpg" alt="avar" class="avar">
             <p class="caption">Lờ tờ mờ</p>
@@ -85,7 +110,7 @@
             <a href="createPost.html" class="Del-btn">Xóa bài đăng</a>
             <a href="danh_sach_gia_su.html" class="List-btn">Danh sách gia sư đăng kí</a>
           </div>
-        </div>
+        </div>*@
   
         
       </main>
