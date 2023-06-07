@@ -13,6 +13,5 @@ namespace PBL3_Project.ViewModel
         [Required]
         [DataType(nameof(Password), ErrorMessage = "Password and confirmation password did not match")]
         public string ConfirmPassword { get; set; }
-        public bool isParent { get; set; }
     }
 }

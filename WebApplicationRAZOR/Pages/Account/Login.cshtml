@@ -24,16 +24,36 @@
 
 <div class="container">
     <h2>ĐĂNG NHẬP</h2>
-        <form>
-            <label for="NAME">UserName</label>
-            <input type="text" id="email" name="email" asp-for="Model.Email"/>
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            @*<label for="NAME">UserName</label>
+            <input type="text" id="email" name="email" asp-for="Model.Email"/>*@
+            <div class="mb-3">
+                <label class="form-label" asp-for="Model.Email">Email Address</label>
+                <input type="text" asp-for="Model.Email" class="form-control" />
+                <span asp-validation-for="Model.Email" class="text-danger"></span>
+            </div>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" asp-for="Model.Password"/>
-        <label for="forgot-password" class="right"><a href="forgotpassword.html" style="text-decoration: none">Quên mật khẩu?</a></label>
+            @*<label for="password">Password</label>
+            <input type="password" id="password" name="password" asp-for="Model.Password"/>*@
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Model.Password">Password</label>
+                <input type="password" asp-for="Model.Password" class="form-control" />
+                <span asp-validation-for="Model.Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <input type="checkbox" asp-for="Model.RememberMe" class="form-check-input" />
+                <label class="form-check-label" asp-for="Model.RememberMe">Remember Me</label>
+            </div>
+
+            <label for="forgot-password" class="right"><a href="forgotpassword.html" style="text-decoration: none">Quên mật khẩu?</a></label>
+
+            
 
             <!-- <button type="submit">Đăng nhập</button> -->
-            <a asp-page="#"><button class="btn-signIn2" type="button">Đăng nhập</button></a>
+            <a asp-page="#"><button class="btn-signIn2" type="submit">Đăng nhập</button></a>
 
             <div class="create-account">
             Bạn chưa có tài khoản?<a asp-page="/Account/Register" style="text-decoration: none"> Tạo tài khoản?</a>

@@ -4,6 +4,7 @@ using PBL3_Project.Models;
 using PBL3_Project.Data;
 using Microsoft.AspNetCore.Identity;
 using System;
+using static System.Formats.Asn1.AsnWriter;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,17 +16,6 @@ builder.Services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(bui
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
 builder.Services.AddAuthorization();
-
-var serviceProvider = builder.Services.BuildServiceProvider();
-using (var scope = serviceProvider.CreateScope())
-{
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    roleManager.CreateAsync(new IdentityRole("Admin"));
-    roleManager.CreateAsync(new IdentityRole("Parent"));
-    roleManager.CreateAsync(new IdentityRole("Tutor"));
-}
-
-
 
 var app = builder.Build();
 

@@ -8,33 +8,35 @@ namespace WebApplicationRAZOR.Pages
 {
     public class LoginModel : PageModel
     {
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         [BindProperty]
         public Login Model { get; set; }
-        public LoginModel(SignInManager<IdentityUser> signInManager)
+        public LoginModel(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
+            this._userManager = userManager;
             this._signInManager = signInManager;
         }
         public void OnGet()
         {
         }
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
+        
+        public async Task<IActionResult> OnPostAsync()
         {
             if (ModelState.IsValid)
             {
                 var identityResult = await _signInManager.PasswordSignInAsync(Model.Email, Model.Password, Model.RememberMe, false);
                 if (identityResult.Succeeded)
                 {
-                    if (returnUrl == null)
+                    var user = await _userManager.FindByEmailAsync(Model.Email);
+                    var roles = await _userManager.GetRolesAsync(user);
+                    if (roles.Contains("Parent"))
                     {
-                        if (returnUrl == null || returnUrl == "/")
-                        {
-                            return RedirectToPage("Index");
-                        }
-                        else
-                        {
-                            return RedirectToPage(returnUrl);
-                        }
+                        return RedirectToPage("/Parent/PHome");
+                    }
+                    else if(roles.Contains("Tutor"))
+                    {
+                        return RedirectToPage("/Tutor/THome");
                     }
                 }
                 ModelState.AddModelError("", "Username or Password incorrect");

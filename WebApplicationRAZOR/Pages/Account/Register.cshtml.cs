@@ -11,18 +11,39 @@ namespace WebApplicationRAZOR.Pages
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly RoleManager<IdentityRole> roleManager;
+
         [BindProperty]
         public Register Model { get; set; }
-        public RegisterModel(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        [BindProperty]
+        public bool IsParent { get; set; }
+        public RegisterModel(
+            UserManager<IdentityUser> userManager, 
+            SignInManager<IdentityUser> signInManager,
+            RoleManager<IdentityRole> roleManager)
         {
             this._userManager = userManager;
             this._signInManager = signInManager;
+            this.roleManager = roleManager;
         }
-        public void OnGet()
+        public async Task OnGet()
         {
+            if(!await roleManager.RoleExistsAsync(RolesApp.Admin))
+            {
+                await roleManager.CreateAsync(new IdentityRole(RolesApp.Admin));
+            }
+            if (!await roleManager.RoleExistsAsync(RolesApp.Parent))
+            {
+                await roleManager.CreateAsync(new IdentityRole(RolesApp.Parent));
+            }
+            if (!await roleManager.RoleExistsAsync(RolesApp.Tutor))
+            {
+                await roleManager.CreateAsync(new IdentityRole(RolesApp.Tutor));
+            }
         }
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostCreateAccAsync()
         {
+            IsParent = true;
             if (ModelState.IsValid)
             {
                 var user = new IdentityUser()
@@ -35,7 +56,7 @@ namespace WebApplicationRAZOR.Pages
                 {
                     await _signInManager.SignInAsync(user, false);
                     string role = "Parent";
-                    if (Model.isParent == false)
+                    if (IsParent == false)
                     {
                         role = "Tutor";
                     }
