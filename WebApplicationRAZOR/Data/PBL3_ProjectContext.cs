@@ -16,8 +16,8 @@ namespace PBL3_Project.Data
 
         public DbSet<PBL3_Project.Models.HoSoGiaSu> HoSoGiaSu { get; set; } = default!;
 
-        public DbSet<PBL3_Project.Models.HoSoPhuHuynh>? HoSoPhuHuynh { get; set; }
+        public DbSet<PBL3_Project.Models.HoSoPhuHuynh> HoSoPhuHuynh { get; set; }
 
-        public DbSet<PBL3_Project.Models.BaiDang>? BaiDang { get; set; }
+        public DbSet<PBL3_Project.Models.BaiDang> BaiDang { get; set; }
     }
 }

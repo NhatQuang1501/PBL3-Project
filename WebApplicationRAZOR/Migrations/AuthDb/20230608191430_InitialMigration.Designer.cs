@@ -12,7 +12,7 @@ using PBL3_Project.Data;
 namespace PBL3_Project.Migrations.AuthDb
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20230606114148_InitialMigration")]
+    [Migration("20230608191430_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
