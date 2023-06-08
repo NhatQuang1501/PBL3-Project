@@ -50,51 +50,53 @@
         <img src="image/background.png" alt="background" class="background" />
         <main>
             <div class="create-profile">
-                <div>
-                    <label>Họ tên*</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>Ngày sinh*</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>Địa chỉ thường trú*</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>Địa chỉ hiện tại*</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>Số điện thoại*</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>CCCD*</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>Tên trường*</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>Ngành học*</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>Niên khoá*</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>Trình độ hiện đại*</label>
-                    <input type="text">
-                </div>
-                <button class="Save-btn">Lưu</button>
-                <button class="Del-btn">Xóa</button>
-            </div>
+                <form method="post">
+                    <div>
+                        <label>Họ tên*</label>
+                        <input type="text" asp-for="AddTInfor.TenGiaSu">
+                    </div>
+                    <div class="mb-3">
+                        <label for="NgaySinh" class="form-label">Ngày sinh*</label>
+                        <input type="date" class="form-control" id="NgaySinh" asp-for="AddTInfor.NgaySinh">
+                    </div>
+                    <div>
+                        <label>Địa chỉ*</label>
+                        <input type="text" asp-for="AddTInfor.DiaChi">
+                    </div>
+                    <div>
+                        <label>Môn Học*</label>
+                        <input type="text" asp-for="AddTInfor.MonHoc">
+                    </div>
+                    <div>
+                        <label>Số điện thoại*</label>
+                        <input type="text" asp-for="AddTInfor.SoDienThoai">
+                    </div>
+                    <div>
+                        <label>Trình độ học vấn*</label>
+                        <input type="text" asp-for="AddTInfor.TrinhDoHocVan">
+                    </div>
+                    <div>
+                        <label>Học phí*</label>
+                        <input type="text" asp-for="AddTInfor.GioiTinh">
+                    </div>
+                    <div class="radio-group">
+                        <label><input type="radio" name="user-type" value="false" asp-for=AddTInfor.GioiTinh> Nam</label>
+                        <label><input type="radio" name="user-type" value="true" checked> Nữ</label>
+                    </div>
 
+                    <button class="Save-btn" type="submit">Lưu</button>
+                    @*<button class="Del-btn">Xóa</button>*@
+                    @* <div class="mb-3 d-flex justify-content-between">
+                    <button class="btn btn-primary" type="submit" asp-page-handler="Save">Lưu</button>
+                    <button class="btn btn-danger" type="submit" asp-page-handler="Delete">Xóa</button>
+                    </div>*@
+                </form>
+               
+            </div>
+            
         </main>
+
+       
     </div>
 </body>
 

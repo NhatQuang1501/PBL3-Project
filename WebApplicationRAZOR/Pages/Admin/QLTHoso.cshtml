@@ -1,0 +1,130 @@
+﻿@page
+@model PBL3_Project.Pages.Admin.QLTHosoModel
+@{
+    Layout = null;
+    ViewData["title"] = "Quản lý tài khoản gia sư";
+}
+
+
+
+<head>
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/mainAdmin.css">
+    <link rel="stylesheet" href="~/css/Personal.css">
+    <link rel="stylesheet" href="~/css/hoSoGiaSu.css">
+    <link rel="stylesheet" href="~/css/managePH.css">
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo-box">
+                
+                <img src="~/img/logo.png" alt="Logo" class="logo" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Trang chủ</a></li>
+
+                <!-- <div class="search">
+                  <input type="text" id="search-bar" placeholder="Search...">
+
+                  <button type="submit" class="image-button">
+                    <img src="image/iconSearch.png" alt="Image" class="button-image">
+                  </button>
+                </div> -->
+
+                <div class="log-out-box">
+                    <a href="index.html" class="btn btn-su">Đăng xuất</a>
+                </div>
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container2">
+        <div class="control">
+            <img class="avatar" src="~/img/avar.jpg" alt="Avatar" />
+            <div class="user-info">
+                <div class="username">ADMIN</div>
+                <img src="~/img/iconControl.png" alt="Logo" class="iconControl" />
+            </div>
+        </div>
+
+        <div class="menu">
+
+            <div class="choice">
+                <ul>
+                    <li>
+                        <a href="mainAdmin.html"><u>Quản lý bài đăng</u> </a>
+                    </li>
+
+                    <li>
+                        <a href="manageGS.html"><u>Quản lý tài khoản Gia sư <br><br></u></a>
+                    </li>
+
+                    <li>
+                        <a href="managePH.html"><u> Quản lý tài khoản Phụ huynh<br><br></u> </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <main>
+
+        <h1 class="pageTitle">Quản lý tài khoản Gia sư</h1>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Phụ huynh</th>
+                    <th>Tên tài khoản</th>
+                    <th>Mật khẩu</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.HoSoGiaSus != null)
+                {
+                    @foreach (var HoSo in Model.HoSoGiaSus)
+                    {
+                        <tr>
+                            <td>@HoSo.ID_GiaSu</td>
+                            <td>@HoSo.TenAcc</td>
+                            <td>@HoSo.PasswordAcc</td>
+                            <td><a href="/admin/qltinfo/@HoSo.ID_GiaSu">View</a></td>
+
+                        </tr>
+                    }
+                }
+
+                
+            </tbody>
+        </table>
+
+
+    </main>
+
+    <div id="pagination">
+        <a href="#" id="first">&laquo; Đầu</a>
+        <a href="#" id="prev">&lsaquo; Trước</a>
+        <span id="pages"></span>
+        <a href="#" id="next">Tiếp &rsaquo;</a>
+        <a href="#" id="last">Cuối &raquo;</a>
+    </div>
+
+    </div>
+</body>
+
+<footer>
+
+    <div class="footer">
+        <img src="image/footer.png" alt="footer" class="footer" height="188px" width="1200px">
+    </div>
+</footer>
+
+</html>

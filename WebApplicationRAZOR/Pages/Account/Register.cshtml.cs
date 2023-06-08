@@ -51,6 +51,11 @@ namespace WebApplicationRAZOR.Pages
                     UserName = Model.Email,
                     Email = Model.Email
                 };
+                if(Model.Password != Model.ConfirmPassword)
+        {
+                    ModelState.AddModelError("", "Password and confirmation password did not match");
+                    return Page();
+                }
                 var result = await _userManager.CreateAsync(user, Model.Password);
                 if (result.Succeeded)
                 {

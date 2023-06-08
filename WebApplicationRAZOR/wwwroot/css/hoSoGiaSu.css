@@ -96,3 +96,16 @@
     margin: 10%;
     margin-left: 30%;
 }
+
+
+.2btn {
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
