@@ -30,11 +30,11 @@ namespace WebApplicationRAZOR.Pages
                 {
                     var user = await _userManager.FindByEmailAsync(Model.Email);
                     var roles = await _userManager.GetRolesAsync(user);
-                    if (roles.Contains("Parent"))
+                    if (roles.Contains(RolesApp.Parent))
                     {
                         return RedirectToPage("/Parent/PHome");
                     }
-                    else if(roles.Contains("Tutor"))
+                    else if(roles.Contains(RolesApp.Tutor))
                     {
                         return RedirectToPage("/Tutor/THome");
                     }
