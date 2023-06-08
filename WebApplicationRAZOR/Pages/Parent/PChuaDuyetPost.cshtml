@@ -5,10 +5,10 @@
     ViewData["title"] = "Trang chủ Phụ huynh";
 }
 
-    <link rel="stylesheet" href="Personal.css" />
-    <link rel="stylesheet" href="changePassGS.css" />
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="CheckedPost.css" />
+<link rel="stylesheet" href="~/css/Personal.css" />
+<link rel="stylesheet" href="~/css/ChangePassGS.css" />
+<link rel="stylesheet" href="~/css/main.css" />
+<link rel="stylesheet" href="~/css/CheckedPost.css" />
 
 
 <body>
@@ -27,7 +27,7 @@
             <div class="choice">
                 <ul>
                     <li>
-                        <a asp-page="/Parent/PInfor"><u>Thông tin tài khoản</u> </a>
+                        <a asp-page="/Parent/PInfo"><u>Thông tin tài khoản</u> </a>
                     </li>
                     <li>
                         <a asp-page="/Parent/PProfile"><u>Quản lý hồ sơ : <br><br></u></a>
@@ -50,9 +50,35 @@
 
     <main>
 
-        <h1 class="pageTitle">Bài đăng chờ duyệt</h1>
 
-        <div class="job-posting">
+
+        @foreach(var post in Model.Posts)
+        {
+            <div class="job-posting">
+                <div class="image-container">
+                    <img src="~/img/avar.jpg" alt="avar" class="avar">
+                    <p class="caption">Lờ tờ mờ</p>
+                </div>
+                <br>
+                <p><b><i>Môn học:</i></b> @post.MonHoc</p><br>
+                <p><b><i>Trình độ học vấn:</i></b> @post.TrinhDoHocVan</p><br>
+                <p><b><i>Học phí:</i></b> @post.HocPhi</p><br>
+                <p><b><i>Lớp:</i></b> @post.Lop</p><br>
+                <p><b><i>Số buổi:</i></b> @post.SoBuoi</p><br>
+                <p><b><i>Số học viên:</i></b> @post.SoHocVien</p><br>
+                <p><b><i>Thời gian:</i></b> @post.ThoiGian</p><br>
+                <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
+                <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>
+
+                <div class="button-container">
+                    <a href="createPost.html" class="Edit-btn">Sửa bài đăng</a>
+                    <a href="createPost.html" class="Del-btn">Xóa bài đăng</a>
+                </div>
+            </div>
+        }
+        
+
+        @*<div class="job-posting">
             <div class="image-container">
                 <img src="~/img/avar.jpg" alt="avar" class="avar">
                 <p class="caption">Lờ tờ mờ</p>
@@ -63,29 +89,11 @@
             <p><b><i>Học phí :</i></b> 70k/h.</p><br>
             <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
             <div class="button-container">
-
                 <a href="createPost.html" class="Edit-btn">Sửa bài đăng</a>
                 <a href="createPost.html" class="Del-btn">Xóa bài đăng</a>
 
             </div>
-        </div>
-
-        <div class="job-posting">
-            <div class="image-container">
-                <img src="~/img/avar.jpg" alt="avar" class="avar">
-                <p class="caption">Lờ tờ mờ</p>
-            </div>
-            <br>
-            <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
-            <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
-            <p><b><i>Học phí :</i></b> 70k/h.</p><br>
-            <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
-            <div class="button-container">
-                <a href="createPost.html" class="Edit-btn">Sửa bài đăng</a>
-                <a href="createPost.html" class="Del-btn">Xóa bài đăng</a>
-
-            </div>
-        </div>
+        </div>*@
 
 
     </main>

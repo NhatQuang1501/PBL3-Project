@@ -9,11 +9,47 @@
     ViewData["title"] ="Trang chủ Phụ huynh";
 }
 
+<link rel="stylesheet" href="~/css/main.css" />
+@*@{
+    var bd1 = new BaiDang()
+        {
+            ID_BaiDang = 1,
+            ID_PhuHuynh = 2,
+            MonHoc = "Toan",
+            TrinhDoHocVan = "Sinh vien",
+            HocPhi = 500000,
+            Lop = "12",
+            SoBuoi = 3,
+            SoHocVien = 2,
+            TinhTrang = false,
+            ThoiGian = "17:00 - 19:00 Thứ 2, 4, 6",
+            DiaChi = "54 Nguyen Luong Bang",
+            GhiChu = "2 chau bi mat goc",
+            TinhTrangDuyet = false
+        };
+    var bd2 = new BaiDang()
+            {
+                ID_BaiDang = 2,
+                ID_PhuHuynh = 1,
+                MonHoc = "Toan",
+                TrinhDoHocVan = "Sinh vien",
+                HocPhi = 500000,
+                Lop = "10",
+                SoBuoi = 3,
+                SoHocVien = 2,
+                TinhTrang = false,
+                ThoiGian = "17:00 - 19:00 Thứ 2, 4, 6",
+                DiaChi = "54 Nguyen Luong Bang",
+                GhiChu = "2 chau bi mat goc",
+                TinhTrangDuyet = false
+            };
+}*@
 
 <body>
 
     <div class="container">
-        <img src="~/img/FilterSearch.png" alt="FilSearch" id="FilSearch">
+        @*<img src="image/FilterSearch.png" alt="FilSearch" class="FilSearch">*@
+        <img src="~/img/FilterSearch.png" alt="FilSearch" class="FilSearch">
         <!-- filter -->
         <div class="filter">
 
@@ -85,56 +121,28 @@
         </div>
 
         <main>
-            <div class="job-posting">
-                <div class="image-container">
-                    <img src="image/avar.jpg" alt="avar" class="avar">
-                    <p class="caption">Lờ tờ mờ</p>
-                </div>
-                <br>
-                <p>Tìm gia sư Lý cho học sinh 13</p><br>
-                <p>Cháu bị mất gốc nặng.</p>
+            @foreach(var post in Model.Posts)
+            {
+@*                <div class="job-posting">
+                    <div class="image-container">
+                        <img src="image/avar.jpg" alt="avar" class="avar">
+                        <p class="caption">Lờ tờ mờ</p>
+                    </div>
+                    <br>
+                    <p>Môn học: @post.MonHoc</p><br>
+                    <p>Lớp: @post.Lop</p><br>
+                    <p>Trình độ học vấn của gia sư: @post.TrinhDoHocVan</p><br>
+                    <p>Số buổi dạy: @post.SoBuoi</p><br>
+                    <p>Số học viên: @post.SoHocVien</p><br>
+                    <p>Học phí: @post.HocPhi</p><br>
+                    <p>Thời gian: @post.ThoiGian</p><br>
+                    <p>Ghi chú: @post.GhiChu</p><br>
+                </div>*@
+                <partial name="_Post" model="post"></partial>
+            }
 
-            </div>
-
-            <div class="job-posting">
-                <div class="image-container">
-                    <img src="image/avar.jpg" alt="avar" class="avar">
-                    <p class="caption">Lờ tờ mờ</p>
-                </div>
-                <br>
-                <p>Tìm gia sư Lý cho học sinh 13</p><br>
-                <p>Cháu bị mất gốc nặng.</p>
-            </div>
-
-            <div class="job-posting">
-                <div class="image-container">
-                    <img src="image/avar.jpg" alt="avar" class="avar">
-                    <p class="caption">Lờ tờ mờ</p>
-                </div>
-                <br>
-                <p>Tìm gia sư Lý cho học sinh 13</p><br>
-                <p>Cháu bị mất gốc nặng.</p>
-            </div>
-
-            <div class="job-posting">
-                <div class="image-container">
-                    <img src="image/avar.jpg" alt="avar" class="avar">
-                    <p class="caption">Lờ tờ mờ</p>
-                </div>
-                <br>
-                <p>Tìm gia sư Lý cho học sinh 13</p><br>
-                <p>Cháu bị mất gốc nặng.</p>
-            </div>
-
-            <div class="job-posting">
-                <div class="image-container">
-                    <img src="image/avar.jpg" alt="avar" class="avar">
-                    <p class="caption">Lờ tờ mờ</p>
-                </div>
-                <br>
-                <p>Tìm gia sư Lý cho học sinh 13</p><br>
-                <p>Cháu bị mất gốc nặng.</p>
-            </div>
+@*            <partial name="_Post" model="bd1"></partial>
+            <partial name="_Post" model="bd2"></partial>*@
 
         </main>
 
