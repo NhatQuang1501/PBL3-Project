@@ -11,9 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<PBL3_ProjectContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Pbl3Db")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PBL3_ProjectContext")));
 builder.Services.AddDbContext<AuthDbContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Pbl3Db")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PBL3_ProjectContext")));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
 builder.Services.AddAuthorization();
