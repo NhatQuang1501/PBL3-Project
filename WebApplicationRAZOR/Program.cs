@@ -16,17 +16,25 @@ builder.Services.AddDbContext<AuthDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PBL3_ProjectContext")));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
-builder.Services.AddAuthorization();
+
+//builder.Services.AddAuthorization(options =>
+//{
+//    options.AddPolicy("RequireAdminRole",
+//        policy => policy.RequireRole("Admin"));
+//});
+//builder.Services.AddAuthorization(options =>
+//{
+//    options.AddPolicy("RequireTutorRole",
+//        policy => policy.RequireRole("Gia sư"));
+//});
+//builder.Services.AddAuthorization(options =>
+//{
+//    options.AddPolicy("RequireParentRole",
+//        policy => policy.RequireRole("Phụ huynh"));
+//});
+
 
 var app = builder.Build();
-
-//using (var scope = app.Services.CreateScope())
-//{
-//    var services = scope.ServiceProvider;
-
-//    SeedData.Initialize(services);
-//}
-
 
 
 // Configure the HTTP request pipeline.

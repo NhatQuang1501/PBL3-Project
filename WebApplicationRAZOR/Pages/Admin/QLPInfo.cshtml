@@ -1,0 +1,130 @@
+﻿@page "{id:int}"
+@model PBL3_Project.Pages.Admin.QLPInfoModel
+@{
+    Layout = null;
+    ViewData["title"] = "Quản lý hồ sơ phụ huynh";
+}
+
+    
+
+
+
+<head>
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/mainAdmin.css">
+    <link rel="stylesheet" href="~/css/Personal.css">
+    <link rel="stylesheet" href="~/css/hoSoGiaSu.css">
+    <link rel="stylesheet" href="~/css/managePH.css">
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo-box">
+                
+                <img src="~/img/logo.png" alt="Logo" class="logo" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Trang chủ</a></li>
+
+                <div class="log-out-box">
+                    <a href="index.html" class="btn btn-su">Đăng xuất</a>
+                </div>
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container2">
+        <div class="control">
+            <img class="avatar" src="~/img/avar.jpg" alt="Avatar" />
+            <div class="user-info">
+                <div class="username">ADMIN</div>
+                <img src="~/img/iconControl.png" alt="Logo" class="iconControl" />
+            </div>
+        </div>
+
+        <div class="menu">
+
+            <div class="choice">
+                <ul>
+                    <li>
+                        <a href="mainAdmin.html"><u>Quản lý bài đăng</u> </a>
+                    </li>
+
+                    <li>
+                        <a href="manageGS.html"><u>Quản lý tài khoản Gia sư <br><br></u></a>
+                    </li>
+
+                    <li>
+                        <a href="managePH.html"><u> Quản lý tài khoản Phụ huynh<br><br></u> </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <main>
+
+        <h1 class="pageTitle">Quản lý hồ sơ Phụ huynh</h1>
+
+
+        <form method="post">
+
+            <div class="mb-3">
+                <label for="heading" class="form-label">Id phụ huynh</label>
+                <input type="text" class="form-control" id="id" asp-for="HoSoPhuHuynh.ID_PhuHuynh" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="tenphuhuynh" class="form-label">Họ tên</label>
+                <input type="text" class="form-control" id="tenphuhuynh" asp-for="HoSoPhuHuynh.TenPhuHuynh">
+            </div>
+
+            <div class="mb-3">
+                <label for="diachi" class="form-label">Địa chỉ</label>
+                <input type="text" class="form-control" id="diachi" asp-for="HoSoPhuHuynh.DiaChi">
+            </div>
+
+
+
+            <div class="mb-3">
+                <label for="ngaysinh" class="form-label">Ngày sinh</label>
+                <input type="date" class="form-control" id="ngaysinh" asp-for="HoSoPhuHuynh.NgaySinh">
+            </div>
+
+            <div class="mb-3">
+                <label for="sodienthoai" class="form-label">Số điện thoại</label>
+                <input type="text" class="form-control" id="sodienthoai" asp-for="HoSoPhuHuynh.SoDienThoai">
+            </div>
+            <div class="radio-group">
+                <label><input type="radio" name="user-type" value="true" asp-for=HoSoPhuHuynh.GioiTinh> Nữ</label>
+                <label><input type="radio" name="user-type" value="false" checked> Nam</label>
+            </div>
+
+
+
+            <div class="mb-3 d-flex justify-content-between">
+                @*<button class="btn btn-primary" type="submit" asp-page-handler="Edit">Edit</button>*@
+                <button class="btn btn-danger" type="submit" asp-page-handler="Delete">Delete</button>
+            </div>
+
+        </form>
+ 
+    </main>
+
+   
+
+    </div>
+</body>
+
+<footer>
+
+    <div class="footer">
+        <img src="image/footer.png" alt="footer" class="footer" height="188px" width="1200px">
+    </div>
+</footer>
+
+</html>
