@@ -7,7 +7,7 @@ using PBL3_Project.Pages.Parent;
 
 namespace PBL3_Project.Pages.Tutor
 {
-    //[Authorize(Roles = "Tutor")]
+    //[Authorize(Roles = $"{RolesApp.Tutor}")]
     public class TPersonalModel : PageModel
     {
 

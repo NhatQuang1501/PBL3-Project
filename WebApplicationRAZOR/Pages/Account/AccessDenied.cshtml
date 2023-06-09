@@ -1,0 +1,28 @@
+﻿@page
+@model PBL3_Project.Pages.Account.AccessDeniedModel
+@{
+    ViewData["Title"] = "Không thể truy cập";
+}
+<div class="container">
+	<div class="alert alert-primary" role="alert">
+        <h1 class="alert-heading text-center">Thông báo</h1>
+        <hr />
+        <p><strong>Xin chào bạn!</strong> Bạn không thể truy cập đến trang này vì không được phân quyền phù hợp.</p>
+        <div>
+            <p>Hãy đăng kí tài khoản mới với một quyền khác nếu bạn vẫn muốn truy cập</p>
+            <a class="btn btn-warning" asp-page="/Index">Đăng kí</a>
+        </div>
+        
+        
+    </div>
+</div>
+
+<style>
+    }
+    h1{
+        font-size: 30px
+    }
+    p{
+        font-size: 20px
+    }
+</style>

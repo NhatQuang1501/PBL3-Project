@@ -7,7 +7,7 @@ using PBL3_Project.ViewModel;
 
 namespace WebApplicationRAZOR.Pages.Parent
 {
-    //[Authorize(Roles = RolesApp.Parent)]
+    //[Authorize(Roles = $"{RolesApp.Parent}")]
     public class PHomeModel : PageModel
     {
         private readonly PBL3_ProjectContext _context;

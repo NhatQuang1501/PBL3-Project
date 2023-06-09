@@ -5,7 +5,7 @@ using System.Data;
 
 namespace PBL3_Project.Pages.Tutor
 {
-    //[Authorize(Roles = "Tutor")]
+    //[Authorize(Roles = $"{RolesApp.Tutor}")]
     public class TReviewModel : PageModel
     {
         public void OnGet()

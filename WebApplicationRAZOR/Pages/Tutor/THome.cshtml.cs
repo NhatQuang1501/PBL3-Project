@@ -6,7 +6,7 @@ using PBL3_Project.Models;
 
 namespace WebApplicationRAZOR.Pages.Tutor
 {
-    //[Authorize(Roles = "Tutor")]
+    //[Authorize(Roles = $"{RolesApp.Tutor}")]
     public class THomeModel : PageModel
     {
         private readonly PBL3_ProjectContext _context;
