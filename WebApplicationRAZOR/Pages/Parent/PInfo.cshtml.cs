@@ -20,12 +20,11 @@ namespace PBL3_Project.Pages.Parent
         public void OnGet()
         {
         }
-
         public IActionResult OnPost()
         {
             var infor = new Models.HoSoPhuHuynh()
             {
-
+               
                 TenAcc = "2",
                 PasswordAcc = "2",
                 TenPhuHuynh = AddPInfor.TenPhuHuynh,

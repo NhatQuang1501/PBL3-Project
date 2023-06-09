@@ -1,0 +1,34 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using PBL3_Project.Data;
+using PBL3_Project.ViewModel;
+
+namespace PBL3_Project.Pages.Parent
+{
+    public class PChangePassModel : PageModel
+    {
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly PBL3_ProjectContext _context;
+
+        [BindProperty]
+        public ChangePassword Model { get; set; }
+        public PChangePassModel(
+            UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager,
+            RoleManager<IdentityRole> roleManager,
+            PBL3_ProjectContext context)
+
+        {
+            this._userManager = userManager;
+            this._signInManager = signInManager;
+            this._roleManager = roleManager;
+            this._context = context;
+        }
+        public void OnGet()
+        {
+        }
+    }
+}

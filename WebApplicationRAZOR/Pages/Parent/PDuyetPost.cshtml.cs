@@ -19,5 +19,16 @@ namespace PBL3_Project.Pages.Parent
         {
             Posts = _context.BaiDang.Where(p => p.TinhTrangDuyet == true && p.TinhTrang == false).ToList();
         }
+        public async Task<IActionResult> OnPostDeleteAsync(int id)
+        {
+            var exitingPost = _context.BaiDang.Find(id);
+            if (exitingPost != null)
+            {
+                _context.BaiDang.Remove(exitingPost);
+                _context.SaveChanges();
+            }
+            Posts = _context.BaiDang.Where(p => p.TinhTrangDuyet == false && p.TinhTrang == false).ToList();
+            return Page();
+        }
     }
 }

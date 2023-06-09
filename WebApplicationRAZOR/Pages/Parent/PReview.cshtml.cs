@@ -4,10 +4,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data;
 using PBL3_Project.Data;
 using PBL3_Project.Models;
+using PBL3_Project.ViewModel;
 
 namespace PBL3_Project.Pages.Parent
 {
-    //[Authorize(Roles = "Tutor")]
+    //[Authorize(Roles = $"{RolesApp.Parent}")]
     public class PReviewModel : PageModel
     {
         private readonly PBL3_ProjectContext _context;
@@ -61,3 +62,6 @@ namespace PBL3_Project.Pages.Parent
         }
     }
 }
+
+
+
