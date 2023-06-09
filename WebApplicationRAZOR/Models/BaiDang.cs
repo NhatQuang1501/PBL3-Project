@@ -9,6 +9,7 @@ namespace PBL3_Project.Models
         public int? ID_BaiDang { get; set; }
         [ForeignKey("ID_Phuhuynh")]
         public int ID_PhuHuynh { get; set; }
+        //public int ID_GiaSu { get; set; }
         public string MonHoc { get; set; }
         public string TrinhDoHocVan { get; set; }
         public int HocPhi { get; set; }
