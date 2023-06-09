@@ -5,7 +5,7 @@ using System.Data;
 
 namespace PBL3_Project.Pages.Parent
 {
-    //[Authorize(Roles = "Parent")]
+    //[Authorize(Roles = $"{RolesApp.Parent}")]
     public class PProfileModel : PageModel
     {
         public void OnGet()

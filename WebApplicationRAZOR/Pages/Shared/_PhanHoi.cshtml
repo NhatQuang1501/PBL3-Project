@@ -1,0 +1,30 @@
+﻿@using PBL3_Project.Models
+@model PhanHoi
+
+<link rel="stylesheet" href="~/css/post.css" />
+
+<div class="card my-4">
+    @*<h2 class="card-header text-black">@Model.ID_PhuHuynh</h2>*@
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <label for=""> <b><i>ID_GiaSu:</i></b> @Model.ID_GiaSu</label>
+
+            </li>
+            <li class="list-group-item">
+                <label for=""> <b><i>ID_PhuHuynh:</i></b> @Model.ID_PhuHuynh</label>
+
+            </li>
+            <li class="list-group-item">
+                <label for=""> <b><i>Nội dung phản hồi:</i></b> @Model.NoiDungPhanHoi</label>
+
+            </li>
+            <li class="list-group-item">
+                <label for=""><b><i>Điểm đánh giá:</i></b> @Model.DiemDanhGia</label>
+
+            </li>
+           
+        </ul>
+    </div>
+</div>
+    </div>

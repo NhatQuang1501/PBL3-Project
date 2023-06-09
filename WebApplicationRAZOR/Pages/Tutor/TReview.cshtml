@@ -1,89 +1,100 @@
 ﻿@page
 @model PBL3_Project.Pages.Tutor.TReviewModel
 @{
-	Layout = "_TLayout";
+}
+@{
+    Layout = "_TLayout";
     ViewData["title"] = "Trang chủ Gia sư";
 }
 
-    <link rel="stylesheet" href="~/css/Personal.css" />
-    <link rel="stylesheet" href="~/css/ChangePassGS.css" />
-    <link rel="stylesheet" href="~/css/reviewGS.css" />
+<link rel="stylesheet" href="~/css/main.css">
+<script src="main.js"></script>
 
 <body>
 
+
     <div class="container">
-        <div class="control">
-            <img class="avatar" src="image/avar.jpg" alt="Avatar" />
-            <div class="user-info">
-                <div class="username">ChuBeDan</div>
-                <img src="image/iconControl.png" alt="Logo" class="iconControl" />
+        <img src="~/img/FilterSearch.png" alt="FilSearch" class="FilSearch">
+        <!-- filter -->
+        <div class="filter">
+
+            <div class="form-control">
+                <label>Môn học:</label>
+                <select>
+                    <option value="math">Toán</option>
+                    <option value="physics">Vật lý</option>
+                    <option value="chemistry">Hóa học</option>
+                    <option value="history">Ngữ văn</option>
+                    <option value="english">Tiếng Anh</option>
+                    <option value="english">Tiếng Trung</option>
+                    <option value="history">Lịch sử</option>
+                    <option value="history">Sinh học</option>
+                </select>
             </div>
+            <div class="form-control">
+                <label>Lớp:</label>
+                <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+
+                </select>
+            </div>
+            <div class="form-control">
+                <label>Khu vực:</label>
+                <select>
+                    <option value="hanoi">Hà Nội</option>
+                    <option value="hochiminh">TP Hồ Chí Minh</option>
+                    <option value="danang">Đà Nẵng</option>
+                </select>
+            </div>
+
+            <div class="form-control">
+                <label>Học phí:</label>
+                <input id="inputrange" type="range" value="0" min="0" max="1000" oninput="this.nextElementSibling.value = this.value">
+                <output class="fee">0</output>
+                <output class="fee">.000 (VNĐ/h)</output>
+            </div>
+
+            <div class="form-control">
+                <label>Số học viên:</label>
+                <input id="inputrange" type="range" value="0" min="0" max="20" oninput="this.nextElementSibling.value = this.value">
+                <output class="fee">0</output>
+
+            </div>
+
+            <div class="form-control">
+                <label>Số buổi:</label>
+                <input id="inputrange" type="range" value="0" min="0" max="7" oninput="this.nextElementSibling.value = this.value">
+                <output class="fee">0</output>
+
+            </div>
+
+            <a href="#" class="btn btn-del">Xóa tất cả</a>
+            <a href="#" class="btn btn-find">Áp dụng</a>
+
         </div>
 
-        <div class="menu">
-
-            <div class="choice">
-                <ul>
-                    <li>
-                        <a href="Personal.html"><u>Thông tin tài khoản</u> </a>
-                    </li>
-                    <li>
-                        <a href="hoSoGiaSu.html"><u>Quản lý hồ sơ : <br><br></u></a>
-                    </li>
-                    <li>
-                        <a href="#"><u> Quản lý suất dạy :<br><br></u> </a>
-                        <ul>
-                            <li style="color: white;"><a href="SuatDayDDK.html">Suất dạy đã đăng kí </a></li>
-                            <li style="color: white;"><a href="SuatDayChecked.html">Suất dạy được nhận</a></li>
-                            <li style="color: white;"><a href="#">Đánh giá của tôi</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="employee-reviews">
-
-        <h1 class="Review">Đánh giá từ phụ huynh</h1>
+        <main>
+            @foreach (var phanhoi in Model.PhanHois)
+            {
+                <partial name="_PhanHoi" model="phanhoi"></partial>
+            }
 
 
-        <div class="review-item">
-            <div class="avatar">
-                <img src="image/admin.jpg" alt="Avatar">
-            </div>
-            <div class="employee-info">
 
-                <div class="criteria">TranVanA</div><br>
-                <div class="rating">
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                </div>
-                <div class="comment">Gia sư nhiệt tình, dạy dễ hiểu. Đi đúng giờ. Rất vui vì chọn được cô cho bé..</div>
-            </div>
-        </div>
-        <div class="review-item">
-            <div class="avatar">
-                <img src="image/avar.jpg" alt="Avatar">
-            </div>
-            <div class="employee-info">
+        </main>
 
-                <div class="criteria">LeThiB</div><br>
-                <div class="rating">
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                </div>
-                <div class="comment">Gia sư nhiệt tình, dạy dễ hiểu. Đi đúng giờ. Rất vui vì chọn được cô cho bé.</div>
-            </div>
-        </div>
+
 
     </div>
 </body>
-
