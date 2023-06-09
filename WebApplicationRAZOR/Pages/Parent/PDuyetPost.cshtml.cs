@@ -6,7 +6,7 @@ using PBL3_Project.Models;
 
 namespace PBL3_Project.Pages.Parent
 {
-    //[Authorize(Roles = "Parent")]
+    //[Authorize(Roles = $"{RolesApp.Parent}")]
     public class PDuyetPostModel : PageModel
     {
         private readonly PBL3_ProjectContext _context;
@@ -18,6 +18,17 @@ namespace PBL3_Project.Pages.Parent
         public void OnGet()
         {
             Posts = _context.BaiDang.Where(p => p.TinhTrangDuyet == true && p.TinhTrang == false).ToList();
+        }
+        public async Task<IActionResult> OnPostDeleteAsync(int id)
+        {
+            var exitingPost = _context.BaiDang.Find(id);
+            if (exitingPost != null)
+            {
+                _context.BaiDang.Remove(exitingPost);
+                _context.SaveChanges();
+            }
+            Posts = _context.BaiDang.Where(p => p.TinhTrangDuyet == false && p.TinhTrang == false).ToList();
+            return Page();
         }
     }
 }

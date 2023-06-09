@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PBL3_Project.Data;
 using PBL3_Project.Models;
-using System.Data;
+using PBL3_Project.ViewModel;
 
 namespace WebApplicationRAZOR.Pages.Parent
 {
-    //[Authorize(Roles = "Parent")]
+    //[Authorize(Roles = $"{RolesApp.Parent}")]
     public class PHomeModel : PageModel
     {
         private readonly PBL3_ProjectContext _context;

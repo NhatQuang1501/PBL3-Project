@@ -5,6 +5,7 @@ using PBL3_Project.Models;
 
 namespace PBL3_Project.Pages.Admin
 {
+    //[Authorize(Roles = $"{RolesApp.Admin}")]
     public class QLTHosoModel : PageModel
     {
         private readonly PBL3_ProjectContext dbContext;

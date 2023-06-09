@@ -70,10 +70,12 @@
                     <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
                     <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>
 
-                    <div class="button-container">
-                        <a href="createPost.html" class="Edit-btn">Sửa bài đăng</a>
-                        <a href="createPost.html" class="Del-btn">Xóa bài đăng</a>
-                    </div>
+                    <form method="post">
+                        <div class="button-container">
+                            <button class="btn btn-primary" style="margin:10px" asp-page="" type="button">Sửa bài đăng</button>
+                            <button class="btn btn-danger" type="button submit" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang" onclick="return confirm('Bạn có muốn xoá không?')">Xóa bài đăng</button>
+                        </div>
+                    </form>
                 </div>
             }
     

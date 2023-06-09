@@ -5,6 +5,7 @@ using PBL3_Project.Models;
 
 namespace PBL3_Project.Pages.Admin
 {
+    //[Authorize(Roles = $"{RolesApp.Admin}")]
     public class QLPInfoModel : PageModel
     {
 

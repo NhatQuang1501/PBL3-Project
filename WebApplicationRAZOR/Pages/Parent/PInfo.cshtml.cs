@@ -6,7 +6,7 @@ using PBL3_Project.Models;
 
 namespace PBL3_Project.Pages.Parent
 {
-    //[Authorize(Roles = "Parent")]
+    //[Authorize(Roles = $"{RolesApp.Parent}")]
     public class PInfoModel : PageModel
     {
         private readonly PBL3_ProjectContext _context;
@@ -20,12 +20,11 @@ namespace PBL3_Project.Pages.Parent
         public void OnGet()
         {
         }
-
         public IActionResult OnPost()
         {
             var infor = new Models.HoSoPhuHuynh()
             {
-
+               
                 TenAcc = "2",
                 PasswordAcc = "2",
                 TenPhuHuynh = AddPInfor.TenPhuHuynh,

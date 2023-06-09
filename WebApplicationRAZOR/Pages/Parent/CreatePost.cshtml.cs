@@ -6,7 +6,7 @@ using PBL3_Project.Models;
 
 namespace PBL3_Project.Pages.Parent
 {
-    //[Authorize(Roles = "Parent")]
+    //[Authorize(Roles = $"{RolesApp.Parent}")]
     public class CreatePostModel : PageModel
     {
         private readonly PBL3_ProjectContext _context;
@@ -24,6 +24,7 @@ namespace PBL3_Project.Pages.Parent
             var post = new Models.BaiDang()
             {
                 ID_PhuHuynh = 1,
+                ID_GiaSu = 0,
                 TrinhDoHocVan = AddPostRequest.TrinhDoHocVan,
                 MonHoc = AddPostRequest.MonHoc,
                 HocPhi = AddPostRequest.HocPhi,

@@ -1,20 +1,19 @@
 ﻿@page
-@model PBL3_Project.Pages.Tutor.TReviewModel
+@model PBL3_Project.Pages.Parent.PReviewModel
 @{
-}
-@{
-    Layout = "_TLayout";
-    ViewData["title"] = "Trang chủ Gia sư";
+    Layout = "_PLayout";
+    ViewData["title"] = "Trang chủ Phụ huynh";
 }
 
 <link rel="stylesheet" href="~/css/main.css">
-<script src="main.js"></script>
+<link rel="stylesheet" href="~/css/createPost.css" />
+<link rel="stylesheet" href="~/css/Personal.css" />
+
 
 <body>
 
-
     <div class="container">
-        <img src="~/img/FilterSearch.png" alt="FilSearch" class="FilSearch">
+
         <!-- filter -->
         <div class="filter">
 
@@ -79,22 +78,63 @@
 
             </div>
 
-            <a href="#" class="btn btn-del">Xóa tất cả</a>
-            <a href="#" class="btn btn-find">Áp dụng</a>
 
         </div>
 
-        <main>
-            @foreach (var phanhoi in Model.PhanHois)
-            {
-                <partial name="_PhanHoi" model="phanhoi"></partial>
-            }
+        <div class="container1">
+
+            <h1 class="myPost">Đánh giá của tôi</h1>
+            <main>
 
 
+                <form method="post" asp-page-handler="SubmitForm" style="margin-top:300px">
+                    <div class="create-profile">
+                        <div>
+                            <label>ID_GiaSu*</label>
+                            <input type="text" asp-for="AddPhanHoiRequest.ID_GiaSu">
+                        </div>
+                        <div>
+                            <label>ID_PhuHuynh*</label>
+                            <input type="text" asp-for="AddPhanHoiRequest.ID_PhuHuynh">
+                        </div>
+                        <div>
+                            <label>Nội dung phản hồi*</label>
+                            <input type="text" asp-for="AddPhanHoiRequest.NoiDungPhanHoi">
+                        </div>
+                        <div>
+                            <label>Điểm đánh giá*</label>
+                            <input type="text" asp-for="AddPhanHoiRequest.DiemDanhGia">
+                        </div>
+
+
+                        
+                        <button class="btn btn-primary custom-button" type="submit" asp-page-handler="PhanHoi">Gửi</button>
+
+                        <style>
+                            .custom-button {
+                                color: #000;
+                                background-color: #fff;
+                            }
+
+                                .custom-button.btn-primary {
+                                    background-color: #007bff;
+                                    border-color: #007bff;
+                                    width: 70px;
+                                    height: 70px;
+                                    margin-left: 105px;
+                                    padding: 0;
+                                }
+
+                                .custom-button.text-dark {
+                                    color: #000;
+                                }
+                        </style>
+
+                </form>
+        </div>
 
         </main>
-
-
+    </div>
 
     </div>
 </body>
