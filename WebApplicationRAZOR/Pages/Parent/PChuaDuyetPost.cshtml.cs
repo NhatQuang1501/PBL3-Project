@@ -15,19 +15,21 @@ namespace PBL3_Project.Pages.Parent
         {
             _context = context;
         }
-        public async Task OnGet()
+        public void OnGet()
         {
+            //Posts = _context.BaiDang.ToList();
             Posts = _context.BaiDang.Where(p => p.TinhTrangDuyet == false && p.TinhTrang == false).ToList();
         }
-        public async Task<IActionResult> OnPostDeleteAsync()
+        public async Task<IActionResult> OnPostDeleteAsync(int id)
         {
-            var existingPost = await _context.BaiDang.FindAsync(BaiDang.ID_BaiDang);
-            if (existingPost != null)
+            var exitingPost = _context.BaiDang.Find(id);
+            if (exitingPost != null)
             {
-                _context.BaiDang.Remove(existingPost);
-               await _context.SaveChangesAsync();
+                _context.BaiDang.Remove(exitingPost);
+                _context.SaveChanges();
             }
-            return RedirectToPage("/parent/pchuaduyetpost");
+            Posts = _context.BaiDang.Where(p => p.TinhTrangDuyet == false && p.TinhTrang == false).ToList();
+            return Page();
         }
     }
 }

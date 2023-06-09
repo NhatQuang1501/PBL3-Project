@@ -17,7 +17,7 @@
         <div class="control">
             <img class="avatar" src="~/img/avar.jpg" alt="Avatar" />
             <div class="user-info">
-                <div class="username">ChuBeDan</div>
+                <div class="username">Phụ huynh</div>
                 <img src="~/img/iconControl.png" alt="Logo" class="iconControl" />
             </div>
         </div>
@@ -54,23 +54,12 @@
         {
                  <main>
              @foreach(var post in Model.Posts)
-        {
-            <div class="job-posting">
-                <div class="image-container">
-                    <img src="~/img/avar.jpg" alt="avar" class="avar">
-                    <p class="caption">Lờ tờ mờ</p>
-                </div>
-               @* <br>
-                    <p><b><i>Id bài đăng:</i></b> @post.ID_BaiDang asp-for="BaiDang.ID_BaiDang" id="id"</p><br>
-                    <p><b><i>Môn học:</i></b> @post.MonHoc</p><br>
-                <p><b><i>Trình độ học vấn:</i></b> @post.TrinhDoHocVan</p><br>
-                <p><b><i>Học phí:</i></b> @post.HocPhi</p><br>
-                <p><b><i>Lớp:</i></b> @post.Lop</p><br>
-                <p><b><i>Số buổi:</i></b> @post.SoBuoi</p><br>
-                <p><b><i>Số học viên:</i></b> @post.SoHocVien</p><br>
-                <p><b><i>Thời gian:</i></b> @post.ThoiGian</p><br>
-                <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
-                <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>*@
+            {
+                <div class="job-posting">
+                    <div class="image-container">
+                        <img src="~/img/avar.jpg" alt="avar" class="avar">
+                        <p class="caption">Lờ tờ mờ</p>
+                    </div>
 
                     <p><b><i>Id bài đăng:</i></b> @post.ID_BaiDang <input type="hidden" asp-for="BaiDang.ID_BaiDang" /> </p><br>
                     <p><b><i>Môn học:</i></b> @post.MonHoc</p><br>
@@ -83,14 +72,39 @@
                     <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
                     <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>
 
-                <div class="button-container">
+                @*<div class="button-container">
                     <a href="/parent/editpost/@post.ID_BaiDang" class="Edit-btn">Sửa bài đăng</a>
                         <button class="btn btn-danger custom-button" type="submit" asp-page-handler="Delete">Delete</button>
-                </div>
+                </div>*@
+
+                    <form method="post">
+                        <div class="button-container">
+                            <a href="/parent/editpost/@post.ID_BaiDang" class="Edit-btn" style="margin:10px">Sửa bài đăng</a>
+
+                            @*<button class="btn btn-primary" style="margin:10px" asp-page="/Parent/PHome" type="button">Sửa bài đăng</button>*@
+                            <button class="Del" type="button submit" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang" onclick="return confirm('Bạn có muốn xoá không?')">Xóa bài đăng</button>
+                        </div>
+                    </form>
                
             </div>
         }
     </main>
+    <style>
+        .Del{
+            width : 360px;
+                padding: 10px;
+                background-color: #F1BB45;
+                text-decoration: none;
+                text-align: center;
+                border-color: #F1BB45;
+                
+                border-radius: 30px;
+        }
+
+            .Del:hover {
+                background-color: darkorange;
+            }
+    </style>
 
     <div id="pagination">
         <a href="#" id="first">&laquo; Đầu</a>

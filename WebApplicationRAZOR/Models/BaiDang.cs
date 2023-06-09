@@ -11,9 +11,9 @@ namespace PBL3_Project.Models
         //    SuatDayDangKis = new HashSet<SuatDayDangKi>();
         //}
         [Key]
-        public int? ID_BaiDang { get; set; }
+        public int ID_BaiDang { get; set; }
         [ForeignKey("ID_Phuhuynh")]
-        public int? ID_PhuHuynh { get; set; }
+        public int ID_PhuHuynh { get; set; }
         public int? ID_GiaSu { get; set; }
         public string? MonHoc { get; set; }
         public string? TrinhDoHocVan { get; set; }
