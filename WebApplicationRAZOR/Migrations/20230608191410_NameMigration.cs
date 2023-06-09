@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -8,6 +9,30 @@ namespace PBL3_Project.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "BaiDang",
+                columns: table => new
+                {
+                    ID_BaiDang = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ID_PhuHuynh = table.Column<int>(type: "int", nullable: false),
+                    MonHoc = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TrinhDoHocVan = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HocPhi = table.Column<int>(type: "int", nullable: false),
+                    Lop = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SoBuoi = table.Column<int>(type: "int", nullable: false),
+                    SoHocVien = table.Column<int>(type: "int", nullable: false),
+                    TinhTrang = table.Column<bool>(type: "bit", nullable: false),
+                    ThoiGian = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DiaChi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    GhiChu = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TinhTrangDuyet = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BaiDang", x => x.ID_BaiDang);
+                });
+
             migrationBuilder.CreateTable(
                 name: "HoSoGiaSu",
                 columns: table => new
@@ -21,7 +46,7 @@ namespace PBL3_Project.Migrations
                     SoDienThoai = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     GioiTinh = table.Column<bool>(type: "bit", nullable: false),
-                    Tuoi = table.Column<int>(type: "int", nullable: false),
+                    NgaySinh = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MonHoc = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TrinhDoHocVan = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HocPhi = table.Column<int>(type: "int", nullable: false)
@@ -44,7 +69,7 @@ namespace PBL3_Project.Migrations
                     SoDienThoai = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     GioiTinh = table.Column<bool>(type: "bit", nullable: false),
-                    Tuoi = table.Column<int>(type: "int", nullable: false)
+                    NgaySinh = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -54,6 +79,9 @@ namespace PBL3_Project.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "BaiDang");
+
             migrationBuilder.DropTable(
                 name: "HoSoGiaSu");
 

@@ -54,10 +54,10 @@ namespace WebApplicationRAZOR.Pages
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, false);
-                    string role = "Parent";
+                    string role = RolesApp.Parent;
                     if (IsParent == false)
                     {
-                        role = "Tutor";
+                        role = RolesApp.Tutor;
                     }
                     if (!string.IsNullOrEmpty(role))
                     {

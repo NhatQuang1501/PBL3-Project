@@ -6,7 +6,7 @@ using PBL3_Project.Models;
 
 namespace PBL3_Project.Pages.Parent
 {
-    //[Authorize(Roles = "Parent")]
+    //[Authorize(Roles = $"{RolesApp.Parent}")]
     public class CreatePostModel : PageModel
     {
         private readonly PBL3_ProjectContext _context;

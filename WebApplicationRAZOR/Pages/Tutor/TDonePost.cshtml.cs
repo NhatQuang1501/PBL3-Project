@@ -5,7 +5,7 @@ using System.Data;
 
 namespace PBL3_Project.Pages.Tutor
 {
-    //[Authorize(Roles = "Tutor")]
+    //[Authorize(Roles = $"{RolesApp.Tutor}")]
     public class TDonePostModel : PageModel
     {
         public void OnGet()

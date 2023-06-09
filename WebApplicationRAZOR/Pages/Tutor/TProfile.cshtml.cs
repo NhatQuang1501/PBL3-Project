@@ -5,7 +5,7 @@ using System.Data;
 
 namespace WebApplicationRAZOR.Pages.Tutor
 {
-    //[Authorize(Roles = "Tutor")]
+    //[Authorize(Roles = $"{RolesApp.Tutor}")]
     public class TProfileModel : PageModel
     {
         public void OnGet()

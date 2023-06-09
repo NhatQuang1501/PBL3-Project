@@ -7,7 +7,7 @@ using PBL3_Project.Models;
 
 namespace PBL3_Project.Pages.Tutor
 {
-    //[Authorize(Roles = "Tutor")]
+    //[Authorize(Roles = $"{RolesApp.Tutor}")]
     public class TReviewModel : PageModel
     {
         private readonly PBL3_ProjectContext _context;
