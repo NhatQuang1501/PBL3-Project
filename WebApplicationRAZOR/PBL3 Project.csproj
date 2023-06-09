@@ -7,6 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Admin\QLHSGS\**" />
+    <Compile Remove="Pages\Admin\QLHSPH\**" />
+    <Compile Remove="Pages\Admin\QLPost\**" />
+    <Content Remove="Pages\Admin\QLHSGS\**" />
+    <Content Remove="Pages\Admin\QLHSPH\**" />
+    <Content Remove="Pages\Admin\QLPost\**" />
+    <EmbeddedResource Remove="Pages\Admin\QLHSGS\**" />
+    <EmbeddedResource Remove="Pages\Admin\QLHSPH\**" />
+    <EmbeddedResource Remove="Pages\Admin\QLPost\**" />
+    <None Remove="Pages\Admin\QLHSGS\**" />
+    <None Remove="Pages\Admin\QLHSPH\**" />
+    <None Remove="Pages\Admin\QLPost\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="bootstrap" Version="5.2.3" />
     <PackageReference Include="entityframework" Version="6.4.4" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.16" />
@@ -24,12 +39,6 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Admin\QLHSGS\" />
-    <Folder Include="Pages\Admin\QLHSPH\" />
-    <Folder Include="Pages\Admin\QLPost\" />
   </ItemGroup>
 
 </Project>

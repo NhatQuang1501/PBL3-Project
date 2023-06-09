@@ -17,7 +17,7 @@
             <img class="avatar" src="~/img/avar.jpg" alt="Avatar" />
         <div class="user-info">
           <div class="username">ChuBeDan</div>
-          <img src="image/iconControl.png" alt="Logo" class="iconControl" />
+          <img src="~img/iconControl.png" alt="Logo" class="iconControl" />
         </div>
       </div>
 
@@ -67,53 +67,23 @@
                 <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
                 <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>
 
-                <div class="button-container">
-                    <a href="createPost.html" class="Edit-btn">Sửa bài đăng</a>
-                    <a href="createPost.html" class="Del-btn">Xóa bài đăng</a>
-                </div>
+                @*<button class="btn btn-primary custom-button" type="button-submit">Đánh giá gia sư</button>*@
+              @*  <td><a href="/admin/qlpinfo/@HoSo.ID_PhuHuynh">View</a></td>
+                <a asp-page="/Parent/PReview" class="btn btn-DG">Đánh giá gia sư</a>*@
+                <a href="/parent/preview/@post.ID_BaiDang" class="btn btn-DG">Đánh giá gia sư</a>
+                <style>
+
+                    .btn btn-DG {
+                            background-color: #F1BB45;
+                            border-color: #F1BB45;
+                            text-align: center;
+                    }
+                </style>
             </div>
         }
-
-        @*<div class="job-posting">
-          <div class="image-container">
-            <img src="image/avar.jpg" alt="avar" class="avar">
-            <p class="caption">Lờ tờ mờ</p>
-          </div>
-          <br>
-          <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
-          <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
-          <p><b><i>Học phí :</i></b> 70k/h.</p><br>
-          <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
-          <div class="button-container">
-
-            <a href="#" class="Edit-btn">Đánh giá gia sư</a>
-
-          </div>
-        </div>
-  
-        <div class="job-posting">
-          <div class="image-container">
-            <img src="image/avar.jpg" alt="avar" class="avar">
-            <p class="caption">Lờ tờ mờ</p>
-          </div>
-          <br>
-          <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
-          <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
-          <p><b><i>Học phí :</i></b> 70k/h.</p><br>
-          <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
-          <div class="button-container">
-            <a href="#" class="Edit-btn">Đánh giá gia sư</a>
-          </div>
-        </div>*@
   
         
       </main>
   
-      <div id="pagination">
-        <a href="#" id="first">&laquo; Đầu</a>
-        <a href="#" id="prev">&lsaquo; Trước</a>
-        <span id="pages"></span>
-        <a href="#" id="next">Tiếp &rsaquo;</a>
-        <a href="#" id="last">Cuối &raquo;</a>
-      </div>
+
   </body>

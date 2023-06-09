@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id:int}"
 @model PBL3_Project.Pages.Parent.PReviewModel
 @{
     Layout = "_PLayout";
@@ -91,11 +91,11 @@
                     <div class="create-profile">
                         <div>
                             <label>ID_GiaSu*</label>
-                            <input type="text" asp-for="AddPhanHoiRequest.ID_GiaSu">
+                            <input type="text" asp-for="SuatDayDaNhan.ID_GiaSu">
                         </div>
                         <div>
                             <label>ID_PhuHuynh*</label>
-                            <input type="text" asp-for="AddPhanHoiRequest.ID_PhuHuynh">
+                            <input type="text" asp-for="BaiDang.ID_PhuHuynh">
                         </div>
                         <div>
                             <label>Nội dung phản hồi*</label>

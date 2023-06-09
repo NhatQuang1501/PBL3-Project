@@ -17,7 +17,8 @@ namespace PBL3_Project.Pages.Parent
         }
         public void OnGet()
         {
-            Posts = _context.BaiDang.Where(p => p.TinhTrangDuyet == true && p.TinhTrang == true).ToList();
+            Posts = _context.BaiDang.Where(p => p.TinhTrangDuyet == true && p.TinhTrang == false).ToList();
         }
+
     }
 }

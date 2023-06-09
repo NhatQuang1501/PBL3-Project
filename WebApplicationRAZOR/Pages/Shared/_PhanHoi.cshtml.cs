@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace PBL3_Project.Pages.Shared
 {
-    public class _PostModel : PageModel
+    public class _PhanHoiModel : PageModel
     {
         public void OnGet()
         {

@@ -1,8 +1,6 @@
 ﻿@page
 @model PBL3_Project.Pages.Tutor.TReviewModel
 @{
-}
-@{
     Layout = "_TLayout";
     ViewData["title"] = "Trang chủ Gia sư";
 }
@@ -85,11 +83,12 @@
         </div>
 
         <main>
-            @foreach (var phanhoi in Model.PhanHois)
-            {
-                <partial name="_PhanHoi" model="phanhoi"></partial>
+            @{
+                foreach (var phanhoi in Model.PhanHois)
+                {
+                    <partial name="_PhanHoi" model="phanhoi"></partial>
+                }
             }
-
 
 
         </main>

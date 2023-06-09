@@ -13,20 +13,43 @@ namespace PBL3_Project.Pages.Parent
         private readonly PBL3_ProjectContext _context;
         [BindProperty]
         public PhanHoi AddPhanHoiRequest { get; set; }
-        public void OnGet()
+        public BaiDang BaiDang { get; set; }
+        public SuatDayDaNhan SuatDayDaNhan { get; set; }
+
+        public void OnGet(int id)
         {
+           BaiDang = _context.BaiDang.Find(id);
+            SuatDayDaNhan = _context.SuatDayDaNhan.Find(id);
         }
         public PReviewModel(PBL3_ProjectContext context)
         {
             _context = context;
         }
+        
+
+       
+       
+        //public IActionResult OnPostEdit()
+        //{
+        //    var existingHoso = dBContext.HoSoPhuHuynh.Find(HoSoPhuHuynh.ID_PhuHuynh);
+        //    if (existingHoso != null)
+        //    {
+        //        existingHoso.TenPhuHuynh = HoSoPhuHuynh.TenPhuHuynh;
+        //        existingHoso.DiaChi = HoSoPhuHuynh.DiaChi;
+        //        existingHoso.NgaySinh= HoSoPhuHuynh.NgaySinh;
+        //        existingHoso.SoDienThoai= HoSoPhuHuynh.SoDienThoai;
+        //    }
+        //    dBContext.SaveChanges();
+        //    return RedirectToPage("/admin/qlphoso");
+        //}
+
         public IActionResult OnPostPhanHoi()
         {
             var phanhoi = new Models.PhanHoi()
             {
                 
-                ID_GiaSu = AddPhanHoiRequest.ID_GiaSu,
-                ID_PhuHuynh = AddPhanHoiRequest.ID_PhuHuynh,
+                ID_GiaSu = SuatDayDaNhan.ID_GiaSu,
+                ID_PhuHuynh = BaiDang.ID_PhuHuynh,
                 NoiDungPhanHoi = AddPhanHoiRequest.NoiDungPhanHoi,
                 DiemDanhGia = AddPhanHoiRequest.DiemDanhGia,
 
