@@ -1,0 +1,136 @@
+﻿@page
+@model PBL3_Project.Pages.Admin.QLPostModel
+@{
+    Layout = null;
+    ViewData["title"] = "Trang chủ Admin";
+}
+
+
+<head>
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/mainAdmin.css">
+    <link rel="stylesheet" href="~/css/Personal.css">
+    <link rel="stylesheet" href="~/css/hoSoGiaSu.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo-box">
+                <img src="~img/logo.png" alt="Logo" class="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Trang chủ</a></li>
+
+                <!-- <div class="search">
+                  <input type="text" id="search-bar" placeholder="Search...">
+
+                  <button type="submit" class="image-button">
+                    <img src="image/iconSearch.png" alt="Image" class="button-image">
+                  </button>
+                </div> -->
+
+                <div class="log-out-box">
+                    <a href="index.html" class="btn btn-su">Đăng xuất</a>
+                </div>
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container2">
+        <div class="control">
+            <img class="avatar" src="image/admin.jpg" alt="Avatar" />
+            <div class="user-info">
+                <div class="username">ADMIN</div>
+                <img src="image/iconControl.png" alt="Logo" class="iconControl" />
+            </div>
+        </div>
+
+        <div class="menu">
+
+            <div class="choice">
+                <ul>
+                    <li>
+                        <a href="#"><u>Quản lý bài đăng</u> </a>
+                    </li>
+
+                    <li>
+                        <a href="manageGS.html"><u>Quản lý tài khoản Gia sư <br><br></u></a>
+                    </li>
+
+                    <li>
+                        <a href="managePH.html"><u> Quản lý tài khoản Phụ huynh<br><br></u> </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <main>
+        @foreach(var post in Model.Posts)
+        {
+            <div class="job-posting">
+                <div class="image-container">
+                    <img src="~/img/avar.jpg" alt="avar" class="avar">
+                    <p class="caption">Lờ tờ mờ</p>
+                </div>
+                <br>
+                <p><b><i>Môn học:</i></b> @post.MonHoc</p><br>
+                <p><b><i>Trình độ học vấn:</i></b> @post.TrinhDoHocVan</p><br>
+                <p><b><i>Học phí:</i></b> @post.HocPhi</p><br>
+                <p><b><i>Lớp:</i></b> @post.Lop</p><br>
+                <p><b><i>Số buổi:</i></b> @post.SoBuoi</p><br>
+                <p><b><i>Số học viên:</i></b> @post.SoHocVien</p><br>
+                <p><b><i>Thời gian:</i></b> @post.ThoiGian</p><br>
+                <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
+                <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>
+
+                <form method="post">
+@*                    <div class="button-container">
+                        <button class="btn btn-primary" style="margin:10px" asp-page="" type="submit">Sửa bài đăng</button>
+                        <button class="btn btn-danger" type="submit" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang">Xóa bài đăng</button>
+                    </div>*@
+                    <button class="apply-btn" type="button submit" style="margin-left:100px" asp-page-handler="OK" asp-route-id="@post.ID_BaiDang">Duyệt bài đăng</button>
+                    <button class="Cancel-btn" type="button submit" style="margin-left:300px" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang">Xóa bài đăng</button>
+                </form>
+                
+            </div>
+        }
+
+@*        <div class="job-posting">
+            <div class="image-container">
+                <img src="~img/account.png" alt="avar" class="avar">
+                <p class="caption">Lờ tờ mờ</p>
+            </div>
+            <br>
+            <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
+            <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
+            <p><b><i>Học phí :</i></b> 70k/h.</p><br>
+            <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
+            <button class="apply-btn">Duyệt bài đăng</button>
+            <button class="Cancel-btn">Xóa bài đăng</button>
+        </div>*@
+
+
+    </main>
+
+    <div id="pagination">
+        <a href="#" id="first">&laquo; Đầu</a>
+        <a href="#" id="prev">&lsaquo; Trước</a>
+        <span id="pages"></span>
+        <a href="#" id="next">Tiếp &rsaquo;</a>
+        <a href="#" id="last">Cuối &raquo;</a>
+    </div>
+
+    </div>
+</body>
+
+<footer>
+
+    <div class="footer">
+        <img src="image/footer.png" alt="footer" class="footer" height="188px" width="1200px">
+    </div>
+</footer>

@@ -19,5 +19,9 @@ namespace PBL3_Project.Data
         public DbSet<PBL3_Project.Models.HoSoPhuHuynh>? HoSoPhuHuynh { get; set; }
 
         public DbSet<PBL3_Project.Models.BaiDang>? BaiDang { get; set; }
+        public DbSet<PBL3_Project.Models.PhanHoi>? PhanHoi { get; set; }
+        public DbSet<PBL3_Project.Models.SuatDayDangKi>? SuatDayDangKi { get; set; }
+        public DbSet<PBL3_Project.Models.SuatDayDaNhan>? SuatDayDaNhan { get; set; }
+
     }
 }
