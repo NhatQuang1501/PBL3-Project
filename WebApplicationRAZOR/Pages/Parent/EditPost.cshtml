@@ -1,0 +1,136 @@
+﻿@page "{id:int}"
+@model PBL3_Project.Pages.Parent.EditPostModel
+@{
+    Layout = "_PLayout";
+    ViewData["title"] = "Sửa bài đăng";
+}
+
+   
+<link rel="stylesheet" href="~/css/main.css">
+<link rel="stylesheet" href="~/css/createPost.css" />
+<link rel="stylesheet" href="~/css/Personal.css" />
+
+  <body>
+    
+    <div class="container">
+      <div class="control">
+        <img class="avatar" src="image/avar.jpg" alt="Avatar" />
+        <div class="user-info">
+          <div class="username">ChuBeDan</div>
+          <img src="image/iconControl.png" alt="Logo" class="iconControl" />
+        </div>
+      </div>
+
+        <div class="menu">
+
+            <div class="choice">
+                <ul>
+                    <li>
+                        <a asp-page="/Parent/PInfor"><u>Thông tin tài khoản</u> </a>
+                    </li>
+                    <li>
+                        <a asp-page="/Parent/PProfile"><u>Quản lý hồ sơ : <br><br></u></a>
+                    </li>
+                    <li>
+                        <u> Quản lý bài đăng :<br><br></u>
+                        <ul>
+                            <li style="color: white;"><a asp-page="/Parent/PDuyetPost">Bài đăng được duyệt </a></li>
+                            <li style="color: white;"><a asp-page="/Parent/PChuaDuyetPost">Bài đăng chờ duyệt</a></li>
+                            <li style="color: white;"><a href="#">Suất dạy đã giao</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+   
+  
+    <main>
+
+
+        <form method="post" asp-page-handler="SubmitForm" style="margin-top:300px">
+            <div class="create-profile">
+                <div class="mb-3">
+                    <label for="heading" class="form-label">Id bài đăng</label>
+                    <input type="text" class="form-control" id="id" asp-for="BaiDang.ID_BaiDang" readonly>
+                </div>
+                <div>
+                    <label>Môn học*</label>
+                    <input type="text" asp-for="BaiDang.MonHoc">
+                </div>
+                <div>
+                    <label>Lớp*</label>
+                    <input type="text" asp-for="BaiDang.Lop">
+                </div>
+                <div>
+                    <label>Trình độ*</label>
+                    <input type="text" asp-for="BaiDang.TrinhDoHocVan">
+                </div>
+                <div>
+                    <label>Số học viên*</label>
+                    <input type="text" asp-for="BaiDang.SoHocVien">
+                </div>
+                <div>
+                    <label>Học phí*</label>
+                    <input type="text" asp-for="BaiDang.HocPhi">
+                </div>
+                <div>
+                    <label>Địa chỉ*</label>
+                    <input type="text" asp-for="BaiDang.DiaChi">
+                </div>
+                <div>
+                    <label>Số buổi học*</label>
+                    <input type="text" asp-for="BaiDang.SoBuoi">
+                </div>
+                <div>
+                    <label>Thời gian*</label>
+                    <input type="text" asp-for="BaiDang.ThoiGian">
+                </div>
+                <div>
+                    <label>Ghi chú*</label>
+                    <input type="text" asp-for="BaiDang.GhiChu">
+                </div>
+                <div>
+                    <button class="btn btn-primary custom-button" type="submit" asp-page-handler="Save">Lưu</button>
+                    <button class="btn btn-primary custom-button" type="submit" asp-page-handler="Delete">Delete</button>
+                </div>
+              
+
+                <style>
+                    .custom-button {
+                        color: #000;
+                        background-color: #fff;
+                    }
+
+                        .custom-button.btn-primary {
+                            background-color: #007bff;
+                            border-color: #007bff;
+                            width: 70px;
+                            height: 70px;
+                            margin-left: 105px;
+                            padding: 0;
+                        }
+
+                        .custom-button.text-dark {
+                            color: #000;
+                        }
+                </style>
+
+        </form>
+        
+
+    </main>
+      <div id="pagination">
+        <a href="#" id="first">&laquo; Đầu</a>
+        <a href="#" id="prev">&lsaquo; Trước</a>
+        <span id="pages"></span>
+        <a href="#" id="next">Tiếp &rsaquo;</a>
+        <a href="#" id="last">Cuối &raquo;</a>
+      </div>
+  </body>
+
