@@ -10,6 +10,7 @@ using System.Data;
 
 namespace WebApplicationRAZOR.Pages
 {
+    //[AllowAnonymous]
     public class RegisterModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
