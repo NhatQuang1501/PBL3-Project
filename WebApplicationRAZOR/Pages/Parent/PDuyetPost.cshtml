@@ -48,9 +48,12 @@
 
     </div>
 
-    <main>
+   
 
         
+        @if (Model.Posts != null)
+        {
+             <main>
 
             @foreach (var post in Model.Posts)
             {
@@ -70,24 +73,47 @@
                     <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
                     <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>
 
-                    <form method="post">
+                    @*<form method="post">
                         <div class="button-container">
                             <button class="btn btn-primary" style="margin:10px" asp-page="" type="button">Sửa bài đăng</button>
                             <button class="btn btn-danger" type="button submit" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang" onclick="return confirm('Bạn có muốn xoá không?')">Xóa bài đăng</button>
                         </div>
-                    </form>
+                    </form>*@
+                <form method="post">
+                    <div class="button-container">
+                        <a href="/parent/editpost/@post.ID_BaiDang" class="Edit-btn" style="margin:10px">Sửa bài đăng</a>
+
+                        @*<button class="btn btn-primary" style="margin:10px" asp-page="/Parent/PHome" type="button">Sửa bài đăng</button>*@
+                        <button class="Del" type="button submit" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang" onclick="return confirm('Bạn có muốn xoá không?')">Xóa bài đăng</button>
+                    </div>
+                </form>
                 </div>
             }
   
         
       </main>
-  
-      <div id="pagination">
-        <a href="#" id="first">&laquo; Đầu</a>
-        <a href="#" id="prev">&lsaquo; Trước</a>
-        <span id="pages"></span>
-        <a href="#" id="next">Tiếp &rsaquo;</a>
-        <a href="#" id="last">Cuối &raquo;</a>
-      </div>
+    <style>
+        .Del {
+            width: 360px;
+            padding: 10px;
+            background-color: #F1BB45;
+            text-decoration: none;
+            text-align: center;
+            border-color: #F1BB45;
+            border-radius: 30px;
+        }
+
+            .Del:hover {
+                background-color: darkorange;
+            }
+    </style>
+        }
+        else
+        {
+        <div class="job-posting">
+            <p>Không tìm thấy bài đăng chưa duyệt</p>
+        </div>
+        }
+    
   </body>
 

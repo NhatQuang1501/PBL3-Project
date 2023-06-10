@@ -73,10 +73,12 @@
 
         </div>
     </div>
+    @if (Model.HoSoGiaSus != null)
+{
     <main>
 
         <h1 class="pageTitle">Quản lý tài khoản Gia sư</h1>
-
+        <form method="post">
 
         <table>
             <thead>
@@ -97,6 +99,8 @@
                             <td>@HoSo.TenAcc</td>
                             <td>@HoSo.PasswordAcc</td>
                             <td><a href="/admin/qltinfo/@HoSo.ID_GiaSu">View</a></td>
+                            <td> <button class="Del" type="button submit" asp-page-handler="Delete" asp-route-id="@HoSo.ID_GiaSu" onclick="return confirm('Bạn có muốn xoá không?')">Xóa tài khoản</button></td>
+
 
                         </tr>
                     }
@@ -105,19 +109,20 @@
                 
             </tbody>
         </table>
+        </form>
 
 
     </main>
+    }
+    else
+    {
+        <div class="container">
+            <p>Không tìm thấy tài khoản gia sư nào!</p>
 
-    <div id="pagination">
-        <a href="#" id="first">&laquo; Đầu</a>
-        <a href="#" id="prev">&lsaquo; Trước</a>
-        <span id="pages"></span>
-        <a href="#" id="next">Tiếp &rsaquo;</a>
-        <a href="#" id="last">Cuối &raquo;</a>
-    </div>
+        </div>
+    }
 
-    </div>
+   
 </body>
 
 <footer>
