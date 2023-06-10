@@ -7,77 +7,156 @@
 
 
 
-<div class="bg-secondary bg-opacity-10 py-2 mb-5">
+@*<div class="bg-secondary bg-opacity-10 py-2 mb-5">
 	<div class="container">
 		<h1>Hồ sơ gia sư</h1>
 	</div>
 </div>
+*@
+<head>
+	<link rel="stylesheet" href="~/css/main.css">
+	<link rel="stylesheet" href="~/css/mainAdmin.css">
+	<link rel="stylesheet" href="~/css/Personal.css">
+	<link rel="stylesheet" href="~/css/hoSoGiaSu.css">
+	<link rel="stylesheet" href="~/css/managePH.css">
+
+</head>
 
 
 
-@if (Model.HoSoGiaSu != null)
-{
-		<div>
-		<div class="container">
-			<form method="post">
 
-			
-				<div class="mb-3">
-					<label for="heading" class="form-label">Id</label>
-					<input type="text" class="form-control" id="id" asp-for="HoSoGiaSu.ID_GiaSu" readonly>
-				</div>
-				<div class="mb-3">
-					<label for="heading" class="form-label">Họ tên</label>
-					<input type="text" class="form-control" id="hoten" asp-for="HoSoGiaSu.TenGiaSu" readonly>
-				</div>
-				
-				<div class="mb-3">
-					<label for="NgaySinh" class="form-label">Ngày sinh</label>
-					<input type="date" class="form-control" id="NgaySinh" asp-for="HoSoGiaSu.NgaySinh">
-				</div>
-				<div class="mb-3">
-					<label for="heading" class="form-label">Địa chỉ</label>
-					<input type="text" class="form-control" id="diachi" asp-for="HoSoGiaSu.DiaChi" readonly>
-				</div>
-				
-				<div class="mb-3">
-					<label for="monhoc" class="form-label">Môn học</label>
-					<input type="text" class="form-control" id="monhoc" asp-for="HoSoGiaSu.MonHoc" readonly>
-				</div>
-				
-				<div class="mb-3">
-					<label for="heading" class="form-label">Số điện thoại</label>
-					<input type="text" class="form-control" id="sodienthoai" asp-for="HoSoGiaSu.SoDienThoai" readonly>
-				</div>
-				
-				<div class="mb-3">
-					<label for="heading" class="form-label">Trình độ học vấn</label>
-					<input type="text" class="form-control" id="trinhdohocvan" asp-for="HoSoGiaSu.TrinhDoHocVan" readonly>
-				</div>
-				
-				<div class="mb-3">
-					<label for="heading" class="form-label">Học phí</label>
-					<input type="text" class="form-control" id="hocphi" asp-for="HoSoGiaSu.HocPhi" readonly>
-				</div>
-				
-				<div class="radio-group">
-					<label><input type="radio" name="user-type" value="false" asp-for=HoSoGiaSu.GioiTinh> Nam</label>
-					<label><input type="radio" name="user-type" value="true" checked> Nữ</label>
-				</div>
-				 <div class="mb-3 ">
-					 <button class="btn btn-danger" type="submit" asp-page-handler="Delete">Delete</button>
-				 </div>
+<body>
+    <header>
+        <nav>
+            <div class="logo-box">
 
-			</form>
+                <img src="~/img/logo.png" alt="Logo" class="logo" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Trang chủ</a></li>
 
-		</div>
-	</div>
-}
-else
-{
-	<div class="container">
-		<p>Blog Post Not Found!</p>
+                <div class="log-out-box">
+                    <a href="Index" class="btn btn-su">Đăng xuất</a>
+                </div>
 
-	</div>
-}
+            </ul>
+        </nav>
+    </header>
 
+
+    <div class="container2">
+        <div class="control">
+            <img class="avatar" src="~/img/avar.jpg" alt="Avatar" />
+            <div class="user-info">
+                <div class="username">ADMIN</div>
+                <img src="~/img/iconControl.png" alt="Logo" class="iconControl" />
+            </div>
+        </div>
+
+        <div class="menu">
+
+            <div class="choice">
+                <ul>
+                    <li>
+                        <a asp-page="#"><u>Quản lý bài đăng</u> </a>
+                    </li>
+
+                    <li>
+                        <a asp-page="/admin/QLTHoso"><u>Quản lý tài khoản Gia sư <br><br></u></a>
+                    </li>
+
+                    <li>
+                        <a asp-page="/admin/QLPHoso"><u> Quản lý tài khoản Phụ huynh<br><br></u> </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+	
+    <main>
+
+
+		<form method="post">
+
+
+			<div class="mb-3">
+				<label for="heading" class="form-label">Id</label>
+				<input type="text" class="form-control" id="id" asp-for="HoSoGiaSu.ID_GiaSu" readonly>
+			</div>
+			<div class="mb-3">
+				<label for="heading" class="form-label">Họ tên</label>
+				<input type="text" class="form-control" id="hoten" asp-for="HoSoGiaSu.TenGiaSu" readonly>
+			</div>
+
+			<div class="mb-3">
+				<label for="NgaySinh" class="form-label">Ngày sinh</label>
+				<input type="date" class="form-control" id="NgaySinh" asp-for="HoSoGiaSu.NgaySinh">
+			</div>
+			<div class="mb-3">
+				<label for="heading" class="form-label">Địa chỉ</label>
+				<input type="text" class="form-control" id="diachi" asp-for="HoSoGiaSu.DiaChi" readonly>
+			</div>
+
+			<div class="mb-3">
+				<label for="monhoc" class="form-label">Môn học</label>
+				<input type="text" class="form-control" id="monhoc" asp-for="HoSoGiaSu.MonHoc" readonly>
+			</div>
+
+			<div class="mb-3">
+				<label for="heading" class="form-label">Số điện thoại</label>
+				<input type="text" class="form-control" id="sodienthoai" asp-for="HoSoGiaSu.SoDienThoai" readonly>
+			</div>
+
+			<div class="mb-3">
+				<label for="heading" class="form-label">Trình độ học vấn</label>
+				<input type="text" class="form-control" id="trinhdohocvan" asp-for="HoSoGiaSu.TrinhDoHocVan" readonly>
+			</div>
+
+			<div class="mb-3">
+				<label for="heading" class="form-label">Học phí</label>
+				<input type="text" class="form-control" id="hocphi" asp-for="HoSoGiaSu.HocPhi" readonly>
+			</div>
+
+			<div class="radio-group">
+				<label><input type="radio" name="user-type" value="false" asp-for=HoSoGiaSu.GioiTinh> Nam</label>
+				<label><input type="radio" name="user-type" value="true" checked> Nữ</label>
+			</div>
+			<div class="mb-3 ">
+                <button class="btn btn-primary custom-button" type="submit" asp-page-handler="Delete">Delete</button>
+			</div>
+            <style>
+                .custom-button {
+                    color: #000;
+                    background-color: #fff;
+                }
+
+                    .custom-button.btn-primary {
+                        background-color: #007bff;
+                        border-color: #007bff;
+                        width: 70px;
+                        height: 70px;
+                        margin-left: 105px;
+                        padding: 0;
+                    }
+
+                    .custom-button.text-dark {
+                        color: #000;
+                    }
+            </style>
+
+		</form>
+
+    </main>
+
+
+
+</body>
+
+<footer>
+
+    <div class="footer">
+        <img src="image/footer.png" alt="footer" class="footer" height="188px" width="1200px">
+    </div>
+</footer>

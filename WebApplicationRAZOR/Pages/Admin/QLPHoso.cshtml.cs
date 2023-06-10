@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Hosting;
 using PBL3_Project.Data;
 using PBL3_Project.Models;
 using PBL3_Project.ViewModel;
@@ -22,6 +23,17 @@ namespace PBL3_Project.Pages.Admin
         {
             HoSoPhuHuynhs = dbContext.HoSoPhuHuynh.ToList();
         }
-       
+        public async Task<IActionResult> OnPostDeleteAsync(int id)
+        {
+            var exitingPost = await dbContext.HoSoPhuHuynh.FindAsync(id);
+            if (exitingPost != null)
+            {
+                dbContext.HoSoPhuHuynh.Remove(exitingPost);
+                dbContext.SaveChanges();
+            }
+            HoSoPhuHuynhs = dbContext.HoSoPhuHuynh.ToList();
+            return Page();
+        }
+
     }
 }

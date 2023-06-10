@@ -94,7 +94,7 @@
                         <button class="btn btn-danger" type="submit" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang">Xóa bài đăng</button>
                     </div>*@
                     <button class="apply-btn" type="button submit" style="margin-left:100px" asp-page-handler="OK" asp-route-id="@post.ID_BaiDang">Duyệt bài đăng</button>
-                    <button class="Cancel-btn" type="button submit" style="margin-left:300px" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang">Xóa bài đăng</button>
+                    <button class="Cancel-btn" type="button submit" style="margin-left:300px" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang" onclick="return confirm('Bạn có muốn xoá không?')">Xóa bài đăng</button>
                 </form>
                 
             </div>

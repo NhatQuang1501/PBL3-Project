@@ -27,7 +27,7 @@ namespace PBL3_Project.Pages.Parent
                 _context.BaiDang.Remove(exitingPost);
                 _context.SaveChanges();
             }
-            Posts = _context.BaiDang.Where(p => p.TinhTrangDuyet == false && p.TinhTrang == false).ToList();
+            Posts = _context.BaiDang.Where(p => p.TinhTrangDuyet == true && p.TinhTrang == false).ToList();
             return Page();
         }
     }
