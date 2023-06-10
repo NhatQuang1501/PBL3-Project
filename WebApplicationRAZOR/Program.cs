@@ -15,7 +15,9 @@ builder.Services.AddDbContext<PBL3_ProjectContext>(options =>
 builder.Services.AddDbContext<AuthDbContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("PBL3_ProjectContext")));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<AuthDbContext>().
+    AddDefaultTokenProviders();
 
 //builder.Services.AddAuthorization(options =>
 //{
