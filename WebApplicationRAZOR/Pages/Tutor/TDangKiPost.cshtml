@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="~/css/mainAdmin.css">
 <link rel="stylesheet" href="~/css/Personal.css">
 <link rel="stylesheet" href="~/css/hoSoGiaSu.css">
-<script src="main.js"></script>
+
 
 <body>
     <div class="container2">
@@ -48,8 +48,34 @@
 
         <!-- <h1 class="pageTitle">Suất dạy đã đăng kí</h1> -->
 
+         @foreach(var post in Model.Posts)
+            {
+            <div class="job-posting" style="margin:100px">
+            <div class="image-container">
+                <img src="image/avar.jpg" alt="avar" class="avar">
+                <p class="caption">Lờ tờ mờ</p>
+            </div>
+            <p><b><i>Id bài đăng:</i></b> @post.ID_BaiDang <input type="hidden" asp-for="BaiDang.ID_BaiDang" /> </p><br>
+            <p><b><i>Môn học:</i></b> @post.MonHoc</p><br>
+            <p><b><i>Trình độ học vấn:</i></b> @post.TrinhDoHocVan</p><br>
+            <p><b><i>Học phí:</i></b> @post.HocPhi</p><br>
+            <p><b><i>Lớp:</i></b> @post.Lop</p><br>
+            <p><b><i>Số buổi:</i></b> @post.SoBuoi</p><br>
+            <p><b><i>Số học viên:</i></b> @post.SoHocVien</p><br>
+            <p><b><i>Thời gian:</i></b> @post.ThoiGian</p><br>
+            <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
+            <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>
+           @* <br>
+            <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
+            <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
+            <p><b><i>Học phí :</i></b> 70k/h.</p><br>
+            <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
+*@
+            <button class="Cancel-btn">Hủy đăng ký</button>
+        </div>
+        }
 
-        <div class="job-posting">
+     @*   <div class="job-posting">
             <div class="image-container">
                 <img src="image/avar.jpg" alt="avar" class="avar">
                 <p class="caption">Lờ tờ mờ</p>
@@ -61,36 +87,12 @@
             <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
 
             <button class="Cancel-btn">Hủy đăng ký</button>
-        </div>
-
-
-        <div class="job-posting">
-            <div class="image-container">
-                <img src="image/avar.jpg" alt="avar" class="avar">
-                <p class="caption">Lờ tờ mờ</p>
-            </div>
-            <br>
-            <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
-            <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
-            <p><b><i>Học phí :</i></b> 70k/h.</p><br>
-            <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
-
-            <button class="Cancel-btn">Hủy đăng ký</button>
-        </div>
+        </div>*@
 
 
 
 
     </main>
 
-    <div id="pagination">
-        <a href="#" id="first">&laquo; Đầu</a>
-        <a href="#" id="prev">&lsaquo; Trước</a>
-        <span id="pages"></span>
-        <a href="#" id="next">Tiếp &rsaquo;</a>
-        <a href="#" id="last">Cuối &raquo;</a>
-    </div>
-
-    </div>
 </body>
 
