@@ -15,7 +15,9 @@ builder.Services.AddDbContext<PBL3_ProjectContext>(options =>
 builder.Services.AddDbContext<AuthDbContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("PBL3_ProjectContext")));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<AuthDbContext>().
+    AddDefaultTokenProviders();
 
 //builder.Services.AddAuthorization(options =>
 //{
@@ -33,11 +35,11 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkSto
 //        policy => policy.RequireRole("Phụ huynh"));
 //});
 
-//builder.Services.ConfigureApplicationCookie(options =>
-//{
-//    options.LoginPath = "/Index";
-//    options.AccessDeniedPath = "/Account/AccessDenied";
-//});
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Index";
+    options.AccessDeniedPath = "/Account/AccessDenied";
+});
 
 var app = builder.Build();
 

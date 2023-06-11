@@ -19,6 +19,16 @@ namespace PBL3_Project.Pages.Admin
         {
             HoSoGiaSus = dbContext.HoSoGiaSu.ToList();
         }
-        
+        public async Task<IActionResult> OnPostDeleteAsync(int id)
+        {
+            var exitingPost = await dbContext.HoSoGiaSu.FindAsync(id);
+            if (exitingPost != null)
+            {
+                dbContext.HoSoGiaSu.Remove(exitingPost);
+                dbContext.SaveChanges();
+            }
+            HoSoGiaSus =  dbContext.HoSoGiaSu.ToList();
+            return Page();
+        }
     }
 }
