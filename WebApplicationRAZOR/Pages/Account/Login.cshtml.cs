@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NuGet.Protocol.Plugins;
@@ -6,6 +7,7 @@ using PBL3_Project.ViewModel;
 
 namespace WebApplicationRAZOR.Pages
 {
+    //[AllowAnonymous]
     public class LoginModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;

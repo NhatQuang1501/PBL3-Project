@@ -37,7 +37,7 @@ namespace PBL3_Project.Pages.Parent
                 existingPost.ThoiGian = BaiDang.ThoiGian;
                 existingPost.DiaChi = BaiDang.DiaChi;
                 existingPost.GhiChu = BaiDang.GhiChu;
-                existingPost.TinhTrangDuyet = BaiDang.TinhTrangDuyet;
+                existingPost.TinhTrangDuyet = false;
             }
             await dBContext.SaveChangesAsync();
             return RedirectToPage("/parent/pchuaduyetpost");

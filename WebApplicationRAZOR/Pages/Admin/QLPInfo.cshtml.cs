@@ -36,15 +36,17 @@ namespace PBL3_Project.Pages.Admin
         //    return RedirectToPage("/admin/qlphoso");
         //}
 
-        public IActionResult OnPostDelete()
+        public async Task<IActionResult> OnPostDeleteAsync()
+
         {
-            var existingHoso = dBContext.HoSoPhuHuynh.Find(HoSoPhuHuynh.ID_PhuHuynh);
+            var existingHoso = await dBContext.HoSoPhuHuynh.FindAsync(HoSoPhuHuynh.ID_PhuHuynh);
             if (existingHoso != null)
             {
                 dBContext.HoSoPhuHuynh.Remove(existingHoso);
-                dBContext.SaveChanges();
+                dBContext.SaveChangesAsync();
             }
             return RedirectToPage("/admin/qlphoso");
+
         }
 
 
