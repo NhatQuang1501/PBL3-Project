@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using PBL3_Project.Data;
 using PBL3_Project.ViewModel;
 using System.Data;
 
@@ -10,9 +11,73 @@ namespace PBL3_Project.Pages.Tutor
     [Authorize(Roles = $"{RolesApp.Tutor}")]
     public class TChangePassModel : PageModel
     {
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
-        public void OnGet()
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly PBL3_ProjectContext _context;
+
+        [BindProperty]
+        public ChangePassword Model { get; set; }
+        [BindProperty]
+        public static string Email { get; set; }
+        public string Email1 { get; set; }
+        public TChangePassModel(
+            UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager,
+            RoleManager<IdentityRole> roleManager,
+            PBL3_ProjectContext context)
+
         {
+            this._userManager = userManager;
+            this._signInManager = signInManager;
+            this._roleManager = roleManager;
+            this._context = context;
+        }
+        public async void OnGet()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            Email = user.Email;
+            Email1 = user.Email;
+        }
+   
+        public async Task<IActionResult> OnPostAsync()
+        {
+            var user = await _userManager.GetUserAsync(User);
+
+            if (Model.NewPassword != Model.ConfirmPassword)
+            {
+                ModelState.AddModelError("", "Password and confirmation password did not match");
+                return Page();
+            }
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Data null");
+                return Page();
+            }
+            if (Model.CurrentPassword == null)
+            {
+                ModelState.AddModelError("", "current password null");
+                return Page();
+            }
+            if (Model.NewPassword == null)
+            {
+                ModelState.AddModelError("", "new password null");
+                return Page();
+            }
+            var changePWResult = await _userManager.ChangePasswordAsync(user, Model.CurrentPassword, Model.NewPassword);
+            if (!changePWResult.Succeeded)
+            {
+                foreach (var error in changePWResult.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+                return Page();
+            }
+
+            await _signInManager.RefreshSignInAsync(user);
+            Email = user.Email;
+            Email1 = user.Email;
+            return RedirectToPage("/Index");
         }
 
         public async Task<IActionResult> OnGetLogOut()
@@ -22,3 +87,4 @@ namespace PBL3_Project.Pages.Tutor
         }
     }
 }
+

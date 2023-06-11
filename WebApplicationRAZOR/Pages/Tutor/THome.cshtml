@@ -58,10 +58,10 @@
 
                 <form method="post">
 
-                    <a asp-page="/Parent/PHome" class="btn btn-func1">Xóa tất cả</a>
+                    <a asp-page="/Tutor/PHome" class="btn btn-func1">Xóa tất cả</a>
 
                     <button type="submit button" class="btn btn-func2" asp-page-handler="ByFilter"> Tìm kiếm</button>
-                    <a asp-page="/Parent/CreatePost" class="btn btn-create">Tạo bài đăng</a>
+                    
                 </form>
             </div>
         </form>
@@ -95,7 +95,32 @@
         <main>
             @foreach (var post in Model.Posts)
             {
-                <partial name="_Post" model="post"></partial>
+               @* <partial name="_Post" model="post"></partial>*@
+                <div class="job-posting">
+                    <div class="image-container">
+                        <img src="~/img/avar.jpg" alt="avar" class="avar">
+                        <p class="caption">Lờ tờ mờ</p>
+                    </div>
+
+                    @*<p><b><i>Id bài đăng:</i></b> @post.ID_BaiDang <input type="hidden" asp-for="BaiDang.ID_BaiDang" /> </p><br>*@
+                    <p><b><i>Môn học:</i></b> @post.MonHoc</p><br>
+                    <p><b><i>Trình độ học vấn:</i></b> @post.TrinhDoHocVan</p><br>
+                    <p><b><i>Học phí:</i></b> @post.HocPhi</p><br>
+                    <p><b><i>Lớp:</i></b> @post.Lop</p><br>
+                    <p><b><i>Số buổi:</i></b> @post.SoBuoi</p><br>
+                    <p><b><i>Số học viên:</i></b> @post.SoHocVien</p><br>
+                    <p><b><i>Thời gian:</i></b> @post.ThoiGian</p><br>
+                    <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
+                    <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>
+
+
+                    <form method="post">
+                        <div class="button-container">
+                            <button class="btn btn-primary" type="button submit" asp-page-handler="DangKy" asp-route-id="@post.ID_BaiDang" onclick="return confirm('Bạn có muốn đăng ký không?')">Đăng ký</button>
+                        </div>
+                    </form>
+
+                </div>
             }
 
         </main>

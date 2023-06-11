@@ -1,7 +1,7 @@
 ﻿@page
 @model PBL3_Project.Pages.Parent.PChangePassModel
 @{
-	Layout = "_TLayout";
+	Layout = "_PLayout";
 	ViewData["Title"] = "Đổi mật khẩu Phụ huynh";
 }
 
@@ -13,7 +13,7 @@
         <div class="control">
             <img class="avatar" src="~img/avar.jpg" alt="Avatar" />
             <div class="user-info">
-                <div class="username">ChuBeDan</div>
+                <div class="username">Phụ huynh</div>
                 <img src="~img/iconControl.png" alt="Logo" class="iconControl" />
             </div>
         </div>
@@ -23,17 +23,16 @@
             <div class="choice">
                 <ul>
                     <li>
-                        <a asp-page="/Parent/PInfor"><u>Thông tin tài khoản</u> </a>
+                        <a asp-page="/Parent/PProfile"><u>Thông tin tài khoản</u> </a>
                     </li>
                     <li>
-                        <a asp-page="/Parent/PProfile"><u>Quản lý hồ sơ : <br><br></u></a>
+                        <a asp-page="/Parent/PInfo"><u>Quản lý hồ sơ : <br><br></u></a>
                     </li>
-                    <li>
-                        <u> Quản lý bài đăng :<br><br></u>
+                    <li><a href="#"> <u> Quản lý bài đăng :<br><br></u> </a>
                         <ul>
                             <li style="color: white;"><a asp-page="/Parent/PDuyetPost">Bài đăng được duyệt </a></li>
                             <li style="color: white;"><a asp-page="/Parent/PChuaDuyetPost">Bài đăng chờ duyệt</a></li>
-                            <li style="color: white;"><a href="#">Suất dạy đã giao</a></li>
+                            <li style="color: white;"><a href="/Parent/PDonePost">Suất dạy đã giao</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -44,7 +43,7 @@
 
     <div class="container1">
         <img src="~/img/background.png" alt="background" class="background" />
-        <form class="form" style="height:600px , width : 100px" method="post">
+        <form class="form" style="height:600px , width : 100px " method="post">
             <table >
                 <tr>
                     <td colspan="2">
@@ -54,11 +53,8 @@
                 <tr>
                     <td>
                         <strong><label for="username">Email đăng nhập:</label></strong>
-                        <label for="Email">@Model.Email<br /><br /></label>
+                        <label for="Email" name="Email">@Model.Email1<br /><br /></label>
                     </td>
-                    @*<td>
-                        <label for="Email">LTMTUTOR@@@@<br /><br /></label>
-                    </td>*@
                     <br />
                 </tr>
 
@@ -67,7 +63,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="password" id="password1" name="password1" asp-for="Model.CurrentPassword">
+                        <input type="password" id="password1" name="CurrentPassword" asp-for="Model.CurrentPassword">
                         <span asp-validation-for="Model.CurrentPassword" class="text-danger"></span>
                     </td>
                 </tr>
@@ -76,7 +72,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="password" id="password2" name="password2" asp-for="Model.NewPassword">
+                        <input type="password" id="password2" name="NewPassword" asp-for="Model.NewPassword">
                         <span asp-validation-for="Model.NewPassword" class="text-danger"></span>
                     </td>
                 </tr>
@@ -86,18 +82,21 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="password" id="password3" name="password3" asp-for="Model.ConfirmPassword">
+                        <input type="password" id="password3" name="ConfirmPassword" asp-for="Model.ConfirmPassword">
                         <span asp-validation-for="Model.ConfirmPassword" class="text-danger"></span>
                     </td>
-                    @*<label for="Email">Email</label> <br />
-                    <input type="text" id="email" name="email" asp-for=Model.Email />
-                    <span asp-validation-for="Model.Email" class="text-danger"></span>*@
                 </tr>
             </table>
 @*            <button class="apply-btn" type="button" asp-page-handler="ChangePassword" runat="Server" onclick="ChangePassword()">Đổi mật khẩu</button>
-*@            <button type="submit" class="apply-btn" type="submit">Đổi mật khẩu</button>
+*@            <button type="submit button" class="apply-btn">Đổi mật khẩu</button>
 
             <div asp-validation-summary="All" class="text-danger"></div>
         </form>
     </div>
+
+    <style>
+        .form{
+            margin-left: -60px;
+        }
+    </style>
 </body>

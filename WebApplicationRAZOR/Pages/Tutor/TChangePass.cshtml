@@ -13,7 +13,7 @@
       <div class="control">
         <img class="avatar" src="~/img/avar.jpg" alt="Avatar" />
         <div class="user-info">
-          <div class="username">ChuBeDan</div>
+          <div class="username">Gia sư</div>
           <img src="~/img/iconControl.png" alt="Logo" class="iconControl" />
         </div>
       </div>
@@ -22,77 +22,79 @@
 
         <div class="choice">
             <ul>
-              <li><a  asp-page="/TProfile"><u>Thông tin tài khoản</u> </a>
+              <li><a  asp-page="/Tutor/TProfile"><u>Thông tin tài khoản</u> </a>
               </li>
-              <li><a  asp-page="/TInfo">><u>Quản lý hồ sơ : <br><br></u></a>
+              <li><a  asp-page="/Tutor/TInfo">><u>Quản lý hồ sơ : <br><br></u></a>
               </li>
               <li><a href="#"><u> Quản lý suất dạy :<br><br></u> </a>
                 <ul>
-                  <li style="color: white;"><a asp-page="/TDangKiPost" >Suất dạy đã đăng kí </a></li>
-                  <li style="color: white;"><a asp-page="/TDonePost">Suất dạy được nhận</a></li>
-                  <li style="color: white;"><a asp-page="/TReview">Đánh giá của tôi</a></li>
+                  <li style="color: white;"><a asp-page="/Tutor/TDangKiPost" >Suất dạy đã đăng kí </a></li>
+                  <li style="color: white;"><a asp-page="/Tutor/TDonePost">Suất dạy được nhận</a></li>
+                  <li style="color: white;"><a asp-page="/Tutor/TReview">Đánh giá của tôi</a></li>
                 </ul>
               </li>
             </ul>
           </div>
-          
-      </div>
-        <!-- Thêm đường dẫn đến tệp JavaScript -->
-    </div>
-
-    <div class="container1">
-      <img src="~/img/background.png" alt="background" class="background" />
-      <form class="form">
-        <table>
-          <tr>
-            <td colspan="2">
-              <h2>Thông tin tài khoản <br /><br /></h2>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong><label for="username">Email đăng nhập:</label></strong>
-            </td>
-            <td>
-              <label for="Email">LTMTUTOR@@@@<br /><br /></label>
-            </td>
-            <br />
-          </tr>
-
-          <tr>
-            <td>
-              <strong><label for="password">Mật khẩu:</label></strong>
-            </td>
-            <td><label for="Pass">123456</label></td>
-            <td colspan="2"><input type="submit" value="Đổi mật khẩu" /></td>
-          </tr>
+         </div>
+       </div>
 
 
-          <tr>
-            <td><div><strong><br> Nhập mật khẩu hiện tại * <br><br></strong></div></td>
-          </tr>
-          <tr>
-            <td><input type="text" id="password1" name="password1"></td>
-          </tr>
-          <tr>
-            <td><div><strong> Nhập mật khẩu mới * <br><br></strong></div></td>
-          </tr>
-          <tr>
-            <td><input type="password" id="password2" name="password2"></td>
-          </tr>
-          <tr>
-            <td><strong><label for="username" style="color: red; font-weight: bold;">Lưu ý *</strong></label>
-                <div>Mật khẩu phải có tối thiểu 8 kí tự, trong đó có ít nhất 1 kí tự chữ và 1 kí tự số. <br><br> </div></td>
-          </tr>
-          <tr>
-            <td><div><strong> Xác nhận mật khẩu mới * </strong></div></td>
-          </tr>
-          <tr>
-            <td><input type="password" id="password3" name="password3"></td>
-            <td><input type="submit" value="Lưu" class="save-button" /></td>
+            <div class="container1">
+                <img src="~/img/background.png" alt="background" class="background" />
+                <form class="form" style="height:600px , width : 100px " method="post">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <h2>Thông tin tài khoản <br /><br /></h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong><label for="username">Email đăng nhập:</label></strong>
+                                <label for="Email" name="Email">@Model.Email1<br /><br /></label>
+                            </td>
+                            <br />
+                        </tr>
 
-          </tr>
-        </table>
-      </form>
-    </div>
-  </body>
+                        <tr>
+                            <td><div><strong><br> Nhập mật khẩu hiện tại * <br><br></strong></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" id="password1" name="CurrentPassword" asp-for="Model.CurrentPassword">
+                                <span asp-validation-for="Model.CurrentPassword" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div><strong> Nhập mật khẩu mới * <br><br></strong></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" id="password2" name="NewPassword" asp-for="Model.NewPassword">
+                                <span asp-validation-for="Model.NewPassword" class="text-danger"></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><div><strong> Xác nhận mật khẩu mới * </strong></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" id="password3" name="ConfirmPassword" asp-for="Model.ConfirmPassword">
+                                <span asp-validation-for="Model.ConfirmPassword" class="text-danger"></span>
+                            </td>
+                        </tr>
+                    </table>
+                    @*            <button class="apply-btn" type="button" asp-page-handler="ChangePassword" runat="Server" onclick="ChangePassword()">Đổi mật khẩu</button>
+                    *@            <button type="submit button" class="apply-btn">Đổi mật khẩu</button>
+
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                </form>
+            </div>
+
+            <style>
+                .form {
+                    margin-left: -60px;
+                }
+            </style>
+</body>

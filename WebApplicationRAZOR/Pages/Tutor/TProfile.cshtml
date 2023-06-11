@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="~/css/ChangePassGS.css" />
 
 <body>
+
     <div class="container">
         <div class="control">
-            <img class="avatar" src="~/img/avar.jpg" alt="Avatar" />
+            <img class="avatar" src="~img/avar.jpg" alt="Avatar" />
             <div class="user-info">
-                <div class="username">ChuBeDan</div>
-                <img src="~/img/iconControl.png" alt="Logo" class="iconControl" />
+                <div class="username">Gia sư</div>
+                <img src="~img/iconControl.png" alt="Logo" class="iconControl" />
             </div>
         </div>
 
@@ -24,17 +25,17 @@
             <div class="choice">
                 <ul>
                     <li>
-                        <a asp-page="/TProfile"><u>Thông tin tài khoản</u> </a>
+                        <a asp-page="/Tutor/TInfo"><u>Thông tin tài khoản</u> </a>
                     </li>
                     <li>
-                        <a asp-page="/TInfo"><u>Quản lý hồ sơ : <br><br></u></a>
+                        <a asp-page="/Tutor/TProfile"><u>Quản lý hồ sơ : <br><br></u></a>
                     </li>
                     <li>
-                        <a href="#"><u> Quản lý suất dạy :<br><br></u> </a>
+                        <u> Quản lý bài đăng :<br><br></u>
                         <ul>
-                            <li style="color: white;"><a asp-page="/TDangKiPost">Suất dạy đã đăng kí </a></li>
-                            <li style="color: white;"><a asp-page="/TDonePost">Suất dạy được nhận</a></li>
-                            <li style="color: white;"><a asp-page="/TReview">Đánh giá của tôi</a></li>
+                            <li style="color: white;"><a asp-page="/Tutor/TDangKiPost">Suất dạy đã đăng kí </a></li>
+                            <li style="color: white;"><a asp-page="/Tutor/TDonePost">Suất dạy được nhận</a></li>
+                            <li style="color: white;"><a asp-page="/Tutor/TReview">Đánh giá của tôi</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -44,7 +45,6 @@
     </div>
 
     <div class="container1">
-        <img src="~/img/background.png" alt="background" class="background" />
         <form class="form">
             <table>
                 <tr>
@@ -54,28 +54,27 @@
                 </tr>
                 <tr>
                     <td>
-                        <strong><label for="username">Email đăng nhập:</label></strong>
+                        <strong><label for="username">Email đăng nhập: @Model.Email</label></strong>
                     </td>
-                    <td>
-                        <label for="Email">LTMTUTOR@@@@<br /><br /></label>
-                    </td>
+                    @*<td>
+                    <label for="Email">Phuhuynh@gmail.com<br /> <br /> </label>
+                    </td>*@
                     <br />
                 </tr>
 
+                @*<tr>
+                <td>
+                <strong><label for="password">Mật khẩu:</label></strong>
+                </td>
+                <td><label for="Pass">Phuhuynh1</label></td>
+                </tr>*@
                 <tr>
                     <td>
-                        <strong><label for="password">Mật khẩu:</label></strong>
+                        @*<button class="apply-btn" type="button" style="margin-left:100px" asp-page="/Parent/PChangePass">Đổi mật khẩu</button>*@
+                        <a href="/Tutor/TChangePass" class="btn apply-btn" style="margin-left:50px">Đổi mật khẩu</a>
                     </td>
-                    <td><label for="Pass">123456</label></td>
-                    <form action="changePassGS.html">
-                    <td colspan="2"><input type="submit" value="Đổi mật khẩu" formaction="changePassGS.html" /></td>
-        </form>
-
-        </tr>
-        <tr></tr>
-        </table>
+                </tr>
+            </table>
         </form>
     </div>
 </body>
-
-

@@ -15,16 +15,25 @@ namespace PBL3_Project.Pages.Tutor
 
         private readonly PBL3_ProjectContext _context;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<IdentityUser> _userManager;
         [BindProperty]
         public HoSoGiaSu AddTInfor { get; set; }
+        public int TutorId { get; set; }
 
-        public TPersonalModel(PBL3_ProjectContext context)
+        public TPersonalModel(PBL3_ProjectContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         public void OnGet()
         {
+            var user = _userManager.GetUserAsync(User);
+            if(user != null)
+            {
+                TutorId = user.Id;
+            }
+            AddTInfor =  _context.HoSoGiaSu.Find(TutorId);
         }
         public IActionResult OnPost()
         {

@@ -98,5 +98,16 @@ namespace WebApplicationRAZOR.Pages.Tutor
             await _signInManager.SignOutAsync();
             return RedirectToPage("/Index");
         }
+        public async Task<IActionResult> OnPostDangKy(int id)
+        {
+            SuatDayDangKi sddk = new SuatDayDangKi()
+            {
+                ID_BaiDang = id,
+                ID_GiaSu = 5,
+            };
+            _context.SuatDayDangKi.Add(sddk) ;
+            _context.SaveChanges();
+            return RedirectToPage("/Tutor/TDangKiPost");
+        }
     }
 }
