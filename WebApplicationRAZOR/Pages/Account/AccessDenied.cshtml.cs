@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace PBL3_Project.Pages.Account
 {
-    //[AllowAnonymous]
+    [AllowAnonymous]
     public class AccessDeniedModel : PageModel
     {
         public void OnGet()

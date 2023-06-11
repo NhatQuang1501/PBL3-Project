@@ -1,19 +1,22 @@
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PBL3_Project.Data;
 using PBL3_Project.Models;
+using PBL3_Project.ViewModel;
 using System.Data;
 
 namespace PBL3_Project.Pages.Tutor
 {
-    ///[Authorize(Roles = $"{RolesApp.Tutor}")]
+    [Authorize(Roles = $"{RolesApp.Tutor}")]
     public class TDangKiPostModel : PageModel
     {
         //public void OnGet()
         //{
         //}
         private readonly PBL3_ProjectContext _context;
+        private readonly SignInManager<IdentityUser> _signInManager;
         public List<SuatDayDangKi> SuatDayDangKis { get; set; }
         public BaiDang BaiDang { get; set; }
         public List<BaiDang> Posts { get; set; }
@@ -40,6 +43,12 @@ namespace PBL3_Project.Pages.Tutor
             Posts = _context.BaiDang.Where(bd => idBaiDangList.Contains(bd.ID_BaiDang)).ToList(); 
            
         }
-       
+
+        public async Task<IActionResult> OnGetLogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToPage("/Index");
+        }
+
     }
 }

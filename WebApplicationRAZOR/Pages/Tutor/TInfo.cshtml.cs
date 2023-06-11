@@ -1,17 +1,20 @@
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PBL3_Project.Data;
 using PBL3_Project.Models;
 using PBL3_Project.Pages.Parent;
+using PBL3_Project.ViewModel;
 
 namespace PBL3_Project.Pages.Tutor
 {
-    //[Authorize(Roles = $"{RolesApp.Tutor}")]
+    [Authorize(Roles = $"{RolesApp.Tutor}")]
     public class TPersonalModel : PageModel
     {
 
         private readonly PBL3_ProjectContext _context;
+        private readonly SignInManager<IdentityUser> _signInManager;
         [BindProperty]
         public HoSoGiaSu AddTInfor { get; set; }
 
@@ -42,6 +45,12 @@ namespace PBL3_Project.Pages.Tutor
              _context.HoSoGiaSu.Add(infor);
             _context.SaveChanges();
             return RedirectToPage("/Tutor/THome");
+        }
+
+        public async Task<IActionResult> OnGetLogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToPage("/Index");
         }
     }
 }

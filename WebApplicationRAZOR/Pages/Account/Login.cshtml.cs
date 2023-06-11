@@ -7,7 +7,7 @@ using PBL3_Project.ViewModel;
 
 namespace WebApplicationRAZOR.Pages
 {
-    //[AllowAnonymous]
+    [AllowAnonymous]
     public class LoginModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;

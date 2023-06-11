@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using PBL3_Project.Models
+@inject SignInManager<IdentityUser> _signInManager
+@inject UserManager<IdentityUser> _userManager
+
+@if(_signInManager.IsSignedIn(User))
+{
+	<div class="log-out-box">
+		<p style="color:white">Hello @_userManager.GetUserAsync(User).Result.Id</p>
+		<a asp-page="/Index" class="btn btn-su" asp-page-handler="LogOut">Đăng xuất</a>
+	</div>
+
+}
+else
+{
+	<div class="log-out-box">
+		<a asp-page="/Index" class="btn btn-su" asp-page-handler="LogOut">Đăng xuất</a>
+	</div>
+}

@@ -9,7 +9,7 @@ using System.Data;
 
 namespace PBL3_Project.Pages.Admin
 {
-    //[Authorize(Roles = $"{RolesApp.Admin}")]
+    [Authorize(Roles = $"{RolesApp.Admin}")]
     public class QLPHosoModel : PageModel
     {
         private readonly PBL3_ProjectContext dbContext;

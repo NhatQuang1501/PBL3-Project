@@ -2,7 +2,7 @@
 @model PBL3_Project.Pages.Tutor.TChangePassModel
 @{
 	Layout = "_TLayout";
-	ViewData["Title"] = "Đổi mật khẩu gia sư";
+	ViewData["Title"] = "Đổi mật khẩu Gia sư";
 }
 
     <link rel="stylesheet" href="~/css/Personal.css" />
@@ -22,15 +22,15 @@
 
         <div class="choice">
             <ul>
-              <li><a  href="#"><u>Thông tin tài khoản</u> </a>
+              <li><a  asp-page="/TProfile"><u>Thông tin tài khoản</u> </a>
               </li>
-              <li><a  href="hoSoGiaSu.html"><u>Quản lý hồ sơ : <br><br></u></a>
+              <li><a  asp-page="/TInfo">><u>Quản lý hồ sơ : <br><br></u></a>
               </li>
               <li><a href="#"><u> Quản lý suất dạy :<br><br></u> </a>
                 <ul>
-                  <li style="color: white;"><a href="SuatDayDDK.html" >Suất dạy đã đăng kí </a></li>
-                  <li style="color: white;"><a href="#">Suất dạy được nhận</a></li>
-                  <li style="color: white;"><a href="reviewGS.html">Đánh giá của tôi</a></li>
+                  <li style="color: white;"><a asp-page="/TDangKiPost" >Suất dạy đã đăng kí </a></li>
+                  <li style="color: white;"><a asp-page="/TDonePost">Suất dạy được nhận</a></li>
+                  <li style="color: white;"><a asp-page="/TReview">Đánh giá của tôi</a></li>
                 </ul>
               </li>
             </ul>
@@ -38,7 +38,6 @@
           
       </div>
         <!-- Thêm đường dẫn đến tệp JavaScript -->
-  <script src="changePassGS.js"></script>
     </div>
 
     <div class="container1">

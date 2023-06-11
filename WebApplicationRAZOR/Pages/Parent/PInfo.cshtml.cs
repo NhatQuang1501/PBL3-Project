@@ -1,14 +1,17 @@
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PBL3_Project.Data;
 using PBL3_Project.Models;
+using PBL3_Project.ViewModel;
 
 namespace PBL3_Project.Pages.Parent
 {
-    //[Authorize(Roles = $"{RolesApp.Parent}")]
+    [Authorize(Roles = $"{RolesApp.Parent}")]
     public class PInfoModel : PageModel
     {
+        private readonly SignInManager<IdentityUser> _signInManager;
         private readonly PBL3_ProjectContext _context;
         [BindProperty]
         public HoSoPhuHuynh AddPInfor { get; set; }
@@ -40,5 +43,10 @@ namespace PBL3_Project.Pages.Parent
             return RedirectToPage("/Parent/PHome");
         }
 
+        public async Task<IActionResult> OnGetLogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToPage("/Index");
+        }
     }
 }

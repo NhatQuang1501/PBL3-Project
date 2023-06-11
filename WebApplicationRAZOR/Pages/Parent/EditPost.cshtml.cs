@@ -1,12 +1,18 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PBL3_Project.Data;
 using PBL3_Project.Models;
+using PBL3_Project.ViewModel;
+using System.Data;
 
 namespace PBL3_Project.Pages.Parent
 {
+    [Authorize(Roles = $"{RolesApp.Parent}")]
     public class EditPostModel : PageModel
     {
+        private readonly SignInManager<IdentityUser> _signInManager;
 
         //public void OnGet()
         //{
@@ -59,5 +65,10 @@ namespace PBL3_Project.Pages.Parent
             return RedirectToPage("/parent/pchuaduyetpost");
         }
 
+        public async Task<IActionResult> OnGetLogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToPage("/Index");
+        }
     }
 }
