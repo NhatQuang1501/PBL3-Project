@@ -11,7 +11,7 @@ namespace PBL3_Project.Models
         //    SuatDayDangKis = new HashSet<SuatDayDangKi>();
         //}
         [Key]
-        public string ID_GiaSu { get; set; }
+        public int ID_GiaSu { get; set; }
         public string? TenAcc { get; set; }
         public string? PasswordAcc { get; set; }
         public string? TenGiaSu { get; set; }
