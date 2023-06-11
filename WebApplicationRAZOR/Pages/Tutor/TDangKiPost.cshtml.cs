@@ -29,19 +29,8 @@ namespace PBL3_Project.Pages.Tutor
         }
         public void OnGet()
         {
-            //Posts = _context.BaiDang.ToList();
-            //SuatDayDangKis = _context.SuatDayDangKi.Where(p => p.ID_GiaSu == 5).ToList();
-            //foreach(var SuatDayDangKi in SuatDayDangKis)
-            //{
-            //    Posts= _context.BaiDang.Where(p=>p.ID_BaiDang == SuatDayDangKi.ID_BaiDang).ToList();
-            //}
-            // public List<BaiDang> TimBaiDangTheoGiaSu(string idGiaSu) { var baiDangList = _context.BaiDang.Where(bd => bd.SuatDayDangKies.Any(sddk => sddk.ID_GiaSu == idGiaSu)).ToList(); return baiDangList; }
-            //Posts = _context.BaiDang.Where(p => p.SuatDayDangKi == SuatDayDangKi.ID_BaiDang).ToList();
-            //var idBaiDangList = _context.SuatDayDangKy.Where(sddk => sddk.ID_GiaSu == idGiaSu).Select(sddk => sddk.ID_BaiDang).ToList(); 
-            //var baiDangList = _context.BaiDang.Where(bd => idBaiDangList.Contains(bd.ID_BaiDang)).ToList(); return baiDangList;
             var idBaiDangList = _context.SuatDayDangKi.Where(sddk => sddk.ID_GiaSu == 5).Select(sddk => sddk.ID_BaiDang).ToList();
-            Posts = _context.BaiDang.Where(bd => idBaiDangList.Contains(bd.ID_BaiDang)).ToList(); 
-           
+            Posts = _context.BaiDang.Where(bd => idBaiDangList.Contains(bd.ID_BaiDang)).ToList();           
         }
 
         public async Task<IActionResult> OnGetLogOut()
