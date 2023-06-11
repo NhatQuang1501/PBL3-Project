@@ -10,7 +10,7 @@ namespace PBL3_Project.Models
         //    PhanHois = new HashSet<PhanHoi>();
         //}
         [Key]
-        public string ID_PhuHuynh { get; set; }
+        public int ID_PhuHuynh { get; set; }
         public string? TenAcc { get; set; }
         public string? PasswordAcc { get; set; }
         public string? TenPhuHuynh { get; set; }

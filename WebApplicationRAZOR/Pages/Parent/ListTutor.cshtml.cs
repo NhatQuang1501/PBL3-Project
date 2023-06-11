@@ -23,7 +23,7 @@ namespace PBL3_Project.Pages.Parent
             ListGiaSu = _context.HoSoGiaSu.Where(gs => idGiaSuList.Contains(gs.ID_GiaSu)).ToList();
             idBaiDang = id;
         }
-        public IActionResult OnPostChoose(string id)
+        public IActionResult OnPostChoose(int id)
         {
             //HoSoGiaSu giaSu = _context.HoSoGiaSu.Where(hs => hs.ID_GiaSu == id).ToList().FirstOrDefault();
             SuatDayDaNhan sddn = new Models.SuatDayDaNhan() 

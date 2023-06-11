@@ -35,7 +35,7 @@ namespace PBL3_Project.Pages.Tutor
             //{
             //    Posts = _context.BaiDang.Where(p => p.ID_BaiDang == SuatDayDaNhan.ID_BaiDang).ToList();
             //}
-            var idBaiDangList = _context.SuatDayDaNhan.Where(sddk => sddk.ID_GiaSu == "5").Select(sddk => sddk.ID_BaiDang).ToList();
+            var idBaiDangList = _context.SuatDayDaNhan.Where(sddk => sddk.ID_GiaSu == 5).Select(sddk => sddk.ID_BaiDang).ToList();
             Posts = _context.BaiDang.Where(bd => idBaiDangList.Contains(bd.ID_BaiDang)).ToList();
         }
 
