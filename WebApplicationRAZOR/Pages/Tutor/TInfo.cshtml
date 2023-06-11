@@ -78,15 +78,38 @@
                     <div>
                         <label>Học phí*</label>
                         <input type="text" asp-for="AddTInfor.GioiTinh">
-                    </div>
+                    </div><br /><br />
+                    <label>Nam</label>
                     <div class="radio-group">
-                        <label><input type="radio" name="user-type" value="false" asp-for=AddTInfor.GioiTinh> Nam</label>
-                        <label><input type="radio" name="user-type" value="true" checked> Nữ</label>
+                        
+                            <input type="radio" name="user-type" value="false" asp-for=AddTInfor.GioiTinh >
+                        @*<label><input type="radio" name="user-type" value="true" checked > Nữ</label>*@
+                    </div><br /><br />
+
+                    <label>Nữ</label>
+                    <div class="radio-group">
+
+                        <input type="radio" name="user-type" value="true" checked>
+                        @*<label><input type="radio" name="user-type" value="true" checked > Nữ</label>*@
                     </div>
 
-                    <button class="Save-btn" type="submit">Lưu</button>
+                    <button class="Save-btn" type="submit button">Lưu</button>
+                    @*<button class="Del-btn">Xóa</button>*@
+                    @* <div class="mb-3 d-flex justify-content-between">
+                    <button class="btn btn-primary" type="submit" asp-page-handler="Save">Lưu</button>
+                    <button class="btn btn-danger" type="submit" asp-page-handler="Delete">Xóa</button>
+                    </div>*@
                 </form>
-               
+               <style>
+                    .radio-group {
+                       margin-top: -28px;
+                       
+                   }
+
+                    .Save-btn{
+                        margin-left: 100px;
+                    }
+               </style>
             </div>
             
         </main>

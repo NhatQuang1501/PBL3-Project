@@ -47,20 +47,24 @@ nav {
 
 .nav-links {
     position: absolute;
-    top: 3;
+    top: 10;
     right: 5px;
     width: 85%;
     list-style: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin-top: -15px;
 }
 
     .nav-links li {
-        display: inline-block;
+        /*align-content: center;
+        text-align: center;*/
         padding: 0 1.5rem;
         font-size: 1.6rem;
         position: relative;
-        margin-top: 2%;
+        /*margin-top: 2%;*/
     }
 
 
@@ -68,7 +72,7 @@ nav {
         .nav-links li a:link,
         .nav-links li a:visited {
             color: #fff;
-            display: inline-block;
+            /*display: inline-block;*/
             text-decoration: none;
             padding: 1rem 0;
             transition: all 0.2s;

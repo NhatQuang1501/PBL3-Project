@@ -1,7 +1,7 @@
 ﻿@page
 @model PBL3_Project.Pages.Tutor.TDonePostModel
 @{
-    Layout = "_TLayout";
+    Layout = null;
     ViewData["title"] = "Suất dạy đã nhận";
 }
 
@@ -13,6 +13,20 @@
 
 
 <body>
+    <header>
+        <nav>
+            <div class="logo-box">
+                <img src="~/img/logo.png" alt="Logo" class="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a asp-page="/Tutor/THome">Trang chủ</a></li>
+                <li><a asp-page="/Tutor/TProfile">Thông tin cá nhân</a></li>
+
+                <partial name="_LoginPartial"></partial>
+
+            </ul>
+        </nav>
+    </header>
 
     <div class="container2">
         <div class="control">
@@ -31,7 +45,7 @@
                         <a asp-page="/Tutor/TProfile"><u>Thông tin tài khoản</u> </a>
                     </li>
                     <li>
-                        <a asp-page="/Tutor/TInfo">><u>Quản lý hồ sơ : <br><br></u></a>
+                        <a asp-page="/Tutor/TInfo"><u>Quản lý hồ sơ : <br><br></u></a>
                     </li>
                     <li>
                         <a href="#"><u> Quản lý suất dạy :<br><br></u> </a>
