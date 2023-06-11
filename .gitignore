@@ -361,7 +361,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/WebApplicationRAZOR/Pages/Tutor/THome.cshtml
-/WebApplicationRAZOR/Pages/Tutor/THome.cshtml.cs
-/WebApplicationRAZOR/Pages/Tutor/THome.cshtml
-/WebApplicationRAZOR/Pages/Tutor/THome.cshtml.cs
