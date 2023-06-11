@@ -22,6 +22,8 @@ namespace WebApplicationRAZOR.Pages
         public Register Model { get; set; }
         [BindProperty]
         public bool IsParent { get; set; }
+        [BindProperty]
+        public bool IsTutor { get; set; }
         public RegisterModel(
             UserManager<IdentityUser> userManager, 
             SignInManager<IdentityUser> signInManager,
@@ -45,7 +47,8 @@ namespace WebApplicationRAZOR.Pages
         }
         public async Task<IActionResult> OnPostCreateAccAsync()
         {
-            IsParent = true;
+            //IsTutor = true;
+            //IsParent = true;
             if (ModelState.IsValid)
             {
                 var user = new IdentityUser()
@@ -54,7 +57,7 @@ namespace WebApplicationRAZOR.Pages
                     Email = Model.Email
                 };
                 if(Model.Password != Model.ConfirmPassword)
-        {
+                {
                     ModelState.AddModelError("", "Password and confirmation password did not match");
                     return Page();
                 }
@@ -62,11 +65,17 @@ namespace WebApplicationRAZOR.Pages
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, false);
-                    string role = RolesApp.Parent;
-                    if (IsParent == false)
-                    {
-                        role = RolesApp.Tutor;
-                    }
+                    //string role ="";
+                    //if(IsParent == true)
+                    //{
+                    //    role = RolesApp.Parent;
+                    //}
+                    //if (IsTutor == true)
+                    //{
+                    //    role = RolesApp.Tutor;
+                    //}
+
+                    var role = Request.Form["rUserRole"];
                     if (!string.IsNullOrEmpty(role))
                     {
                         await _userManager.AddToRoleAsync(user, role);

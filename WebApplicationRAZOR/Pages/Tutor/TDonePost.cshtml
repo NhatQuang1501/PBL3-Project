@@ -1,14 +1,15 @@
 ﻿@page
 @model PBL3_Project.Pages.Tutor.TDonePostModel
 @{
-    Layout = null;
-    ViewData["title"] = "Trang chủ Gia sư";
+    Layout = "_TLayout";
+    ViewData["title"] = "Suất dạy đã nhận";
 }
 
 <link rel="stylesheet" href="~/css/main.css">
 <link rel="stylesheet" href="~/css/mainAdmin.css">
 <link rel="stylesheet" href="~/css/Personal.css">
 <link rel="stylesheet" href="~/css/hoSoGiaSu.css">
+<script src="~/js/main.js"></script>
 
 
 <body>
@@ -27,17 +28,17 @@
             <div class="choice">
                 <ul>
                     <li>
-                        <a href="Personal.html"><u>Thông tin tài khoản</u> </a>
+                        <a asp-page="/TProfile"><u>Thông tin tài khoản</u> </a>
                     </li>
                     <li>
-                        <a href="hoSoGiaSu.html"><u>Quản lý hồ sơ : <br><br></u></a>
+                        <a asp-page="/TInfo">><u>Quản lý hồ sơ : <br><br></u></a>
                     </li>
                     <li>
                         <a href="#"><u> Quản lý suất dạy :<br><br></u> </a>
                         <ul>
-                            <li style="color: white;"><a href="/Tutor/TDangKiPost">Suất dạy đã đăng kí </a></li>
-                            <li style="color: white;"><a href="/Tutor/TDonePost">Suất dạy được nhận</a></li>
-                            <li style="color: white;"><a href="/Tutor/TReview">Đánh giá của tôi</a></li>
+                            <li style="color: white;"><a asp-page="/TDangKiPost">Suất dạy đã đăng kí </a></li>
+                            <li style="color: white;"><a asp-page="/TDonePost">Suất dạy được nhận</a></li>
+                            <li style="color: white;"><a asp-page="/TReview">Đánh giá của tôi</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -53,7 +54,7 @@
         {
             <div class="job-posting" style="margin:100px">
                 <div class="image-container">
-                    <img src="image/avar.jpg" alt="avar" class="avar">
+                    <img src="~/img/avar.jpg" alt="avar" class="avar">
                     <p class="caption">Lờ tờ mờ</p>
                 </div>
                 <p><b><i>Id bài đăng:</i></b> @post.ID_BaiDang <input type="hidden" asp-for="BaiDang.ID_BaiDang" /> </p><br>

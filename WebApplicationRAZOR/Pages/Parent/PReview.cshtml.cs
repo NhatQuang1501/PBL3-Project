@@ -5,12 +5,14 @@ using System.Data;
 using PBL3_Project.Data;
 using PBL3_Project.Models;
 using PBL3_Project.ViewModel;
+using Microsoft.AspNetCore.Identity;
 
 namespace PBL3_Project.Pages.Parent
 {
-    //[Authorize(Roles = $"{RolesApp.Parent}")]
+    [Authorize(Roles = $"{RolesApp.Parent}")]
     public class PReviewModel : PageModel
     {
+        private readonly SignInManager<IdentityUser> _signInManager;
         private readonly PBL3_ProjectContext _context;
         [BindProperty]
         public PhanHoi AddPhanHoiRequest { get; set; }
@@ -59,6 +61,12 @@ namespace PBL3_Project.Pages.Parent
             _context.SaveChanges();
 
             return RedirectToPage("/Parent/PHome");
+        }
+
+        public async Task<IActionResult> OnGetLogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToPage("/Index");
         }
     }
 }

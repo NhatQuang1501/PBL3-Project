@@ -4,7 +4,7 @@
 }
 @{
     Layout = "_TLayout";
-    ViewData["title"] = "Trang chủ Gia sư";
+    ViewData["title"] = "Hồ sơ Gia sư";
 }
 
 
@@ -27,17 +27,17 @@
             <div class="choice">
                 <ul>
                     <li>
-                        <a href="/Tutor/TProfile"><u>Thông tin tài khoản</u> </a>
+                        <a asp-page="/TProfile"><u>Thông tin tài khoản</u> </a>
                     </li>
                     <li>
-                        <a href="#"><u>Quản lý hồ sơ : <br><br></u></a>
+                        <a asp-page="/TInfo"><u>Quản lý hồ sơ : <br><br></u></a>
                     </li>
                     <li>
                         <a href="#"><u> Quản lý suất dạy :<br><br></u> </a>
                         <ul>
-                            <li style="color: white;"><a href="SuatDayDDK.html">Suất dạy đã đăng kí </a></li>
-                            <li style="color: white;"><a href="SuatDayChecked.html">Suất dạy được nhận</a></li>
-                            <li style="color: white;"><a href="reviewGS.html">Đánh giá của tôi</a></li>
+                            <li style="color: white;"><a asp-page="/TDangKiPost">Suất dạy đã đăng kí </a></li>
+                            <li style="color: white;"><a asp-page="/TDonePost">Suất dạy được nhận</a></li>
+                            <li style="color: white;"><a asp-page="/TReview">Đánh giá của tôi</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -47,7 +47,7 @@
     </div>
 
     <div class="container1">
-        <img src="image/background.png" alt="background" class="background" />
+        <img src="~/img/background.png" alt="background" class="background" />
         <main>
             <div class="create-profile">
                 <form method="post">

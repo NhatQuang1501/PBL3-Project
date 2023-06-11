@@ -8,7 +8,7 @@ using System.Data;
 
 namespace PBL3_Project.Pages.Parent
 {
-    //[Authorize(Roles = $"{RolesApp.Parent}")]
+    [Authorize(Roles = $"{RolesApp.Parent}")]
     public class PProfileModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -36,6 +36,12 @@ namespace PBL3_Project.Pages.Parent
         {
             var user = await _userManager.GetUserAsync(User);
             Email = user.Email;
+        }
+
+        public async Task<IActionResult> OnGetLogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToPage("/Index");
         }
     }
 }
