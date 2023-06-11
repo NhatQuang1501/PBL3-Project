@@ -10,142 +10,96 @@
 }
 
 <link rel="stylesheet" href="~/css/main.css" />
-@*@{
-    var bd1 = new BaiDang()
-        {
-            ID_BaiDang = 1,
-            ID_PhuHuynh = 2,
-            MonHoc = "Toan",
-            TrinhDoHocVan = "Sinh vien",
-            HocPhi = 500000,
-            Lop = "12",
-            SoBuoi = 3,
-            SoHocVien = 2,
-            TinhTrang = false,
-            ThoiGian = "17:00 - 19:00 Thứ 2, 4, 6",
-            DiaChi = "54 Nguyen Luong Bang",
-            GhiChu = "2 chau bi mat goc",
-            TinhTrangDuyet = false
-        };
-    var bd2 = new BaiDang()
-            {
-                ID_BaiDang = 2,
-                ID_PhuHuynh = 1,
-                MonHoc = "Toan",
-                TrinhDoHocVan = "Sinh vien",
-                HocPhi = 500000,
-                Lop = "10",
-                SoBuoi = 3,
-                SoHocVien = 2,
-                TinhTrang = false,
-                ThoiGian = "17:00 - 19:00 Thứ 2, 4, 6",
-                DiaChi = "54 Nguyen Luong Bang",
-                GhiChu = "2 chau bi mat goc",
-                TinhTrangDuyet = false
-            };
-}*@
 
 <body>
 
     <div class="container">
-        @*<img src="image/FilterSearch.png" alt="FilSearch" class="FilSearch">*@
+        
         <img src="~/img/FilterSearch.png" alt="FilSearch" class="FilSearch">
         <!-- filter -->
+        <form method="post">
+
+      
         <div class="filter">
 
-            <div class="form-control">
-                <label>Môn học:</label>
-                <select>
-                    <option value="math">Toán</option>
-                    <option value="physics">Vật lý</option>
-                    <option value="chemistry">Hóa học</option>
-                    <option value="history">Ngữ văn</option>
-                    <option value="english">Tiếng Anh</option>
-                    <option value="english">Tiếng Trung</option>
-                    <option value="history">Lịch sử</option>
-                    <option value="history">Sinh học</option>
-                </select>
-            </div>
-            <div class="form-control">
-                <label>Lớp:</label>
-                <select>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
 
-                </select>
-            </div>
-            <div class="form-control">
+                <div class="form-control">
+                    <label>Môn học:</label>
+                    <input type="text" placeholder="Nhập môn học" asp-for="Model.MonHoc" name="MonHoc">
+                    
+                </div>
+
+                <div class="form-control">
+                    <label>Lớp:</label>
+                    <input type="text" placeholder="Nhập lớp" asp-for="Model.Lop" name="Lop">
+
+                </div>
+            
+                <div class="form-control">
                 <label>Khu vực:</label>
-                <select>
-                    <option value="hanoi">Hà Nội</option>
-                    <option value="hochiminh">TP Hồ Chí Minh</option>
-                    <option value="danang">Đà Nẵng</option>
-                </select>
+                    <input type="text" placeholder="Nhập khu vực" asp-for="Model.KhuVuc" name="KhuVuc">
             </div>
 
-            <div class="form-control">
-                <label>Học phí:</label>
-                <input id="inputrange" type="range" value="0" min="0" max="1000" oninput="this.nextElementSibling.value = this.value">
-                <output class="fee">0</output>
-                <output class="fee">.000 (VNĐ/h)</output>
-            </div>
-
+                <div class="form-control">
+                    <label>Học phí: (VNĐ)</label>
+                    <input type="text" placeholder="Nhập học phí cao nhất" asp-for="Model.HocPhiMax" name="HocPhiMax">
+                    <input type="text" placeholder="Nhập học phí thấp nhất" asp-for="Model.HocPhiMin" name="HocPhiMin">
+                    </div>
             <div class="form-control">
                 <label>Số học viên:</label>
-                <input id="inputrange" type="range" value="0" min="0" max="20" oninput="this.nextElementSibling.value = this.value">
-                <output class="fee">0</output>
+                    <input type="text" placeholder="Nhập số học viên" asp-for="Model.SoHocVien" name="SoHocVien">
 
             </div>
 
             <div class="form-control">
                 <label>Số buổi:</label>
-                <input id="inputrange" type="range" value="0" min="0" max="7" oninput="this.nextElementSibling.value = this.value">
-                <output class="fee">0</output>
+                    <input type="text" placeholder="Nhập số buổi học" asp-for="Model.SoBuoi" name="SoBuoi">
 
             </div>
 
-            <a href="#" class="btn btn-del">Xóa tất cả</a>
-            <a href="#" class="btn btn-find">Áp dụng</a>
-            <a asp-page="/Parent/CreatePost" class="btn btn-create">Tạo bài đăng</a>
+            <form method="post" >
 
+                    <a asp-page="/Parent/PHome" class="btn btn-func1">Xóa tất cả</a>
+                
+                <button type="submit button" class="btn btn-func2" asp-page-handler="ByFilter"> Tìm kiếm</button>
+                <a asp-page="/Parent/CreatePost" class="btn btn-create">Tạo bài đăng</a>
+            </form>
         </div>
+        </form>
 
+
+        <style> 
+
+            input[type="text"] {
+                width: 180px;
+                height: 30px;
+                margin-bottom: 10px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .btn-func1, .btn-func2 {
+                background-color: #002182;
+                width: 100px;
+                height: 40px;
+                border-radius: 5px;
+                text-align: center;
+                color: #ccc;
+             }
+
+            .btn-func2 {
+                margin-left:130px;
+                margin-top: -40px;
+            }
+
+        </style>
         <main>
             @foreach(var post in Model.Posts)
             {
-@*                <div class="job-posting">
-                    <div class="image-container">
-                        <img src="image/avar.jpg" alt="avar" class="avar">
-                        <p class="caption">Lờ tờ mờ</p>
-                    </div>
-                    <br>
-                    <p>Môn học: @post.MonHoc</p><br>
-                    <p>Lớp: @post.Lop</p><br>
-                    <p>Trình độ học vấn của gia sư: @post.TrinhDoHocVan</p><br>
-                    <p>Số buổi dạy: @post.SoBuoi</p><br>
-                    <p>Số học viên: @post.SoHocVien</p><br>
-                    <p>Học phí: @post.HocPhi</p><br>
-                    <p>Thời gian: @post.ThoiGian</p><br>
-                    <p>Ghi chú: @post.GhiChu</p><br>
-                </div>*@
                 <partial name="_PostPH" model="post"></partial>
             }
-
-@*            <partial name="_Post" model="bd1"></partial>
-            <partial name="_Post" model="bd2"></partial>*@
-
         </main>
-
 
 
     </div>

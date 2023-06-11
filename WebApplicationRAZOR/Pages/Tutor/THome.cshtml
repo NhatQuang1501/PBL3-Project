@@ -8,7 +8,7 @@
 }
 
     <link rel="stylesheet" href="~/css/main.css">
-    <script src="main.js"></script>
+    
 
 <body>
 
@@ -16,91 +16,87 @@
     <div class="container">
         <img src="~/img/FilterSearch.png" alt="FilSearch" class="FilSearch">
         <!-- filter -->
-        <div class="filter">
+        <form method="post">
 
-            <div class="form-control">
-                <label>Môn học:</label>
-                <select>
-                    <option value="math">Toán</option>
-                    <option value="physics">Vật lý</option>
-                    <option value="chemistry">Hóa học</option>
-                    <option value="history">Ngữ văn</option>
-                    <option value="english">Tiếng Anh</option>
-                    <option value="english">Tiếng Trung</option>
-                    <option value="history">Lịch sử</option>
-                    <option value="history">Sinh học</option>
-                </select>
+
+            <div class="filter">
+
+
+                <div class="form-control">
+                    <label>Môn học:</label>
+                    <input type="text" placeholder="Nhập môn học" asp-for="Model.MonHoc" name="MonHoc">
+
+                </div>
+
+                <div class="form-control">
+                    <label>Lớp:</label>
+                    <input type="text" placeholder="Nhập lớp" asp-for="Model.Lop" name="Lop">
+
+                </div>
+
+                <div class="form-control">
+                    <label>Khu vực:</label>
+                    <input type="text" placeholder="Nhập khu vực" asp-for="Model.KhuVuc" name="KhuVuc">
+                </div>
+
+                <div class="form-control">
+                    <label>Học phí: (VNĐ)</label>
+                    <input type="text" placeholder="Nhập học phí cao nhất" asp-for="Model.HocPhiMax" name="HocPhiMax">
+                    <input type="text" placeholder="Nhập học phí thấp nhất" asp-for="Model.HocPhiMin" name="HocPhiMin">
+                </div>
+                <div class="form-control">
+                    <label>Số học viên:</label>
+                    <input type="text" placeholder="Nhập số học viên" asp-for="Model.SoHocVien" name="SoHocVien">
+
+                </div>
+
+                <div class="form-control">
+                    <label>Số buổi:</label>
+                    <input type="text" placeholder="Nhập số buổi học" asp-for="Model.SoBuoi" name="SoBuoi">
+
+                </div>
+
+                <form method="post">
+
+                    <a asp-page="/Parent/PHome" class="btn btn-func1">Xóa tất cả</a>
+
+                    <button type="submit button" class="btn btn-func2" asp-page-handler="ByFilter"> Tìm kiếm</button>
+                    <a asp-page="/Parent/CreatePost" class="btn btn-create">Tạo bài đăng</a>
+                </form>
             </div>
-            <div class="form-control">
-                <label>Lớp:</label>
-                <select>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
+        </form>
 
-                </select>
-            </div>
-            <div class="form-control">
-                <label>Khu vực:</label>
-                <select>
-                    <option value="hanoi">Hà Nội</option>
-                    <option value="hochiminh">TP Hồ Chí Minh</option>
-                    <option value="danang">Đà Nẵng</option>
-                </select>
-            </div>
+        <style>
 
-            <div class="form-control">
-                <label>Học phí:</label>
-                <input id="inputrange" type="range" value="0" min="0" max="1000" oninput="this.nextElementSibling.value = this.value">
-                <output class="fee">0</output>
-                <output class="fee">.000 (VNĐ/h)</output>
-            </div>
+            input[type="text"] {
+                width: 180px;
+                height: 30px;
+                margin-bottom: 10px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
 
-            <div class="form-control">
-                <label>Số học viên:</label>
-                <input id="inputrange" type="range" value="0" min="0" max="20" oninput="this.nextElementSibling.value = this.value">
-                <output class="fee">0</output>
+            .btn-func1, .btn-func2 {
+                background-color: #002182;
+                width: 100px;
+                height: 40px;
+                border-radius: 5px;
+                text-align: center;
+                color: #ccc;
+            }
 
-            </div>
+            .btn-func2 {
+                margin-left: 130px;
+                margin-top: -40px;
+            }
 
-            <div class="form-control">
-                <label>Số buổi:</label>
-                <input id="inputrange" type="range" value="0" min="0" max="7" oninput="this.nextElementSibling.value = this.value">
-                <output class="fee">0</output>
-
-            </div>
-
-            <a href="#" class="btn btn-del">Xóa tất cả</a>
-            <a href="#" class="btn btn-find">Áp dụng</a>
-
-        </div>
-
+        </style>
         <main>
             @foreach (var post in Model.Posts)
             {
                 <partial name="_Post" model="post"></partial>
             }
-@*            <div class="job-posting">
-                <div class="image-container">
-                    <img src="~/img/avar.jpg" alt="avar" class="avar">
-                    <p class="caption">Lờ tờ mờ</p>
-                </div>
-                <br>
-                <p>Tìm gia sư Lý cho học sinh 13</p><br>
-                <p>Cháu bị mất gốc nặng.</p>
-                <button class="apply-btn">Đăng kí dạy</button>
-                <button class="Cancel-btn">Hủy đăng kí</button>
-            </div>*@
-
 
         </main>
 
