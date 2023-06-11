@@ -80,7 +80,6 @@
                     <form method="post">
                         <div class="button-container">
                             <a href="/parent/editpost/@post.ID_BaiDang" class="Edit-btn" style="margin:10px">Sửa bài đăng</a>
-
                             @*<button class="btn btn-primary" style="margin:10px" asp-page="/Parent/PHome" type="button">Sửa bài đăng</button>*@
                             <button class="Del" type="button submit" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang" onclick="return confirm('Bạn có muốn xoá không?')">Xóa bài đăng</button>
                         </div>

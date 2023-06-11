@@ -11,35 +11,35 @@
 <body>
     <div class="container">
         <div class="control">
-            <img class="avatar" src="~/img/avar.jpg" alt="Avatar" />
+            <img class="avatar" src="~img/avar.jpg" alt="Avatar" />
             <div class="user-info">
                 <div class="username">ChuBeDan</div>
-                <img src="~/img/iconControl.png" alt="Logo" class="iconControl" />
+                <img src="~img/iconControl.png" alt="Logo" class="iconControl" />
             </div>
         </div>
 
         <div class="menu">
+
             <div class="choice">
                 <ul>
                     <li>
-                        <a href="#"><u>Thông tin tài khoản</u> </a>
+                        <a asp-page="/Parent/PInfor"><u>Thông tin tài khoản</u> </a>
                     </li>
                     <li>
-                        <a href="hoSoGiaSu.html"><u>Quản lý hồ sơ : <br><br></u></a>
+                        <a asp-page="/Parent/PProfile"><u>Quản lý hồ sơ : <br><br></u></a>
                     </li>
                     <li>
-                        <a href="#"><u> Quản lý suất dạy :<br><br></u> </a>
+                        <u> Quản lý bài đăng :<br><br></u>
                         <ul>
-                            <li style="color: white;"><a href="SuatDayDDK.html">Suất dạy đã đăng kí </a></li>
-                            <li style="color: white;"><a href="#">Suất dạy được nhận</a></li>
-                            <li style="color: white;"><a href="reviewGS.html">Đánh giá của tôi</a></li>
+                            <li style="color: white;"><a asp-page="/Parent/PDuyetPost">Bài đăng được duyệt </a></li>
+                            <li style="color: white;"><a asp-page="/Parent/PChuaDuyetPost">Bài đăng chờ duyệt</a></li>
+                            <li style="color: white;"><a href="#">Suất dạy đã giao</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
+
         </div>
-        <!-- Thêm đường dẫn đến tệp JavaScript -->
-        <script src="changePassGS.js"></script>
     </div>
 
     <div class="container1">
@@ -54,40 +54,50 @@
                 <tr>
                     <td>
                         <strong><label for="username">Email đăng nhập:</label></strong>
+                        <label for="Email">@Model.Email<br /><br /></label>
                     </td>
-                    <td>
+                    @*<td>
                         <label for="Email">LTMTUTOR@@@@<br /><br /></label>
-                    </td>
+                    </td>*@
                     <br />
-                </tr>
-
-                <tr>
-                    <td><strong><label for="password">Mật khẩu:</label></strong></td>
-                    <td><label for="Pass">123456</label></td>
                 </tr>
 
                 <tr>
                     <td><div><strong><br> Nhập mật khẩu hiện tại * <br><br></strong></div></td>
                 </tr>
                 <tr>
-                    <td><input type="text" id="password1" name="password1"></td>
+                    <td>
+                        <input type="password" id="password1" name="password1" asp-for="Model.CurrentPassword">
+                        <span asp-validation-for="Model.CurrentPassword" class="text-danger"></span>
+                    </td>
                 </tr>
                 <tr>
                     <td><div><strong> Nhập mật khẩu mới * <br><br></strong></div></td>
                 </tr>
                 <tr>
-                    <td><input type="password" id="password2" name="password2"></td>
+                    <td>
+                        <input type="password" id="password2" name="password2" asp-for="Model.NewPassword">
+                        <span asp-validation-for="Model.NewPassword" class="text-danger"></span>
+                    </td>
                 </tr>
 
                 <tr>
                     <td><div><strong> Xác nhận mật khẩu mới * </strong></div></td>
                 </tr>
                 <tr>
-                    <td><input type="password" id="password3" name="password3"></td>
-                    @*<td><input type="submit" value="Lưu" class="save-button" /></td>*@
+                    <td>
+                        <input type="password" id="password3" name="password3" asp-for="Model.ConfirmPassword">
+                        <span asp-validation-for="Model.ConfirmPassword" class="text-danger"></span>
+                    </td>
+                    @*<label for="Email">Email</label> <br />
+                    <input type="text" id="email" name="email" asp-for=Model.Email />
+                    <span asp-validation-for="Model.Email" class="text-danger"></span>*@
                 </tr>
             </table>
-            <input type="submit" value="Đổi mật khẩu" />
+@*            <button class="apply-btn" type="button" asp-page-handler="ChangePassword" runat="Server" onclick="ChangePassword()">Đổi mật khẩu</button>
+*@            <button type="submit" class="apply-btn" type="submit">Đổi mật khẩu</button>
+
+            <div asp-validation-summary="All" class="text-danger"></div>
         </form>
     </div>
 </body>

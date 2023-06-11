@@ -7,11 +7,6 @@ namespace PBL3_Project.Pages.Parent
 {
     public class EditPostModel : PageModel
     {
-
-        //public void OnGet()
-        //{
-        //}
-
         private readonly PBL3_ProjectContext dBContext;
 
         [BindProperty]

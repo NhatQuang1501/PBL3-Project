@@ -44,7 +44,6 @@
     </div>
 
     <div class="container1">
-
         <form class="form">
             <table>
                 <tr>
@@ -54,26 +53,27 @@
                 </tr>
                 <tr>
                     <td>
-                        <strong><label for="username">Email đăng nhập:</label></strong>
+                        <strong><label for="username">Email đăng nhập: @Model.Email</label></strong>
                     </td>
-                    <td>
-                        <label for="Email">Phuhuynh@gmail.com<br /><br /></label>
-                    </td>
+                    @*<td>
+                        <label for="Email">Phuhuynh@gmail.com<br /> <br /> </label>
+                    </td>*@
                     <br />
                 </tr>
 
-                <tr>
+                @*<tr>
                     <td>
                         <strong><label for="password">Mật khẩu:</label></strong>
                     </td>
                     <td><label for="Pass">Phuhuynh1</label></td>
-                    <form action="changePassPH.html">
-                    <td colspan="2"><input type="submit" value="Đổi mật khẩu" formaction="changePassPH.html" /></td>
-        </form>
-
-        </tr>
-        <tr></tr>
-        </table>
+                </tr>*@
+                <tr>
+                    <td>
+                        @*<button class="apply-btn" type="button" style="margin-left:100px" asp-page="/Parent/PChangePass">Đổi mật khẩu</button>*@
+                        <a href="/Parent/PChangePass" class="btn apply-btn" style="margin-left:50px">Đổi mật khẩu</a>
+                    </td>
+                </tr>
+            </table>
         </form>
     </div>
 </body>
