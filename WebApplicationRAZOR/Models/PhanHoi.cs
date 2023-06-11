@@ -9,10 +9,10 @@ namespace PBL3_Project.Models
         public int ID_PhanHoi { get; set; }
 
         [ForeignKey("ID_GiaSu")]
-        public int ID_GiaSu { get; set; }
+        public string ID_GiaSu { get; set; }
 
         [ForeignKey("ID_Phuhuynh")]
-        public int ID_PhuHuynh { get; set; }
+        public string ID_PhuHuynh { get; set; }
         public string? NoiDungPhanHoi { get; set; }
         public double DiemDanhGia { get; set; }
         //public virtual HoSoGiaSu IdGiaSuNavigation { get; set; } = null!;

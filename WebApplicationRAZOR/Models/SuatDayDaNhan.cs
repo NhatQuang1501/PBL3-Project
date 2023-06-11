@@ -12,7 +12,7 @@ namespace PBL3_Project.Models
         public int ID_BaiDang { get; set; }
 
         [ForeignKey("ID_GiaSu")]
-        public int ID_GiaSu { get; set; }
+        public string ID_GiaSu { get; set; }
         //public virtual BaiDang IdBaiDangNavigation { get; set; } = null!;
         //public virtual HoSoGiaSu IdGiaSuNavigation { get; set; } = null!;
     }

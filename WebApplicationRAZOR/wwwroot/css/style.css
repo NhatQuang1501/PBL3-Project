@@ -52,6 +52,7 @@ nav {
     width: 85%;
     list-style: none;
     text-align: center;
+    margin-top: -15px;
 }
 
     .nav-links li {

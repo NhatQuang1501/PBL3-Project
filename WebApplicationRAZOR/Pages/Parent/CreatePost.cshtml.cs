@@ -26,8 +26,8 @@ namespace PBL3_Project.Pages.Parent
         {
             var post = new Models.BaiDang()
             {
-                ID_PhuHuynh = 1,
-                ID_GiaSu = 0,
+                ID_PhuHuynh = "1",
+                ID_GiaSu = "0",
                 TrinhDoHocVan = AddPostRequest.TrinhDoHocVan,
                 MonHoc = AddPostRequest.MonHoc,
                 HocPhi = AddPostRequest.HocPhi,
