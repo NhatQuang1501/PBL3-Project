@@ -4,6 +4,11 @@ namespace PBL3_Project.ViewModel
 {
     public class ChangePassword
     {
+        //[Required]
+        //[DataType(DataType.Text)]
+        //[Display(Name = "Email")]
+        //public string Email { get; set; }
+
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Current password")]

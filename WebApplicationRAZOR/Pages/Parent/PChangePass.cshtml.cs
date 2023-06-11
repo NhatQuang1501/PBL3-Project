@@ -19,7 +19,8 @@ namespace PBL3_Project.Pages.Parent
         [BindProperty]
         public ChangePassword Model { get; set; }
         [BindProperty]
-        public string Email { get; set; }
+        public static string Email { get; set; }
+        public string Email1 { get; set; }
         public PChangePassModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
@@ -36,46 +37,31 @@ namespace PBL3_Project.Pages.Parent
         {
             var user = await _userManager.GetUserAsync(User);
             Email = user.Email;
+            Email1 = user.Email;
         }
-        //public async Task<IActionResult> OnPostChangePasswordAsync()
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var user = await _userManager.GetUserAsync(User);
-        //        if (user == null)
-        //        {
-        //            return NotFound();
-        //        }
-        //        if (Model.NewPassword != Model.ConfirmPassword)
-        //        {
-        //            ModelState.AddModelError("", "Password and confirmation password did not match");
-        //            return Page();
-        //        }
-        //        var changePasswordResult = await _userManager.ChangePasswordAsync(user, Model.CurrentPassword, Model.NewPassword);
-        //        if (changePasswordResult.Succeeded)
-        //        {
-        //            await _signInManager.SignOutAsync();
-        //            return RedirectToPage("/Account/Login");
-        //        }
-
-        //        foreach (var error in changePasswordResult.Errors)
-        //        {
-        //            ModelState.AddModelError("", error.Description);
-        //        }
-        //    }
-        //    return Page();
-        //}
 
         public async Task<IActionResult> OnPostAsync()
         {
             var user = await _userManager.GetUserAsync(User);
-            if (user == null)
-            {
-                return NotFound();
-            }
+
             if (Model.NewPassword != Model.ConfirmPassword)
             {
                 ModelState.AddModelError("", "Password and confirmation password did not match");
+                return Page();
+            }
+            if(user == null)
+            {
+                ModelState.AddModelError("", "Data null");
+                return Page();
+            }
+            if (Model.CurrentPassword == null)
+            {
+                ModelState.AddModelError("", "current password null");
+                return Page();
+            }
+            if (Model.NewPassword == null)
+            {
+                ModelState.AddModelError("", "new password null");
                 return Page();
             }
             var changePWResult = await _userManager.ChangePasswordAsync(user, Model.CurrentPassword, Model.NewPassword);
@@ -89,6 +75,8 @@ namespace PBL3_Project.Pages.Parent
             }
 
             await _signInManager.RefreshSignInAsync(user);
+            Email = user.Email;
+            Email1 = user.Email;
             return RedirectToPage("/Index");
         }
 

@@ -1,7 +1,7 @@
 ﻿@page
 @model PBL3_Project.Pages.Tutor.TDangKiPostModel
 @{
-    Layout = "_TLayout";
+    Layout = null;
     ViewData["title"] = "Suất dạy đăng kí";
 }
 
@@ -12,11 +12,25 @@
 
 
 <body>
+    <header>
+        <nav>
+            <div class="logo-box">
+                <img src="~/img/logo.png" alt="Logo" class="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a asp-page="/Tutor/THome">Trang chủ</a></li>
+                <li><a asp-page="/Tutor/TProfile">Thông tin cá nhân</a></li>
+
+                <partial name="_LoginPartial"></partial>
+
+            </ul>
+        </nav>
+    </header>
     <div class="container2">
         <div class="control">
             <img class="avatar" src="~/img/avar.jpg" alt="Avatar" />
             <div class="user-info">
-                <div class="username">Lê Tèo</div>
+                <div class="username">Gia sư</div>
                 <img src="~/img/iconControl.png" alt="Logo" class="iconControl" />
             </div>
         </div>
@@ -26,17 +40,17 @@
             <div class="choice">
                 <ul>
                     <li>
-                        <a asp-page="/TProfile"><u>Thông tin tài khoản</u> </a>
+                        <a asp-page="/Tutor/TProfile"><u>Thông tin tài khoản</u> </a>
                     </li>
                     <li>
-                        <a asp-page="/TInfo">><u>Quản lý hồ sơ : <br><br></u></a>
+                        <a asp-page="/Tutor/TInfo"><u>Quản lý hồ sơ : <br><br></u></a>
                     </li>
                     <li>
                         <a href="#"><u> Quản lý suất dạy :<br><br></u> </a>
                         <ul>
-                            <li style="color: white;"><a asp-page="/TDangKiPost">Suất dạy đã đăng kí </a></li>
-                            <li style="color: white;"><a asp-page="/TDonePost">Suất dạy được nhận</a></li>
-                            <li style="color: white;"><a asp-page="/TReview">Đánh giá của tôi</a></li>
+                            <li style="color: white;"><a asp-page="/Tutor/TDangKiPost">Suất dạy đã đăng kí </a></li>
+                            <li style="color: white;"><a asp-page="/Tutor/TDonePost">Suất dạy được nhận</a></li>
+                            <li style="color: white;"><a asp-page="/Tutor/TReview">Đánh giá của tôi</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -65,32 +79,12 @@
             <p><b><i>Thời gian:</i></b> @post.ThoiGian</p><br>
             <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
             <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>
-           @* <br>
-            <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
-            <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
-            <p><b><i>Học phí :</i></b> 70k/h.</p><br>
-            <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
-*@
+          
             <button class="Cancel-btn">Hủy đăng ký</button>
         </div>
         }
 
-     @*   <div class="job-posting">
-            <div class="image-container">
-                <img src="image/avar.jpg" alt="avar" class="avar">
-                <p class="caption">Lờ tờ mờ</p>
-            </div>
-            <br>
-            <p><b><i>Tiêu đề :</i></b> Tìm gia sư Lý cho học sinh 13.</p><br>
-            <p><b><i>Tình trạng :</i></b> Cháu bị mất gốc nặng.</p><br>
-            <p><b><i>Học phí :</i></b> 70k/h.</p><br>
-            <p><b><i>Địa chỉ :</i></b> 193 Nguyễn Lương Bằng.</p><br>
-
-            <button class="Cancel-btn">Hủy đăng ký</button>
-        </div>*@
-
-
-
+    
 
     </main>
 
