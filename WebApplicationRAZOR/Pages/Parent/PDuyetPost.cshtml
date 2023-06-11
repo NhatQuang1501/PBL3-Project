@@ -1,25 +1,25 @@
 ﻿@page
 @model PBL3_Project.Pages.Parent.PDuyetPostModel
 @{
-	Layout = "_PLayout";
-	ViewData["title"] = "Trang chủ Phụ huynh";
+    Layout = "_PLayout";
+    ViewData["title"] = "Trang chủ Phụ huynh";
 }
 
-    <link rel="stylesheet" href="~/css/Personal.css" />
-    <link rel="stylesheet" href="~/css/ChangePassGS.css" />
-    <link rel="stylesheet" href="~/css/main.css" />
-    <link rel="stylesheet" href="~/css/CheckedPost.css" />
+<link rel="stylesheet" href="~/css/Personal.css" />
+<link rel="stylesheet" href="~/css/ChangePassGS.css" />
+<link rel="stylesheet" href="~/css/main.css" />
+<link rel="stylesheet" href="~/css/CheckedPost.css" />
 
-  <body>
-    
+<body>
+
     <div class="container">
-      <div class="control">
-        <img class="avatar" src="~img/avar.jpg" alt="Avatar" />
-        <div class="user-info">
-          <div class="username">ChuBeDan</div>
-          <img src="image/iconControl.png" alt="Logo" class="iconControl" />
+        <div class="control">
+            <img class="avatar" src="~img/avar.jpg" alt="Avatar" />
+            <div class="user-info">
+                <div class="username">ChuBeDan</div>
+                <img src="~img/iconControl.png" alt="Logo" class="iconControl" />
+            </div>
         </div>
-      </div>
 
         <div class="menu">
 
@@ -36,7 +36,7 @@
                         <ul>
                             <li style="color: white;"><a asp-page="/Parent/PDuyetPost">Bài đăng được duyệt </a></li>
                             <li style="color: white;"><a asp-page="/Parent/PChuaDuyetPost">Bài đăng chờ duyệt</a></li>
-                            <li style="color: white;"><a href="#">Suất dạy đã giao</a></li>
+                            <li style="color: white;"><a href="/Parent/PDonePost">Suất dạy đã giao</a></li>
 
                         </ul>
                     </li>
@@ -44,16 +44,16 @@
             </div>
 
         </div>
-        
+
 
     </div>
 
-   
 
-        
-        @if (Model.Posts != null)
-        {
-             <main>
+
+
+    @if (Model.Posts != null)
+    {
+        <main>
 
             @foreach (var post in Model.Posts)
             {
@@ -73,25 +73,19 @@
                     <p><b><i>Địa chỉ:</i></b> @post.DiaChi</p><br>
                     <p><b><i>Ghi chú:</i></b> @post.GhiChu</p><br>
 
-                    @*<form method="post">
+                    <form method="post">
                         <div class="button-container">
-                            @*<a href="/parent/editpost/@post.ID_BaiDang" class="Edit-btn" style="margin:10px">Sửa bài đăng</a>*@
                             <a href="/parent/editpost/@post.ID_BaiDang" class="Edit-btn" style="margin:10px">Sửa bài đăng</a>
+                            @*<button class="btn btn-primary" style="margin:10px" asp-page="/Parent/PHome" type="button">Sửa bài đăng</button>*@
                             <button class="Del" type="button submit" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang" onclick="return confirm('Bạn có muốn xoá không?')">Xóa bài đăng</button>
-                            @*<button class="btn btn-primary" style="margin:10px" type="button">Danh sách gia sư đăng ký</button>*@
                             <a href="/parent/ListTutor/@post.ID_BaiDang" class="Edit-btn" style="margin:10px">Danh sách gia sư đăng ký</a>
                         </div>
-                    </form>*@
-                <form method="post">
-                    <div class="button-container">
-                        <a href="/parent/editpost/@post.ID_BaiDang" class="Edit-btn" style="margin:10px">Sửa bài đăng</a>
-
-                        @*<button class="btn btn-primary" style="margin:10px" asp-page="/Parent/PHome" type="button">Sửa bài đăng</button>*@
-                        <button class="Del" type="button submit" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang" onclick="return confirm('Bạn có muốn xoá không?')">Xóa bài đăng</button>
-                    </div>
-                </form>
+                    </form>
                 </div>
             }
+
+
+        </main>
         <style>
             .Del {
                 width: 360px;
@@ -107,31 +101,12 @@
                     background-color: darkorange;
                 }
         </style>
-  
-        
-      </main>
-    <style>
-        .Del {
-            width: 360px;
-            padding: 10px;
-            background-color: #F1BB45;
-            text-decoration: none;
-            text-align: center;
-            border-color: #F1BB45;
-            border-radius: 30px;
-        }
-
-            .Del:hover {
-                background-color: darkorange;
-            }
-    </style>
-        }
-        else
-        {
+    }
+    else
+    {
         <div class="job-posting">
             <p>Không tìm thấy bài đăng chưa duyệt</p>
         </div>
-        }
-    
-  </body>
+    }
 
+</body>

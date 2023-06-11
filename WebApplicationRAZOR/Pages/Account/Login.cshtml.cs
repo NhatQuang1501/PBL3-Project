@@ -40,6 +40,10 @@ namespace WebApplicationRAZOR.Pages
                     {
                         return RedirectToPage("/Tutor/THome");
                     }
+                    else
+                    {
+                        return RedirectToPage("/Admin/QLPost");
+                    }
                 }
                 ModelState.AddModelError("", "Username or Password incorrect");
             }

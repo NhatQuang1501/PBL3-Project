@@ -48,7 +48,8 @@ namespace WebApplicationRAZOR.Pages.Parent
 
             if (!string.IsNullOrEmpty(monhoc))
             {
-                query = query.Where(p => p.MonHoc.Replace(" ", "").ToLower() == monhoc.Replace(" ", "").ToLower());
+                query = query.Where(p => p.MonHoc.Replace(" ", "").ToLower().Contains(monhoc.Replace(" ", "").ToLower())
+                || monhoc.Replace(" ", "").ToLower().Contains(p.MonHoc.Replace(" ", "").ToLower()));
             }
 
             if (!string.IsNullOrEmpty(lop))
@@ -58,7 +59,8 @@ namespace WebApplicationRAZOR.Pages.Parent
 
             if (!string.IsNullOrEmpty(khuvuc))
             {
-                query = query.Where(p => p.DiaChi.Replace(" ", "").ToLower().Contains(khuvuc.Replace(" ", "").ToLower()));
+                query = query.Where(p => p.DiaChi.Replace(" ", "").ToLower().Contains(khuvuc.Replace(" ", "").ToLower())
+                || khuvuc.Replace(" ", "").ToLower().Contains(p.DiaChi.Replace(" ", "").ToLower()));
             }
 
             if (!string.IsNullOrEmpty(sohv))
