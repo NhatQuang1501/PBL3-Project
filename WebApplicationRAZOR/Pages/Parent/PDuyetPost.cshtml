@@ -75,8 +75,11 @@
 
                     @*<form method="post">
                         <div class="button-container">
-                            <button class="btn btn-primary" style="margin:10px" asp-page="" type="button">Sửa bài đăng</button>
-                            <button class="btn btn-danger" type="button submit" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang" onclick="return confirm('Bạn có muốn xoá không?')">Xóa bài đăng</button>
+                            @*<a href="/parent/editpost/@post.ID_BaiDang" class="Edit-btn" style="margin:10px">Sửa bài đăng</a>*@
+                            <a href="/parent/editpost/@post.ID_BaiDang" class="Edit-btn" style="margin:10px">Sửa bài đăng</a>
+                            <button class="Del" type="button submit" asp-page-handler="Delete" asp-route-id="@post.ID_BaiDang" onclick="return confirm('Bạn có muốn xoá không?')">Xóa bài đăng</button>
+                            @*<button class="btn btn-primary" style="margin:10px" type="button">Danh sách gia sư đăng ký</button>*@
+                            <a href="/parent/ListTutor/@post.ID_BaiDang" class="Edit-btn" style="margin:10px">Danh sách gia sư đăng ký</a>
                         </div>
                     </form>*@
                 <form method="post">
@@ -89,6 +92,21 @@
                 </form>
                 </div>
             }
+        <style>
+            .Del {
+                width: 360px;
+                padding: 10px;
+                background-color: #F1BB45;
+                text-decoration: none;
+                text-align: center;
+                border-color: #F1BB45;
+                border-radius: 30px;
+            }
+
+                .Del:hover {
+                    background-color: darkorange;
+                }
+        </style>
   
         
       </main>

@@ -21,7 +21,7 @@ namespace PBL3_Project.Pages.Parent
 
         public void OnGet(int id)
         {
-           BaiDang = _context.BaiDang.Find(id);
+            BaiDang = _context.BaiDang.Find(id);
             SuatDayDaNhan = _context.SuatDayDaNhan.Find(id);
         }
         public PReviewModel(PBL3_ProjectContext context)

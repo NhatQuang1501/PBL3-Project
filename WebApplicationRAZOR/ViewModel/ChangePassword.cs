@@ -6,12 +6,15 @@ namespace PBL3_Project.ViewModel
     {
         [Required]
         [DataType(DataType.Password)]
+        [Display(Name = "Current password")]
         public string CurrentPassword { get; set; }
         [Required]
         [DataType(DataType.Password)]
+        [Display(Name = "New password")]
         public string NewPassword { get; set; }
         [Required]
-        [DataType(nameof(NewPassword), ErrorMessage = "Password and confirmation password did not match")]
+        [DataType(DataType.Password)]
+        [Compare("NewPassword", ErrorMessage = "Password and confirmation password did not match")]
         public string ConfirmPassword { get; set; }
     }
 }
