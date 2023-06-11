@@ -25,10 +25,10 @@
             <div class="choice">
                 <ul>
                     <li>
-                        <a asp-page="/Tutor/TInfo"><u>Thông tin tài khoản</u> </a>
+                        <a asp-page="/Tutor/TProfile"><u>Thông tin tài khoản</u> </a>
                     </li>
                     <li>
-                        <a asp-page="/Tutor/TProfile"><u>Quản lý hồ sơ : <br><br></u></a>
+                        <a asp-page="/Tutor/TInfo"><u>Quản lý hồ sơ <br><br></u></a>
                     </li>
                     <li>
                         <u> Quản lý bài đăng :<br><br></u>
@@ -56,21 +56,10 @@
                     <td>
                         <strong><label for="username">Email đăng nhập: @Model.Email</label></strong>
                     </td>
-                    @*<td>
-                    <label for="Email">Phuhuynh@gmail.com<br /> <br /> </label>
-                    </td>*@
                     <br />
                 </tr>
-
-                @*<tr>
-                <td>
-                <strong><label for="password">Mật khẩu:</label></strong>
-                </td>
-                <td><label for="Pass">Phuhuynh1</label></td>
-                </tr>*@
                 <tr>
                     <td>
-                        @*<button class="apply-btn" type="button" style="margin-left:100px" asp-page="/Parent/PChangePass">Đổi mật khẩu</button>*@
                         <a href="/Tutor/TChangePass" class="btn apply-btn" style="margin-left:50px">Đổi mật khẩu</a>
                     </td>
                 </tr>
